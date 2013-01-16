@@ -1,0 +1,401 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"n",
+				"nth-child"
+			],
+			[
+				"button",
+				"x-btn-default-toolbar-small-menu-active"
+			],
+			[
+				"displayfield-10",
+				"displayfield-1016"
+			],
+			[
+				"impor",
+				"important"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "main.scss",
+			"settings":
+			{
+				"buffer_size": 64,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "mixins.scss",
+			"settings":
+			{
+				"buffer_size": 72,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/mluster/Projects/ResponsiveGraphics/javascripts/main.js",
+			"settings":
+			{
+				"buffer_size": 70,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/mluster/Projects/ResponsiveGraphics/index.html",
+			"settings":
+			{
+				"buffer_size": 5366,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Applications/MAMP/conf/apache/extra/httpd-vhosts.conf",
+		"/Applications/MAMP/conf/apache/httpd.conf",
+		"/Applications/MAMP/conf/apache/vhosts.conf",
+		"/Users/mluster/Projects/Responsive Graphics/index.html",
+		"/Users/mluster/Projects/Responsive Graphics/sass/app.scss",
+		"/Users/mluster/Projects/Responsive Graphics/sass/mixins.scss",
+		"/Users/mluster/Projects/Responsive Graphics/sass/main.scss",
+		"/Users/mluster/Projects/Birst Acquia/docroot/careers-new/sass/app.scss",
+		"/Users/mluster/Projects/Birst Acquia/docroot/careers-new/sass/main.scss",
+		"/Users/mluster/Projects/Birst Acquia/docroot/careers-new/sass/mixins.scss",
+		"/Users/mluster/Projects/Birst Acquia/docroot/careers-new/sass/_settings.scss",
+		"/Users/mluster/Projects/Birst Acquia/docroot/careers-new/javascripts/main.js",
+		"/Users/mluster/Projects/Birst Acquia/docroot/careers-new/javascripts/foundation/app.js",
+		"/Users/mluster/Projects/Birst Acquia/docroot/careers-new/index.html",
+		"/Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/lib/foundation/generators/templates/application.html.haml",
+		"/Users/mluster/Projects/Birst Acquia/docroot/careers-new/javascripts/foundation/jquery.foundation.buttons.js",
+		"/Users/mluster/Dropbox/Birst/Compass/careers/config.rb",
+		"/Users/mluster/Dropbox/Birst/Compass/careers/javascripts/foundation/app.js",
+		"/Users/mluster/Dropbox/Birst/Compass/careers/stylesheets/app.css",
+		"/Users/mluster/Dropbox/Birst/Compass/careers/stylesheets/main.css",
+		"/Users/mluster/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Volumes/C/Users/mluster/Desktop/css/Dashboard.css",
+		"/Volumes/C/Users/mluster/Desktop/css/header.css",
+		"/Volumes/C/Users/mluster/Desktop/css/homePage.css",
+		"/Volumes/__sfo0-qaapp-001_BIRST_HOME/BIRST/Acorn/html/homeApp.js",
+		"/Volumes/__sfo0-qaapp-001_BIRST_HOME/BIRST/Acorn/html/home.html",
+		"/Volumes/__sfo0-qaapp-001_BIRST_HOME/BIRST/Acorn/html/resources/css/Core.css",
+		"/Applications/The Witcher 2/Data/bin/config/User.ini",
+		"/Users/mluster/Desktop/Citrix Deck"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"index.html",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"src=\"/careers-new/",
+			"src=\"../",
+			"\"../",
+			"mobile",
+			"src=\"../",
+			"src=\"/careers-new/",
+			"logo",
+			"src=\"../",
+			"min",
+			"/careers-new/images/project/",
+			"url(\"../images/project/",
+			"url(\"",
+			"url",
+			"logo",
+			"url(\"../",
+			"\"/",
+			"\"../",
+			"\"/",
+			"font-weight",
+			"din",
+			"arrow",
+			"contact",
+			"wrap",
+			"%",
+			"media",
+			"logo",
+			"960x400",
+			"#666",
+			"#666666",
+			"font-family",
+			"sans",
+			"department",
+			"170px",
+			"h4",
+			"width",
+			"350",
+			"5px",
+			".x-btn-inner",
+			"nth",
+			"background",
+			"85",
+			"prompts",
+			"#optionsContainer",
+			"optionsContainer",
+			"panel-body",
+			"10px",
+			"x-container",
+			"idSpacesListPanel-body",
+			"#button-1024",
+			"#gridview-1014",
+			"child",
+			"img",
+			"footer",
+			"important",
+			"width: 50",
+			"50",
+			"50px"
+		],
+		"highlight": true,
+		"in_selection": true,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"src=\"../",
+			"src=\"/careers-new/",
+			"src=\"../",
+			"src=\"/careers-new/",
+			"../images/project/",
+			"\"../images/project/",
+			"birst-image(\"",
+			"url(\"/careers-new/images/",
+			"1400x550",
+			"$light-grey",
+			"378",
+			"span",
+			"#buttonUndo",
+			".spaceList .x-grid-body > div"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "main.scss",
+					"settings":
+					{
+						"buffer_size": 64,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SASS/Syntaxes/SASS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "mixins.scss",
+					"settings":
+					{
+						"buffer_size": 72,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SASS/Syntaxes/SASS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/mluster/Projects/ResponsiveGraphics/javascripts/main.js",
+					"settings":
+					{
+						"buffer_size": 70,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": "/Users/mluster/Projects/ResponsiveGraphics/index.html",
+					"settings":
+					{
+						"buffer_size": 5366,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			0.521250009161,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}

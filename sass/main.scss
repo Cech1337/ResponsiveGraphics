@@ -1,0 +1,109 @@
+//SASS CONSTANTS
+$base-font-size: 1rem;
+$font-ratio: 1.22;
+
+//INCLUDES
+@include init-type($base-font-size, $font-ratio);
+
+//DEFAULTS and CLASSES
+#responsiveDemo{
+
+	.row{
+		padding: 0px 4%;
+		@media (max-width: 767px) {
+			padding: 0 1%;
+		}		
+	}
+
+	.columns{
+		padding: 0px 1.5%;
+	}
+
+	.panel{
+		border: none;
+		background: #f9f9f9;
+		padding: .5rem;
+		margin: 0;
+	}
+
+	.number{
+		text-align: right;
+		&.negative{
+			font-weight: 600;
+		}
+		span{
+			//Temp solution for centering -- needs nested tables not a span
+			//display: table;
+			//margin: auto;
+		}
+	}
+	.number:last-child{
+		span{
+			margin: 0;
+		}
+	}
+
+	.text{
+	}
+
+	table{
+		width: 100%;
+		border-radius: none;
+		border: none;
+		.emphasis{
+			font-weight: 600;
+		}
+	}
+
+	table{
+		padding-top: .25rem;
+		background: none;
+	}
+
+	tr, thead{
+		//Override Foundation
+		background: none !important;
+	}
+
+	thead{
+		padding-bottom: 2em;
+	}
+
+	th{
+		padding: 0 0 1rem;
+	}
+	td{
+		padding: 0;
+		line-height: 1.3;
+		&.number{
+			font-family: "WhitneyNumeric";
+			font-weight: 400;
+		}
+	}
+
+	.caption{
+		font-size: ms(-1, $base-font-size, $font-ratio);
+		margin: ms(-2, $base-font-size, $font-ratio) 0;
+		color: #666;
+		padding: 0 1rem 0 0;
+	}
+
+	section .wrapper{
+		padding-bottom: 2rem;
+		margin-bottom: 2rem;
+		border-bottom: 1px solid #eee;
+		overflow: hidden;
+	}
+
+	p{
+		color: #333;
+	}
+}
+
+//Document Styles
+header{
+	padding-top: 2rem;
+}
+
+
+
