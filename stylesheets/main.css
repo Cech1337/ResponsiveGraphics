@@ -1,13 +1,11 @@
 /*
-Syntax error: Undefined mixin 'init-type'.
-        on line 6 of /Users/mluster/projects/responsivegraphics/sass/main.scss, in `init-type'
-        from line 6 of /Users/mluster/projects/responsivegraphics/sass/main.scss
-
-1: /Users/mluster/projects/responsivegraphics/sass/main.scss
+Syntax error: Undefined mixin 'initialize-type'.
+        on line 8 of /Users/mluster/projects/responsivegraphics/sass/main.scss, in `initialize-type'
+        from line 8 of /Users/mluster/projects/responsivegraphics/sass/main.scss
 
 Backtrace:
-/Users/mluster/projects/responsivegraphics/sass/main.scss:6:in `init-type'
-/Users/mluster/projects/responsivegraphics/sass/main.scss:6
+/Users/mluster/projects/responsivegraphics/sass/main.scss:8:in `initialize-type'
+/Users/mluster/projects/responsivegraphics/sass/main.scss:8
 /Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/visitors/perform.rb:251:in `visit_mixin'
 /Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
 /Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
@@ -70,4 +68,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined mixin 'init-type'.\A         on line 6 of /Users/mluster/projects/responsivegraphics/sass/main.scss, in `init-type'\A         from line 6 of /Users/mluster/projects/responsivegraphics/sass/main.scss\A \A 1: /Users/mluster/projects/responsivegraphics/sass/main.scss"; }
+  content: "Syntax error: Undefined mixin 'initialize-type'.\A         on line 8 of /Users/mluster/projects/responsivegraphics/sass/main.scss, in `initialize-type'\A         from line 8 of /Users/mluster/projects/responsivegraphics/sass/main.scss"; }

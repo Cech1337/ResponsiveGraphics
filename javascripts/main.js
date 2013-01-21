@@ -1,8 +1,8 @@
 //Inits
 $('p, table').moltenLeading({
-	minline: 1.2,
+	minline: 1.25,
 	maxline: 1.5,
-	minwidth: 320,
+	minwidth: 220,
 	maxwidth: 460
 });
 

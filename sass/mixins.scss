@@ -1,19 +1,20 @@
+//FUNCTIONS
 @function generate-url($img){
   @return url("#{$imageRoot}#{$img}");
 }
 
-
-@mixin init-type($base-size, $ratio){
-
-	//Setup base 10 fonts
-	$html-base: 62.5%;
+//MIXINS
+@mixin initialize-type($base-size, $ratio){
+	//Reset type styles
+	h1, h2, h3, h4, h5, h6, p, td, a{
+		margin: 0;
+		padding: 0;
+	}
 
 	html{
 		//largest for large monitors
 		font-size: 22px;
 		line-height: 1.4;
-
-
 
 		@media (max-width: 1600px) {
 			font-size: 20px;
@@ -30,6 +31,9 @@
 		@media (max-width: 767px) {
 			font-size: 14px;
 		}
+		@media (max-width: 520px) {
+			font-size: 13px;
+		}		
 		@media (max-width: 320px) {
 			font-size: 12px;
 		}
@@ -39,15 +43,6 @@
 	@include ms-list(0, 7, $base-size, $ratio);
 
 	//Margin reset
-	h1, h2, h3, h4, h5, h6, p, td, a{
-		margin: 0;
-		padding: 0;
-	}
-
-	h1, h2, h3, h4, h5, h6{
-		font-weight: 700;
-	}
-
 
 	h1{
 		font-size: ms(6, $base-size, $ratio);
@@ -79,6 +74,5 @@
 	}
 	p, a{
 		margin-bottom: ms(-1, $base-size, $ratio);
-	}
-
+	}	
 }
