@@ -1,0 +1,97 @@
+/* Foundation v2.1.4 http://foundation.zurb.com */
+/* Artfully masterminded by ZURB  */
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Page Name 1
+:: Page Name 2
+*/
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+/* line 17, ../sass/responsive-tables.scss */
+table th {
+  font-weight: bold;
+}
+
+/* line 18, ../sass/responsive-tables.scss */
+table td, table th {
+  padding: 9px 10px;
+  text-align: left;
+}
+
+/* Mobile */
+@media only screen and (max-width: 767px) {
+  /* line 23, ../sass/responsive-tables.scss */
+  table.responsive {
+    margin-bottom: 0;
+  }
+
+  /* line 25, ../sass/responsive-tables.scss */
+  .pinned {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #fff;
+    width: 35%;
+    overflow: hidden;
+    overflow-x: scroll;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+  }
+
+  /* line 26, ../sass/responsive-tables.scss */
+  .pinned table {
+    border-right: none;
+    border-left: none;
+    width: 100%;
+  }
+
+  /* line 27, ../sass/responsive-tables.scss */
+  .pinned table th, .pinned table td {
+    white-space: nowrap;
+  }
+
+  /* line 28, ../sass/responsive-tables.scss */
+  .pinned td:last-child {
+    border-bottom: 0;
+  }
+
+  /* line 30, ../sass/responsive-tables.scss */
+  div.table-wrapper {
+    position: relative;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-right: 1px solid #ccc;
+  }
+
+  /* line 31, ../sass/responsive-tables.scss */
+  div.table-wrapper div.scrollable table {
+    margin-left: 35%;
+  }
+
+  /* line 32, ../sass/responsive-tables.scss */
+  div.table-wrapper div.scrollable {
+    overflow: scroll;
+    overflow-y: hidden;
+  }
+
+  /* line 34, ../sass/responsive-tables.scss */
+  table.responsive td, table.responsive th {
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  /* line 35, ../sass/responsive-tables.scss */
+  table.responsive th:first-child, table.responsive td:first-child, table.responsive td:first-child, table.responsive.pinned td {
+    display: none;
+  }
+}
+/* -----------------------------------------
+   Page Name 1
+----------------------------------------- */
+/* -----------------------------------------
+   Page Name 2
+----------------------------------------- */
