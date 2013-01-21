@@ -1,7 +1,11 @@
 .sass-cache
 .DS_store
-.sass-cache/dd42df310c4a2bb43e62233395d1377732fde610/_settings.scssc
-
 *.scssc
-
-*.scssc
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
