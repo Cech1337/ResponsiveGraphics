@@ -6306,7 +6306,7 @@ p {
   }
 }
 
-/* line 38, ../sass/main.scss */
+/* line 42, ../sass/main.scss */
 table {
   width: 100%;
   border-radius: none;
@@ -6314,140 +6314,144 @@ table {
   background: none;
   border-collapse: collapse;
 }
-/* line 45, ../sass/main.scss */
+/* line 49, ../sass/main.scss */
 table td, table th {
   font-size: 1em;
 }
-/* line 49, ../sass/main.scss */
+/* line 53, ../sass/main.scss */
 table .emphasis {
   font-weight: 600;
 }
-/* line 53, ../sass/main.scss */
+/* line 57, ../sass/main.scss */
 table thead tr, table tbody tr {
   background: none;
 }
-/* line 55, ../sass/main.scss */
+/* line 59, ../sass/main.scss */
 table thead tr td, table tbody tr td {
   line-height: inherit;
 }
-/* line 57, ../sass/main.scss */
+/* line 61, ../sass/main.scss */
 table thead tr td.number, table tbody tr td.number {
   font-family: "WhitneyNumeric";
   font-weight: 400;
 }
-/* line 64, ../sass/main.scss */
+/* line 68, ../sass/main.scss */
 table thead {
   background: none;
 }
-/* line 67, ../sass/main.scss */
+/* line 71, ../sass/main.scss */
 table thead tr th {
   padding: 0 0 1rem;
 }
-/* line 75, ../sass/main.scss */
+/* line 79, ../sass/main.scss */
 table tbody tr {
   background: none;
 }
-/* line 77, ../sass/main.scss */
+/* line 81, ../sass/main.scss */
 table tbody tr:nth-child(2n) {
   background: none;
 }
-/* line 80, ../sass/main.scss */
+/* line 84, ../sass/main.scss */
 table tbody tr td {
   padding: 0;
 }
 
-/* line 88, ../sass/main.scss */
+/* line 92, ../sass/main.scss */
 .table-wrapper {
   border: none !important;
 }
-/* line 90, ../sass/main.scss */
+/* line 94, ../sass/main.scss */
 .table-wrapper * {
   border: none;
 }
-/* line 93, ../sass/main.scss */
+/* line 97, ../sass/main.scss */
 .table-wrapper .pinned {
   background: none;
   border: none;
   border-right: 1px solid #eee;
 }
-/* line 98, ../sass/main.scss */
+/* line 102, ../sass/main.scss */
 .table-wrapper .scrollable {
   border: none;
   margin-left: 35%;
 }
 
-/* line 104, ../sass/main.scss */
+/* line 108, ../sass/main.scss */
 .panel {
   border: none;
   background: #f9f9f9;
   padding: .5rem;
   margin: 0;
 }
-/* line 109, ../sass/main.scss */
+/* line 114, ../sass/main.scss */
 .panel.blue {
   background: #ecf1f3;
 }
 
-/* line 114, ../sass/main.scss */
+/* line 119, ../sass/main.scss */
 .centered {
   text-align: center;
 }
 
-/* line 123, ../sass/main.scss */
+/* line 128, ../sass/main.scss */
 header, section {
   padding-top: 2rem;
 }
 
-/* line 128, ../sass/main.scss */
+/* line 133, ../sass/main.scss */
 header {
   padding-top: 2rem;
 }
-/* line 130, ../sass/main.scss */
+/* line 135, ../sass/main.scss */
 header h1 {
   margin-bottom: 0;
 }
-/* line 133, ../sass/main.scss */
+/* line 138, ../sass/main.scss */
 header h6 {
   font-weight: 400;
   color: #666;
 }
-/* line 137, ../sass/main.scss */
+/* line 142, ../sass/main.scss */
 header div {
   margin-bottom: 1rem;
 }
 
-/* line 143, ../sass/main.scss */
+/* line 148, ../sass/main.scss */
 section:after {
   display: block;
   margin: 0 1%;
-  padding-top: 2rem;
+  padding-top: 1rem;
   border-bottom: 1px solid #eee;
 }
 
-/* line 152, ../sass/main.scss */
+/* line 157, ../sass/main.scss */
 .number {
   text-align: right;
 }
-/* line 158, ../sass/main.scss */
+/* line 163, ../sass/main.scss */
 .number:last-child span {
   margin: 0;
 }
 
-/* line 165, ../sass/main.scss */
+/* line 169, ../sass/main.scss */
+.graphic {
+  margin-bottom: 1rem;
+}
+/* line 171, ../sass/main.scss */
 .graphic .footnote {
   font-size: 0.81967rem;
   color: #666;
 }
 
-/* line 171, ../sass/main.scss */
+/* line 177, ../sass/main.scss */
 .sidebar {
   margin-bottom: 1rem;
 }
-/* line 172, ../sass/main.scss */
+/* line 178, ../sass/main.scss */
 .sidebar h5 {
   font-size: 1.22rem;
 }
-/* line 175, ../sass/main.scss */
+/* line 181, ../sass/main.scss */
 .sidebar p {
   font-size: 0.81967rem !important;
 }

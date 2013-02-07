@@ -35,6 +35,10 @@ p{
 }
 
 //	Element Overrides
+body{
+	//background-color: #fafaf5
+}
+
 table{
 	width: 100%;
 	border-radius: none;
@@ -106,6 +110,7 @@ table{
 	background: #f9f9f9;
 	padding: .5rem;
 	margin: 0;
+	
 	&.blue{
 		background: #ecf1f3;
 	}
@@ -143,7 +148,7 @@ section{
 	&:after{
 		display: block;
 		margin: 0 $col-padding;
-		padding-top: 2rem;
+		padding-top: 1rem;
 		border-bottom: 1px solid #eee;
 	}
 }
@@ -162,6 +167,7 @@ section{
 }
 
 .graphic{
+	margin-bottom: 1rem;
 	.footnote{
 		font-size: ms(-1, $font-base-size, $font-ratio);
 		color: #666;
