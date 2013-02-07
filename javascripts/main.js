@@ -1,5 +1,5 @@
 //Inits
-$('p, table').moltenLeading({
+$('p, table, .footnote').moltenLeading({
 	minline: 1.25,
 	maxline: 1.5,
 	minwidth: 220,
