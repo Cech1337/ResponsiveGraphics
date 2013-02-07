@@ -1,15 +1,22 @@
-//Declared Constants
+//	Constants
 $font-base-size: 1rem;
 $font-ratio: 1.22;
 $row-padding: 6%;
 $col-padding: 1%;
 
-//Imports
+//
+//	FOUNDATION OVERRIDES
+//
 
-//Initialize Typography
+
+//	Initialize Typography
 @include initialize-type($font-base-size, $font-ratio);
 
-//Initialize Grid
+p{
+	color: #333;
+}
+
+// 	Initialize Grid
 .row{
 	padding: 0px $row-padding;
 	@media (max-width: 767px) {
@@ -21,16 +28,13 @@ $col-padding: 1%;
 	padding: 0px $col-padding !important;
 }
 
-.panel{
-	border: none;
-	background: #f9f9f9;
-	padding: .5rem;
-	margin: 0;
-	&.blue{
-		background: #ecf1f3;
+.columns{
+	@media (max-width: 768px) {
+		margin-bottom: 2rem;
 	}
 }
 
+//	Element Overrides
 table{
 	width: 100%;
 	border-radius: none;
@@ -81,7 +85,63 @@ table{
 
 }
 
-//Project Classes
+.table-wrapper{
+	border: none !important;
+	*{
+		border: none;
+	}
+	.pinned{
+		background: none;
+		border: none;
+		border-right: 1px solid #eee;
+	}
+	.scrollable{
+		border: none;
+		margin-left: 35%; //temp margin -- this needs to be set in the responsive tables script to the calc'd width of the pinned column
+	}
+}
+
+.panel{
+	border: none;
+	background: #f9f9f9;
+	padding: .5rem;
+	margin: 0;
+	&.blue{
+		background: #ecf1f3;
+	}
+}
+
+//
+//	PROJECT CLASSES
+//
+
+//	Elements
+header, section{
+	@extend .row;
+	padding-top: 2rem;
+}
+
+header{
+	padding-top: 2rem;
+	h1{
+		margin-bottom: 0;
+	}
+	h6{
+		font-weight: 400;
+		color: #666;
+	}
+}
+
+section{
+	&:after{
+		display: block;
+		margin: 0 $col-padding;
+		padding-top: 2rem;
+		border-bottom: 1px solid #eee;
+	}
+}
+
+//	Classes
 .number{
 	text-align: right;
 	&.negative{
@@ -102,24 +162,6 @@ table{
 	}
 }
 
-p{
-	color: #333;
-}
-
-header, section{
-	@extend .row;
-	padding-top: 2rem;
-}
-
-section{
-	&:after{
-		display: block;
-		margin: 0 $col-padding;
-		padding-top: 2rem;
-		border-bottom: 1px solid #eee;
-	}
-}
-
 .sidebar{
 	h5{
 		font-size: ms(1, $font-base-size, $font-ratio);
@@ -132,37 +174,6 @@ section{
 	}
 }
 
-.columns{
-	@media (max-width: 768px) {
-		margin-bottom: 2rem;
-	}
-}
 
-.table-wrapper{
-	border: none !important;
-	*{
-		border: none;
-	}
-	.pinned{
-		background: none;
-		border: none;
-		border-right: 1px solid #eee;
-	}
-	.scrollable{
-		border: none;
-		margin-left: 35%; //temp margin -- this needs to be set in the responsive tables script to the calc'd width of the pinned column
-	}
-}
-
-header{
-	padding-top: 2rem;
-	h1{
-		margin-bottom: 0;
-	}
-	h6{
-		font-weight: 400;
-		color: #666;
-	}
-}
 
 
