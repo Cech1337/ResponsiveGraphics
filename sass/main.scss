@@ -1,18 +1,34 @@
-//Constants
+//Declared Constants
 $font-base-size: 1rem;
 $font-ratio: 1.22;
+$row-padding: 6%;
+$col-padding: 1%;
 
 //Imports
 
-//Set Typography
+//Initialize Typography
 @include initialize-type($font-base-size, $font-ratio);
 
-//Foundation Resets
+//Initialize Grid
+.row{
+	padding: 0px $row-padding;
+	@media (max-width: 767px) {
+		padding: 0 $row-padding/2;
+	}		
+}
+
+.columns{
+	padding: 0px $col-padding !important;
+}
+
 .panel{
 	border: none;
 	background: #f9f9f9;
 	padding: .5rem;
 	margin: 0;
+	&.blue{
+		background: #ecf1f3;
+	}
 }
 
 table{
@@ -20,6 +36,11 @@ table{
 	border-radius: none;
 	border: none;
 	background: none;
+	border-collapse: collapse;
+
+	td, th{
+		font-size: 1em;
+	}
 
 	.emphasis{
 		font-weight: 600;
@@ -49,6 +70,9 @@ table{
 	tbody{
 		tr{
 			background: none;
+			&:nth-child(2n){
+				background: none;
+			}
 			td{
 				padding: 0;
 			}
@@ -57,54 +81,78 @@ table{
 
 }
 
-.row{
-	padding: 0px 4%;
-	@media (max-width: 767px) {
-		padding: 0 2%;
-	}		
-}
-
-.columns{
-	padding: 0px 1.5%;
-}
-
 //Project Classes
 .number{
 	text-align: right;
 	&.negative{
-		font-weight: 600;
+		//font-weight: 600;
 	}
-	span{
-		//Temp solution for centering -- needs nested tables not a span
-		//display: table;
-		//margin: auto;
-	}
-}
-.number:last-child{
-	span{
-		margin: 0;
+	&:last-child{
+		span{
+			margin: 0;
+		}	
 	}
 }
 
-.caption{
-	font-size: ms(-1, $font-base-size, $font-ratio);
-	margin: ms(-2, $font-base-size, $font-ratio) 0;
-	color: #666;
-	padding: 0 1rem 0 0;
-}
-
-section .wrapper{
-	padding-bottom: 2rem;
-	margin-bottom: 2rem;
-	border-bottom: 1px solid #eee;
-	overflow: hidden;
+.graphic{
+	.footnote{
+		font-size: ms(-1, $font-base-size, $font-ratio);
+		margin-top: .5rem;
+		color: #666;
+	}
 }
 
 p{
 	color: #333;
 }
 
-//Document Styles
+header, section{
+	@extend .row;
+	padding-top: 2rem;
+}
+
+section{
+	&:after{
+		display: block;
+		margin: 0 $col-padding;
+		padding-top: 2rem;
+		border-bottom: 1px solid #eee;
+	}
+}
+
+.sidebar{
+	h5{
+		font-size: ms(1, $font-base-size, $font-ratio);
+	}
+	p{
+		font-size: ms(-1, $font-base-size, $font-ratio) !important;
+	}
+	*:last-child{
+		margin-bottom: 0;
+	}
+}
+
+.columns{
+	@media (max-width: 768px) {
+		margin-bottom: 2rem;
+	}
+}
+
+.table-wrapper{
+	border: none !important;
+	*{
+		border: none;
+	}
+	.pinned{
+		background: none;
+		border: none;
+		border-right: 1px solid #eee;
+	}
+	.scrollable{
+		border: none;
+		margin-left: 35%; //temp margin -- this needs to be set in the responsive tables script to the calc'd width of the pinned column
+	}
+}
 
 header{
 	padding-top: 2rem;
@@ -112,9 +160,9 @@ header{
 		margin-bottom: 0;
 	}
 	h6{
-		margin-bottom: 3rem;
 		font-weight: 400;
 		color: #666;
 	}
 }
+
 

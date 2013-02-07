@@ -454,19 +454,19 @@ form {
 }
 
 /* line 8, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/common/_forms.scss */
-.row form .row {
+.row form .row, header form .row, section form .row, .row form header, header form header, section form header, .row form section, header form section, section form section {
   margin: 0 -6px;
 }
 /* line 10, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/common/_forms.scss */
-.row form .row .column, .row form .row .columns {
+.row form .row .column, header form .row .column, section form .row .column, .row form header .column, header form header .column, section form header .column, .row form section .column, header form section .column, section form section .column, .row form .row .columns, header form .row .columns, section form .row .columns, .row form header .columns, header form header .columns, section form header .columns, .row form section .columns, header form section .columns, section form section .columns {
   padding: 0 6px;
 }
 /* line 12, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/common/_forms.scss */
-.row form .row.collapse {
+.row form .row.collapse, header form .row.collapse, section form .row.collapse, .row form header.collapse, header form header.collapse, section form header.collapse, .row form section.collapse, header form section.collapse, section form section.collapse {
   margin: 0;
 }
 /* line 13, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/common/_forms.scss */
-.row form .row.collapse .column, .row form .row.collapse .columns {
+.row form .row.collapse .column, header form .row.collapse .column, section form .row.collapse .column, .row form header.collapse .column, header form header.collapse .column, section form header.collapse .column, .row form section.collapse .column, header form section.collapse .column, section form section.collapse .column, .row form .row.collapse .columns, header form .row.collapse .columns, section form .row.collapse .columns, .row form header.collapse .columns, header form header.collapse .columns, section form header.collapse .columns, .row form section.collapse .columns, header form section.collapse .columns, section form section.collapse .columns {
   padding: 0;
 }
 
@@ -889,32 +889,32 @@ form.custom .custom.disabled {
 
 /* The Grid ---------------------- */
 /* line 3, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/_grid.scss */
-.row {
+.row, header, section {
   width: 100%;
   max-width: 100%;
   min-width: 768px;
   margin: 0 auto;
 }
 /* line 4, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/_grid.scss */
-.row .row {
+.row .row, header .row, section .row, .row header, header header, section header, .row section, header section, section section {
   width: auto;
   max-width: none;
   min-width: 0;
   margin: 0 -15px;
 }
 /* line 7, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/_grid.scss */
-.row.collapse .column, .row.collapse .columns {
+.row.collapse .column, header.collapse .column, section.collapse .column, .row.collapse .columns, header.collapse .columns, section.collapse .columns {
   padding: 0;
 }
 /* line 9, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/_grid.scss */
-.row .row {
+.row .row, header .row, section .row, .row header, header header, section header, .row section, header section, section section {
   width: auto;
   max-width: none;
   min-width: 0;
   margin: 0 -15px;
 }
 /* line 10, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/_grid.scss */
-.row .row.collapse {
+.row .row.collapse, header .row.collapse, section .row.collapse, .row header.collapse, header header.collapse, section header.collapse, .row section.collapse, header section.collapse, section section.collapse {
   margin: 0;
 }
 
@@ -942,112 +942,112 @@ form.custom .custom.disabled {
 }
 
 /* line 23, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/_grid.scss */
-.one, .row .one {
+.one, .row .one, header .one, section .one {
   width: 8.33333%;
 }
 
 /* line 23, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/_grid.scss */
-.two, .row .two {
+.two, .row .two, header .two, section .two {
   width: 16.66667%;
 }
 
 /* line 23, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/_grid.scss */
-.three, .row .three {
+.three, .row .three, header .three, section .three {
   width: 25%;
 }
 
 /* line 23, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/_grid.scss */
-.four, .row .four {
+.four, .row .four, header .four, section .four {
   width: 33.33333%;
 }
 
 /* line 23, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/_grid.scss */
-.five, .row .five {
+.five, .row .five, header .five, section .five {
   width: 41.66667%;
 }
 
 /* line 23, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/_grid.scss */
-.six, .row .six {
+.six, .row .six, header .six, section .six {
   width: 50%;
 }
 
 /* line 23, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/_grid.scss */
-.seven, .row .seven {
+.seven, .row .seven, header .seven, section .seven {
   width: 58.33333%;
 }
 
 /* line 23, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/_grid.scss */
-.eight, .row .eight {
+.eight, .row .eight, header .eight, section .eight {
   width: 66.66667%;
 }
 
 /* line 23, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/_grid.scss */
-.nine, .row .nine {
+.nine, .row .nine, header .nine, section .nine {
   width: 75%;
 }
 
 /* line 23, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/_grid.scss */
-.ten, .row .ten {
+.ten, .row .ten, header .ten, section .ten {
   width: 83.33333%;
 }
 
 /* line 23, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/_grid.scss */
-.eleven, .row .eleven {
+.eleven, .row .eleven, header .eleven, section .eleven {
   width: 91.66667%;
 }
 
 /* line 23, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/_grid.scss */
-.twelve, .row .twelve {
+.twelve, .row .twelve, header .twelve, section .twelve {
   width: 100%;
 }
 
 /* line 36, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/_grid.scss */
-.row .offset-by-one {
+.row .offset-by-one, header .offset-by-one, section .offset-by-one {
   margin-left: 8.33333%;
 }
 
 /* line 36, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/_grid.scss */
-.row .offset-by-two {
+.row .offset-by-two, header .offset-by-two, section .offset-by-two {
   margin-left: 16.66667%;
 }
 
 /* line 36, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/_grid.scss */
-.row .offset-by-three {
+.row .offset-by-three, header .offset-by-three, section .offset-by-three {
   margin-left: 25%;
 }
 
 /* line 36, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/_grid.scss */
-.row .offset-by-four {
+.row .offset-by-four, header .offset-by-four, section .offset-by-four {
   margin-left: 33.33333%;
 }
 
 /* line 36, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/_grid.scss */
-.row .offset-by-five {
+.row .offset-by-five, header .offset-by-five, section .offset-by-five {
   margin-left: 41.66667%;
 }
 
 /* line 36, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/_grid.scss */
-.row .offset-by-six {
+.row .offset-by-six, header .offset-by-six, section .offset-by-six {
   margin-left: 50%;
 }
 
 /* line 36, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/_grid.scss */
-.row .offset-by-seven {
+.row .offset-by-seven, header .offset-by-seven, section .offset-by-seven {
   margin-left: 58.33333%;
 }
 
 /* line 36, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/_grid.scss */
-.row .offset-by-eight {
+.row .offset-by-eight, header .offset-by-eight, section .offset-by-eight {
   margin-left: 66.66667%;
 }
 
 /* line 36, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/_grid.scss */
-.row .offset-by-nine {
+.row .offset-by-nine, header .offset-by-nine, section .offset-by-nine {
   margin-left: 75%;
 }
 
 /* line 36, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/_grid.scss */
-.row .offset-by-ten {
+.row .offset-by-ten, header .offset-by-ten, section .offset-by-ten {
   margin-left: 83.33333%;
 }
 
@@ -1164,16 +1164,16 @@ img {
 
 /* Nicolas Gallagher's micro clearfix */
 /* line 52, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/_grid.scss */
-.row {
+.row, header, section {
   *zoom: 1;
 }
 /* line 4, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/mixins/_clearfix.scss */
-.row:before, .row:after {
+.row:before, header:before, section:before, .row:after, header:after, section:after {
   content: " ";
   display: table;
 }
 /* line 5, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/mixins/_clearfix.scss */
-.row:after {
+.row:after, header:after, section:after {
   clear: both;
 }
 
@@ -2969,7 +2969,7 @@ div.orbit, div.orbit-wrapper {
   margin-left: -45%;
 }
 /* line 28, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/modules/_reveal.scss */
-.reveal-modal .row {
+.reveal-modal .row, .reveal-modal header, .reveal-modal section {
   min-width: 0;
   margin-bottom: 10px;
 }
@@ -4746,7 +4746,7 @@ table.hide-for-medium {
   /* The Grid --- */
   /*              */
   /* line 177, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/modules/_mqueries.scss */
-  .row {
+  .row, header, section {
     width: auto;
     min-width: 0;
     margin-left: 0;
@@ -4797,78 +4797,78 @@ table.hide-for-medium {
 
   /* Mobile 4-column Grid */
   /* line 200, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/modules/_mqueries.scss */
-  .row .mobile-one {
+  .row .mobile-one, header .mobile-one, section .mobile-one {
     width: 25% !important;
     float: left;
     padding: 0 15px;
   }
   /* line 201, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/modules/_mqueries.scss */
-  .row .mobile-one:last-child {
+  .row .mobile-one:last-child, header .mobile-one:last-child, section .mobile-one:last-child {
     float: right;
   }
   /* line 202, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/modules/_mqueries.scss */
-  .row .mobile-one.end {
+  .row .mobile-one.end, header .mobile-one.end, section .mobile-one.end {
     float: left;
   }
   /* line 205, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/modules/_mqueries.scss */
-  .row.collapse .mobile-one {
+  .row.collapse .mobile-one, header.collapse .mobile-one, section.collapse .mobile-one {
     padding: 0;
   }
 
   /* line 200, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/modules/_mqueries.scss */
-  .row .mobile-two {
+  .row .mobile-two, header .mobile-two, section .mobile-two {
     width: 50% !important;
     float: left;
     padding: 0 15px;
   }
   /* line 201, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/modules/_mqueries.scss */
-  .row .mobile-two:last-child {
+  .row .mobile-two:last-child, header .mobile-two:last-child, section .mobile-two:last-child {
     float: right;
   }
   /* line 202, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/modules/_mqueries.scss */
-  .row .mobile-two.end {
+  .row .mobile-two.end, header .mobile-two.end, section .mobile-two.end {
     float: left;
   }
   /* line 205, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/modules/_mqueries.scss */
-  .row.collapse .mobile-two {
+  .row.collapse .mobile-two, header.collapse .mobile-two, section.collapse .mobile-two {
     padding: 0;
   }
 
   /* line 200, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/modules/_mqueries.scss */
-  .row .mobile-three {
+  .row .mobile-three, header .mobile-three, section .mobile-three {
     width: 75% !important;
     float: left;
     padding: 0 15px;
   }
   /* line 201, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/modules/_mqueries.scss */
-  .row .mobile-three:last-child {
+  .row .mobile-three:last-child, header .mobile-three:last-child, section .mobile-three:last-child {
     float: right;
   }
   /* line 202, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/modules/_mqueries.scss */
-  .row .mobile-three.end {
+  .row .mobile-three.end, header .mobile-three.end, section .mobile-three.end {
     float: left;
   }
   /* line 205, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/modules/_mqueries.scss */
-  .row.collapse .mobile-three {
+  .row.collapse .mobile-three, header.collapse .mobile-three, section.collapse .mobile-three {
     padding: 0;
   }
 
   /* line 200, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/modules/_mqueries.scss */
-  .row .mobile-four {
+  .row .mobile-four, header .mobile-four, section .mobile-four {
     width: 100% !important;
     float: left;
     padding: 0 15px;
   }
   /* line 201, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/modules/_mqueries.scss */
-  .row .mobile-four:last-child {
+  .row .mobile-four:last-child, header .mobile-four:last-child, section .mobile-four:last-child {
     float: right;
   }
   /* line 202, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/modules/_mqueries.scss */
-  .row .mobile-four.end {
+  .row .mobile-four.end, header .mobile-four.end, section .mobile-four.end {
     float: left;
   }
   /* line 205, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/modules/_mqueries.scss */
-  .row.collapse .mobile-four {
+  .row.collapse .mobile-four, header.collapse .mobile-four, section.collapse .mobile-four {
     padding: 0;
   }
 
@@ -5018,302 +5018,542 @@ table.hide-for-medium {
 
   /* Extend width of all inputs */
   /* line 247, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/modules/_mqueries.scss */
-  input[type="text"].one, .row input[type="text"].one,
+  input[type="text"].one, .row input[type="text"].one, header input[type="text"].one, section input[type="text"].one,
   input[type="password"].one,
   .row input[type="password"].one,
+  header input[type="password"].one,
+  section input[type="password"].one,
   input[type="date"].one,
   .row input[type="date"].one,
+  header input[type="date"].one,
+  section input[type="date"].one,
   input[type="datetime"].one,
   .row input[type="datetime"].one,
+  header input[type="datetime"].one,
+  section input[type="datetime"].one,
   input[type="email"].one,
   .row input[type="email"].one,
+  header input[type="email"].one,
+  section input[type="email"].one,
   input[type="number"].one,
   .row input[type="number"].one,
+  header input[type="number"].one,
+  section input[type="number"].one,
   input[type="search"].one,
   .row input[type="search"].one,
+  header input[type="search"].one,
+  section input[type="search"].one,
   input[type="tel"].one,
   .row input[type="tel"].one,
+  header input[type="tel"].one,
+  section input[type="tel"].one,
   input[type="time"].one,
   .row input[type="time"].one,
+  header input[type="time"].one,
+  section input[type="time"].one,
   input[type="url"].one,
   .row input[type="url"].one,
+  header input[type="url"].one,
+  section input[type="url"].one,
   textarea.one,
-  .row textarea.one {
+  .row textarea.one,
+  header textarea.one,
+  section textarea.one {
     width: 100% !important;
   }
 
   /* line 247, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/modules/_mqueries.scss */
-  input[type="text"].two, .row input[type="text"].two,
+  input[type="text"].two, .row input[type="text"].two, header input[type="text"].two, section input[type="text"].two,
   input[type="password"].two,
   .row input[type="password"].two,
+  header input[type="password"].two,
+  section input[type="password"].two,
   input[type="date"].two,
   .row input[type="date"].two,
+  header input[type="date"].two,
+  section input[type="date"].two,
   input[type="datetime"].two,
   .row input[type="datetime"].two,
+  header input[type="datetime"].two,
+  section input[type="datetime"].two,
   input[type="email"].two,
   .row input[type="email"].two,
+  header input[type="email"].two,
+  section input[type="email"].two,
   input[type="number"].two,
   .row input[type="number"].two,
+  header input[type="number"].two,
+  section input[type="number"].two,
   input[type="search"].two,
   .row input[type="search"].two,
+  header input[type="search"].two,
+  section input[type="search"].two,
   input[type="tel"].two,
   .row input[type="tel"].two,
+  header input[type="tel"].two,
+  section input[type="tel"].two,
   input[type="time"].two,
   .row input[type="time"].two,
+  header input[type="time"].two,
+  section input[type="time"].two,
   input[type="url"].two,
   .row input[type="url"].two,
+  header input[type="url"].two,
+  section input[type="url"].two,
   textarea.two,
-  .row textarea.two {
+  .row textarea.two,
+  header textarea.two,
+  section textarea.two {
     width: 100% !important;
   }
 
   /* line 247, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/modules/_mqueries.scss */
-  input[type="text"].three, .row input[type="text"].three,
+  input[type="text"].three, .row input[type="text"].three, header input[type="text"].three, section input[type="text"].three,
   input[type="password"].three,
   .row input[type="password"].three,
+  header input[type="password"].three,
+  section input[type="password"].three,
   input[type="date"].three,
   .row input[type="date"].three,
+  header input[type="date"].three,
+  section input[type="date"].three,
   input[type="datetime"].three,
   .row input[type="datetime"].three,
+  header input[type="datetime"].three,
+  section input[type="datetime"].three,
   input[type="email"].three,
   .row input[type="email"].three,
+  header input[type="email"].three,
+  section input[type="email"].three,
   input[type="number"].three,
   .row input[type="number"].three,
+  header input[type="number"].three,
+  section input[type="number"].three,
   input[type="search"].three,
   .row input[type="search"].three,
+  header input[type="search"].three,
+  section input[type="search"].three,
   input[type="tel"].three,
   .row input[type="tel"].three,
+  header input[type="tel"].three,
+  section input[type="tel"].three,
   input[type="time"].three,
   .row input[type="time"].three,
+  header input[type="time"].three,
+  section input[type="time"].three,
   input[type="url"].three,
   .row input[type="url"].three,
+  header input[type="url"].three,
+  section input[type="url"].three,
   textarea.three,
-  .row textarea.three {
+  .row textarea.three,
+  header textarea.three,
+  section textarea.three {
     width: 100% !important;
   }
 
   /* line 247, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/modules/_mqueries.scss */
-  input[type="text"].four, .row input[type="text"].four,
+  input[type="text"].four, .row input[type="text"].four, header input[type="text"].four, section input[type="text"].four,
   input[type="password"].four,
   .row input[type="password"].four,
+  header input[type="password"].four,
+  section input[type="password"].four,
   input[type="date"].four,
   .row input[type="date"].four,
+  header input[type="date"].four,
+  section input[type="date"].four,
   input[type="datetime"].four,
   .row input[type="datetime"].four,
+  header input[type="datetime"].four,
+  section input[type="datetime"].four,
   input[type="email"].four,
   .row input[type="email"].four,
+  header input[type="email"].four,
+  section input[type="email"].four,
   input[type="number"].four,
   .row input[type="number"].four,
+  header input[type="number"].four,
+  section input[type="number"].four,
   input[type="search"].four,
   .row input[type="search"].four,
+  header input[type="search"].four,
+  section input[type="search"].four,
   input[type="tel"].four,
   .row input[type="tel"].four,
+  header input[type="tel"].four,
+  section input[type="tel"].four,
   input[type="time"].four,
   .row input[type="time"].four,
+  header input[type="time"].four,
+  section input[type="time"].four,
   input[type="url"].four,
   .row input[type="url"].four,
+  header input[type="url"].four,
+  section input[type="url"].four,
   textarea.four,
-  .row textarea.four {
+  .row textarea.four,
+  header textarea.four,
+  section textarea.four {
     width: 100% !important;
   }
 
   /* line 247, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/modules/_mqueries.scss */
-  input[type="text"].five, .row input[type="text"].five,
+  input[type="text"].five, .row input[type="text"].five, header input[type="text"].five, section input[type="text"].five,
   input[type="password"].five,
   .row input[type="password"].five,
+  header input[type="password"].five,
+  section input[type="password"].five,
   input[type="date"].five,
   .row input[type="date"].five,
+  header input[type="date"].five,
+  section input[type="date"].five,
   input[type="datetime"].five,
   .row input[type="datetime"].five,
+  header input[type="datetime"].five,
+  section input[type="datetime"].five,
   input[type="email"].five,
   .row input[type="email"].five,
+  header input[type="email"].five,
+  section input[type="email"].five,
   input[type="number"].five,
   .row input[type="number"].five,
+  header input[type="number"].five,
+  section input[type="number"].five,
   input[type="search"].five,
   .row input[type="search"].five,
+  header input[type="search"].five,
+  section input[type="search"].five,
   input[type="tel"].five,
   .row input[type="tel"].five,
+  header input[type="tel"].five,
+  section input[type="tel"].five,
   input[type="time"].five,
   .row input[type="time"].five,
+  header input[type="time"].five,
+  section input[type="time"].five,
   input[type="url"].five,
   .row input[type="url"].five,
+  header input[type="url"].five,
+  section input[type="url"].five,
   textarea.five,
-  .row textarea.five {
+  .row textarea.five,
+  header textarea.five,
+  section textarea.five {
     width: 100% !important;
   }
 
   /* line 247, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/modules/_mqueries.scss */
-  input[type="text"].six, .row input[type="text"].six,
+  input[type="text"].six, .row input[type="text"].six, header input[type="text"].six, section input[type="text"].six,
   input[type="password"].six,
   .row input[type="password"].six,
+  header input[type="password"].six,
+  section input[type="password"].six,
   input[type="date"].six,
   .row input[type="date"].six,
+  header input[type="date"].six,
+  section input[type="date"].six,
   input[type="datetime"].six,
   .row input[type="datetime"].six,
+  header input[type="datetime"].six,
+  section input[type="datetime"].six,
   input[type="email"].six,
   .row input[type="email"].six,
+  header input[type="email"].six,
+  section input[type="email"].six,
   input[type="number"].six,
   .row input[type="number"].six,
+  header input[type="number"].six,
+  section input[type="number"].six,
   input[type="search"].six,
   .row input[type="search"].six,
+  header input[type="search"].six,
+  section input[type="search"].six,
   input[type="tel"].six,
   .row input[type="tel"].six,
+  header input[type="tel"].six,
+  section input[type="tel"].six,
   input[type="time"].six,
   .row input[type="time"].six,
+  header input[type="time"].six,
+  section input[type="time"].six,
   input[type="url"].six,
   .row input[type="url"].six,
+  header input[type="url"].six,
+  section input[type="url"].six,
   textarea.six,
-  .row textarea.six {
+  .row textarea.six,
+  header textarea.six,
+  section textarea.six {
     width: 100% !important;
   }
 
   /* line 247, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/modules/_mqueries.scss */
-  input[type="text"].seven, .row input[type="text"].seven,
+  input[type="text"].seven, .row input[type="text"].seven, header input[type="text"].seven, section input[type="text"].seven,
   input[type="password"].seven,
   .row input[type="password"].seven,
+  header input[type="password"].seven,
+  section input[type="password"].seven,
   input[type="date"].seven,
   .row input[type="date"].seven,
+  header input[type="date"].seven,
+  section input[type="date"].seven,
   input[type="datetime"].seven,
   .row input[type="datetime"].seven,
+  header input[type="datetime"].seven,
+  section input[type="datetime"].seven,
   input[type="email"].seven,
   .row input[type="email"].seven,
+  header input[type="email"].seven,
+  section input[type="email"].seven,
   input[type="number"].seven,
   .row input[type="number"].seven,
+  header input[type="number"].seven,
+  section input[type="number"].seven,
   input[type="search"].seven,
   .row input[type="search"].seven,
+  header input[type="search"].seven,
+  section input[type="search"].seven,
   input[type="tel"].seven,
   .row input[type="tel"].seven,
+  header input[type="tel"].seven,
+  section input[type="tel"].seven,
   input[type="time"].seven,
   .row input[type="time"].seven,
+  header input[type="time"].seven,
+  section input[type="time"].seven,
   input[type="url"].seven,
   .row input[type="url"].seven,
+  header input[type="url"].seven,
+  section input[type="url"].seven,
   textarea.seven,
-  .row textarea.seven {
+  .row textarea.seven,
+  header textarea.seven,
+  section textarea.seven {
     width: 100% !important;
   }
 
   /* line 247, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/modules/_mqueries.scss */
-  input[type="text"].eight, .row input[type="text"].eight,
+  input[type="text"].eight, .row input[type="text"].eight, header input[type="text"].eight, section input[type="text"].eight,
   input[type="password"].eight,
   .row input[type="password"].eight,
+  header input[type="password"].eight,
+  section input[type="password"].eight,
   input[type="date"].eight,
   .row input[type="date"].eight,
+  header input[type="date"].eight,
+  section input[type="date"].eight,
   input[type="datetime"].eight,
   .row input[type="datetime"].eight,
+  header input[type="datetime"].eight,
+  section input[type="datetime"].eight,
   input[type="email"].eight,
   .row input[type="email"].eight,
+  header input[type="email"].eight,
+  section input[type="email"].eight,
   input[type="number"].eight,
   .row input[type="number"].eight,
+  header input[type="number"].eight,
+  section input[type="number"].eight,
   input[type="search"].eight,
   .row input[type="search"].eight,
+  header input[type="search"].eight,
+  section input[type="search"].eight,
   input[type="tel"].eight,
   .row input[type="tel"].eight,
+  header input[type="tel"].eight,
+  section input[type="tel"].eight,
   input[type="time"].eight,
   .row input[type="time"].eight,
+  header input[type="time"].eight,
+  section input[type="time"].eight,
   input[type="url"].eight,
   .row input[type="url"].eight,
+  header input[type="url"].eight,
+  section input[type="url"].eight,
   textarea.eight,
-  .row textarea.eight {
+  .row textarea.eight,
+  header textarea.eight,
+  section textarea.eight {
     width: 100% !important;
   }
 
   /* line 247, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/modules/_mqueries.scss */
-  input[type="text"].nine, .row input[type="text"].nine,
+  input[type="text"].nine, .row input[type="text"].nine, header input[type="text"].nine, section input[type="text"].nine,
   input[type="password"].nine,
   .row input[type="password"].nine,
+  header input[type="password"].nine,
+  section input[type="password"].nine,
   input[type="date"].nine,
   .row input[type="date"].nine,
+  header input[type="date"].nine,
+  section input[type="date"].nine,
   input[type="datetime"].nine,
   .row input[type="datetime"].nine,
+  header input[type="datetime"].nine,
+  section input[type="datetime"].nine,
   input[type="email"].nine,
   .row input[type="email"].nine,
+  header input[type="email"].nine,
+  section input[type="email"].nine,
   input[type="number"].nine,
   .row input[type="number"].nine,
+  header input[type="number"].nine,
+  section input[type="number"].nine,
   input[type="search"].nine,
   .row input[type="search"].nine,
+  header input[type="search"].nine,
+  section input[type="search"].nine,
   input[type="tel"].nine,
   .row input[type="tel"].nine,
+  header input[type="tel"].nine,
+  section input[type="tel"].nine,
   input[type="time"].nine,
   .row input[type="time"].nine,
+  header input[type="time"].nine,
+  section input[type="time"].nine,
   input[type="url"].nine,
   .row input[type="url"].nine,
+  header input[type="url"].nine,
+  section input[type="url"].nine,
   textarea.nine,
-  .row textarea.nine {
+  .row textarea.nine,
+  header textarea.nine,
+  section textarea.nine {
     width: 100% !important;
   }
 
   /* line 247, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/modules/_mqueries.scss */
-  input[type="text"].ten, .row input[type="text"].ten,
+  input[type="text"].ten, .row input[type="text"].ten, header input[type="text"].ten, section input[type="text"].ten,
   input[type="password"].ten,
   .row input[type="password"].ten,
+  header input[type="password"].ten,
+  section input[type="password"].ten,
   input[type="date"].ten,
   .row input[type="date"].ten,
+  header input[type="date"].ten,
+  section input[type="date"].ten,
   input[type="datetime"].ten,
   .row input[type="datetime"].ten,
+  header input[type="datetime"].ten,
+  section input[type="datetime"].ten,
   input[type="email"].ten,
   .row input[type="email"].ten,
+  header input[type="email"].ten,
+  section input[type="email"].ten,
   input[type="number"].ten,
   .row input[type="number"].ten,
+  header input[type="number"].ten,
+  section input[type="number"].ten,
   input[type="search"].ten,
   .row input[type="search"].ten,
+  header input[type="search"].ten,
+  section input[type="search"].ten,
   input[type="tel"].ten,
   .row input[type="tel"].ten,
+  header input[type="tel"].ten,
+  section input[type="tel"].ten,
   input[type="time"].ten,
   .row input[type="time"].ten,
+  header input[type="time"].ten,
+  section input[type="time"].ten,
   input[type="url"].ten,
   .row input[type="url"].ten,
+  header input[type="url"].ten,
+  section input[type="url"].ten,
   textarea.ten,
-  .row textarea.ten {
+  .row textarea.ten,
+  header textarea.ten,
+  section textarea.ten {
     width: 100% !important;
   }
 
   /* line 247, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/modules/_mqueries.scss */
-  input[type="text"].eleven, .row input[type="text"].eleven,
+  input[type="text"].eleven, .row input[type="text"].eleven, header input[type="text"].eleven, section input[type="text"].eleven,
   input[type="password"].eleven,
   .row input[type="password"].eleven,
+  header input[type="password"].eleven,
+  section input[type="password"].eleven,
   input[type="date"].eleven,
   .row input[type="date"].eleven,
+  header input[type="date"].eleven,
+  section input[type="date"].eleven,
   input[type="datetime"].eleven,
   .row input[type="datetime"].eleven,
+  header input[type="datetime"].eleven,
+  section input[type="datetime"].eleven,
   input[type="email"].eleven,
   .row input[type="email"].eleven,
+  header input[type="email"].eleven,
+  section input[type="email"].eleven,
   input[type="number"].eleven,
   .row input[type="number"].eleven,
+  header input[type="number"].eleven,
+  section input[type="number"].eleven,
   input[type="search"].eleven,
   .row input[type="search"].eleven,
+  header input[type="search"].eleven,
+  section input[type="search"].eleven,
   input[type="tel"].eleven,
   .row input[type="tel"].eleven,
+  header input[type="tel"].eleven,
+  section input[type="tel"].eleven,
   input[type="time"].eleven,
   .row input[type="time"].eleven,
+  header input[type="time"].eleven,
+  section input[type="time"].eleven,
   input[type="url"].eleven,
   .row input[type="url"].eleven,
+  header input[type="url"].eleven,
+  section input[type="url"].eleven,
   textarea.eleven,
-  .row textarea.eleven {
+  .row textarea.eleven,
+  header textarea.eleven,
+  section textarea.eleven {
     width: 100% !important;
   }
 
   /* line 247, ../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/components/modules/_mqueries.scss */
-  input[type="text"].twelve, .row input[type="text"].twelve,
+  input[type="text"].twelve, .row input[type="text"].twelve, header input[type="text"].twelve, section input[type="text"].twelve,
   input[type="password"].twelve,
   .row input[type="password"].twelve,
+  header input[type="password"].twelve,
+  section input[type="password"].twelve,
   input[type="date"].twelve,
   .row input[type="date"].twelve,
+  header input[type="date"].twelve,
+  section input[type="date"].twelve,
   input[type="datetime"].twelve,
   .row input[type="datetime"].twelve,
+  header input[type="datetime"].twelve,
+  section input[type="datetime"].twelve,
   input[type="email"].twelve,
   .row input[type="email"].twelve,
+  header input[type="email"].twelve,
+  section input[type="email"].twelve,
   input[type="number"].twelve,
   .row input[type="number"].twelve,
+  header input[type="number"].twelve,
+  section input[type="number"].twelve,
   input[type="search"].twelve,
   .row input[type="search"].twelve,
+  header input[type="search"].twelve,
+  section input[type="search"].twelve,
   input[type="tel"].twelve,
   .row input[type="tel"].twelve,
+  header input[type="tel"].twelve,
+  section input[type="tel"].twelve,
   input[type="time"].twelve,
   .row input[type="time"].twelve,
+  header input[type="time"].twelve,
+  section input[type="time"].twelve,
   input[type="url"].twelve,
   .row input[type="url"].twelve,
+  header input[type="url"].twelve,
+  section input[type="url"].twelve,
   textarea.twelve,
-  .row textarea.twelve {
+  .row textarea.twelve,
+  header textarea.twelve,
+  section textarea.twelve {
     width: 100% !important;
   }
 
@@ -5940,211 +6180,262 @@ h1, h2, h3, h4, h5, h6, p, td, a {
   padding: 0;
 }
 
-/* line 14, ../sass/mixins.scss */
+/* line 15, ../sass/mixins.scss */
 html {
   font-size: 22px;
   line-height: 1.4;
 }
 @media (max-width: 1600px) {
-  /* line 14, ../sass/mixins.scss */
+  /* line 15, ../sass/mixins.scss */
   html {
     font-size: 20px;
   }
 }
 @media (max-width: 1420px) {
-  /* line 14, ../sass/mixins.scss */
+  /* line 15, ../sass/mixins.scss */
   html {
     font-size: 18px;
   }
 }
 @media (max-width: 1260px) {
-  /* line 14, ../sass/mixins.scss */
+  /* line 15, ../sass/mixins.scss */
   html {
     font-size: 16px;
   }
 }
 @media (max-width: 960px) {
-  /* line 14, ../sass/mixins.scss */
+  /* line 15, ../sass/mixins.scss */
   html {
     font-size: 15px;
   }
 }
 @media (max-width: 767px) {
-  /* line 14, ../sass/mixins.scss */
+  /* line 15, ../sass/mixins.scss */
   html {
     font-size: 14px;
   }
 }
 @media (max-width: 520px) {
-  /* line 14, ../sass/mixins.scss */
+  /* line 15, ../sass/mixins.scss */
   html {
     font-size: 13px;
   }
 }
 @media (max-width: 320px) {
-  /* line 14, ../sass/mixins.scss */
+  /* line 15, ../sass/mixins.scss */
   html {
     font-size: 12px;
   }
 }
 
 /* line 47, ../sass/mixins.scss */
+h1, h2, h3, h4, h5, h6, p {
+  margin-bottom: 1rem;
+}
+@media (max-width: 767px) {
+  /* line 47, ../sass/mixins.scss */
+  h1, h2, h3, h4, h5, h6, p {
+    margin-bottom: .5rem;
+  }
+}
+
+/* line 54, ../sass/mixins.scss */
 h1 {
   font-size: 3.2973rem;
-  margin-bottom: 2.70271rem;
 }
 
-/* line 51, ../sass/mixins.scss */
+/* line 57, ../sass/mixins.scss */
 h2 {
   font-size: 2.70271rem;
-  margin-bottom: 2.21533rem;
 }
 
-/* line 55, ../sass/mixins.scss */
+/* line 60, ../sass/mixins.scss */
 h3 {
   font-size: 2.21533rem;
-  margin-bottom: 1.81585rem;
-}
-
-/* line 59, ../sass/mixins.scss */
-h4 {
-  font-size: 1.81585rem;
-  margin-bottom: 1.4884rem;
 }
 
 /* line 63, ../sass/mixins.scss */
+h4 {
+  font-size: 1.81585rem;
+}
+
+/* line 66, ../sass/mixins.scss */
 h5 {
   font-size: 1.4884rem;
-  margin-bottom: 1.22rem;
 }
 
-/* line 67, ../sass/mixins.scss */
+/* line 69, ../sass/mixins.scss */
 h6 {
   font-size: 1.22rem;
-  margin-bottom: 1rem;
 }
 
-/* line 71, ../sass/mixins.scss */
+/* line 72, ../sass/mixins.scss */
 p, td, a, th {
   font-size: 1rem !important;
 }
 
-/* line 75, ../sass/mixins.scss */
-p, a {
-  margin-bottom: 0.81967rem;
+/* line 13, ../sass/main.scss */
+.row, header, section {
+  padding: 0px 6%;
+}
+@media (max-width: 767px) {
+  /* line 13, ../sass/main.scss */
+  .row, header, section {
+    padding: 0 3%;
+  }
 }
 
-/* line 11, ../sass/main.scss */
+/* line 20, ../sass/main.scss */
+.columns {
+  padding: 0px 1% !important;
+}
+
+/* line 24, ../sass/main.scss */
 .panel {
   border: none;
   background: #f9f9f9;
   padding: .5rem;
   margin: 0;
 }
+/* line 29, ../sass/main.scss */
+.panel.blue {
+  background: #ecf1f3;
+}
 
-/* line 18, ../sass/main.scss */
+/* line 34, ../sass/main.scss */
 table {
   width: 100%;
   border-radius: none;
   border: none;
   background: none;
+  border-collapse: collapse;
 }
-/* line 24, ../sass/main.scss */
+/* line 41, ../sass/main.scss */
+table td, table th {
+  font-size: 1em;
+}
+/* line 45, ../sass/main.scss */
 table .emphasis {
   font-weight: 600;
 }
-/* line 28, ../sass/main.scss */
+/* line 49, ../sass/main.scss */
 table thead tr, table tbody tr {
   background: none;
 }
-/* line 30, ../sass/main.scss */
+/* line 51, ../sass/main.scss */
 table thead tr td, table tbody tr td {
   line-height: inherit;
 }
-/* line 32, ../sass/main.scss */
+/* line 53, ../sass/main.scss */
 table thead tr td.number, table tbody tr td.number {
   font-family: "WhitneyNumeric";
   font-weight: 400;
 }
-/* line 39, ../sass/main.scss */
+/* line 60, ../sass/main.scss */
 table thead {
   background: none;
 }
-/* line 42, ../sass/main.scss */
+/* line 63, ../sass/main.scss */
 table thead tr th {
   padding: 0 0 1rem;
 }
-/* line 50, ../sass/main.scss */
+/* line 71, ../sass/main.scss */
 table tbody tr {
   background: none;
 }
-/* line 52, ../sass/main.scss */
+/* line 73, ../sass/main.scss */
+table tbody tr:nth-child(2n) {
+  background: none;
+}
+/* line 76, ../sass/main.scss */
 table tbody tr td {
   padding: 0;
 }
 
-/* line 60, ../sass/main.scss */
-.row {
-  padding: 0px 4%;
-}
-@media (max-width: 767px) {
-  /* line 60, ../sass/main.scss */
-  .row {
-    padding: 0 2%;
-  }
-}
-
-/* line 67, ../sass/main.scss */
-.columns {
-  padding: 0px 1.5%;
-}
-
-/* line 72, ../sass/main.scss */
+/* line 85, ../sass/main.scss */
 .number {
   text-align: right;
 }
-/* line 74, ../sass/main.scss */
-.number.negative {
-  font-weight: 600;
-}
-
-/* line 84, ../sass/main.scss */
+/* line 91, ../sass/main.scss */
 .number:last-child span {
   margin: 0;
 }
 
-/* line 89, ../sass/main.scss */
-.caption {
+/* line 98, ../sass/main.scss */
+.graphic .footnote {
   font-size: 0.81967rem;
-  margin: 0.67186rem 0;
+  margin-top: .5rem;
   color: #666;
-  padding: 0 1rem 0 0;
 }
 
-/* line 96, ../sass/main.scss */
-section .wrapper {
-  padding-bottom: 2rem;
-  margin-bottom: 2rem;
-  border-bottom: 1px solid #eee;
-  overflow: hidden;
-}
-
-/* line 103, ../sass/main.scss */
+/* line 105, ../sass/main.scss */
 p {
   color: #333;
 }
 
 /* line 109, ../sass/main.scss */
+header, section {
+  padding-top: 2rem;
+}
+
+/* line 115, ../sass/main.scss */
+section:after {
+  display: block;
+  margin: 0 1%;
+  padding-top: 2rem;
+  border-bottom: 1px solid #eee;
+}
+
+/* line 124, ../sass/main.scss */
+.sidebar h5 {
+  font-size: 1.22rem;
+}
+/* line 127, ../sass/main.scss */
+.sidebar p {
+  font-size: 0.81967rem !important;
+}
+/* line 130, ../sass/main.scss */
+.sidebar *:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  /* line 135, ../sass/main.scss */
+  .columns {
+    margin-bottom: 2rem;
+  }
+}
+
+/* line 141, ../sass/main.scss */
+.table-wrapper {
+  border: none !important;
+}
+/* line 143, ../sass/main.scss */
+.table-wrapper * {
+  border: none;
+}
+/* line 146, ../sass/main.scss */
+.table-wrapper .pinned {
+  background: none;
+  border: none;
+  border-right: 1px solid #eee;
+}
+/* line 151, ../sass/main.scss */
+.table-wrapper .scrollable {
+  border: none;
+  margin-left: 35%;
+}
+
+/* line 157, ../sass/main.scss */
 header {
   padding-top: 2rem;
 }
-/* line 111, ../sass/main.scss */
+/* line 159, ../sass/main.scss */
 header h1 {
   margin-bottom: 0;
 }
-/* line 114, ../sass/main.scss */
+/* line 162, ../sass/main.scss */
 header h6 {
-  margin-bottom: 3rem;
   font-weight: 400;
   color: #666;
 }

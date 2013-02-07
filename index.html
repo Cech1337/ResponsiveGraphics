@@ -19,20 +19,20 @@
 
 </head>
 <body id="responsive-table">
-	<header>
-		<div class="row">
-			<div class="eight columns">
-				<h1>Responsive Tables</h1>
-				<h6>Experiments with Proportional Layout and Typography</h6>
-			</div>
-		</div>
-	</header>
 
-	<section id="tableContainer" class="row">
-		<div class="wrapper">
-			<div class="eight columns">
-				<div class="panel">
-					<table class="responsive">
+	<div id="wrapper">
+
+		<header>
+				<div class="eight columns">
+					<h1>Responsive Tables</h1>
+					<h6>Experiments with Proportional Layout and Typography</h6>
+				</div>
+		</header>
+
+		<section>
+			<div class="nine columns graphic">
+				<div class="blue panel">
+					<table class="responsive goog">
 						<thead>
 							<tr>
 								<th class="text">Company Name</th>
@@ -87,33 +87,87 @@
 						</tbody>
 					</table>
 				</div>
-				<div class="table caption">The grid allows for nesting down as far as yo*u'd like, though at a certain *point it will get absurd. You can use this nesting to create quite complex layouts, as well as some other tricks like form layouts or visual elements.</div>
+				<div class="panel">
+					<div class="footnote">The grid allows for nesting down as far as yo*u'd like, though at a certain *point it will get absurd. You can use this nesting to create quite complex layouts, as well as some other tricks like form layouts or visual elements.</div>
+				</div>
 			</div>
-			<div class="four columns">
+			<div class="three columns sidebar">
 				<h5>Sidebar Title</h5>
 				<p>The grid allows for nesting down as far as yo*u'd like, though at a certain *point it will get absurd. You can use this nesting to create quite complex layouts, as well as some other tricks like form layouts or visual elements.</p>
+				<p>The grid allows for nesting down as far as yo*u'd like, though at a certain *point it will get absurd. You can use this nesting to create quite complex layouts, as well as some other tricks like form layouts or visual elements.</p>				
 			</div>
-		</div>
-	</section>
-	<section class="row">
-		<div class="wrapper">
-			<div class="four columns">
-				<h6>Subhead Title</h6>
-				<p>The grid allows for nesting down as far as you'd like, though at a certain point it will get absurd.</p>
-				<a href="#">Link Text</a>
+		</section>
+
+
+
+		<section>
+			<div class="nine columns graphic">
+
+					<table class="responsive goog">
+						<thead>
+							<tr>
+								<th class="text">Company Name</th>
+								<th class="number">Customers</th>
+								<th class="number">Gross Revenue</th>
+								<th class="number">Net Revenue</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="text">Oracle</td>
+								<td class="number">14,453</td>
+								<td class="number">$234,234,105</td>
+								<td class="number negative">-$123,243</td>
+							</tr>
+							<tr>
+								<td class="text">IBM</td>
+								<td class="number">8,452</td>
+								<td class="number">$124,221,184</td>
+								<td class="number">$31,665</td>
+							</tr>
+							<tr>
+								<td class="text">Microstrategy</td>
+								<td class="number">8,452</td>
+								<td class="number">$52,221,184</td>
+								<td class="number">$31,665</td>
+							</tr>
+							<tr>
+								<td class="text">Tableau</td>
+								<td class="number">14,453</td>
+								<td class="number">$234,234,105</td>
+								<td class="number negative">-$43,223</td>
+							</tr>
+							<tr>
+								<td class="text">Qlikview</td>
+								<td class="number">8,452</td>
+								<td class="number">$63,221,184</td>
+								<td class="number">$31,665</td>
+							</tr>
+							<tr>
+								<td class="text">Birst</td>
+								<td class="number">234,521</td>
+								<td class="number">$285,234,105</td>
+								<td class="number negative">-$53,243</td>
+							</tr>
+							<tr>
+								<td class="text">Good Data</td>
+								<td class="number">14,453</td>
+								<td class="number"><span class="dynamicsparkline">Loading..</span></td>
+								<td class="number negative">-$123,243</td>
+							</tr>										
+						</tbody>
+					</table>
+
+				<div class="footnote">The grid allows for nesting down as far as yo*u'd like, though at a certain *point it will get absurd. You can use this nesting to create quite complex layouts, as well as some other tricks like form layouts or visual elements.</div>
 			</div>
-			<div class="four columns">
-				<h6>Subhead Title</h6>
-				<p>The grid allows for nesting down as far as you'd like, though at a certain point it will get absurd.</p>
-				<a href="#">Link Text</a>
+			<div class="three columns sidebar">
+				<p>The grid allows for nesting down as far as yo*u'd like, though at a certain *point it will get absurd. You can use this nesting to create quite complex layouts, as well as some other tricks like form layouts or visual elements.</p>
 			</div>
-			<div class="four columns">
-				<h6>Subhead Title</h6>
-				<p>The grid allows for nesting down as far as you'd like, though at a certain point it will get absurd.</p>
-				<a href="#">Link Text</a>
-			</div>
-		</div>
-	</section>
+		</section>		
+
+
+
+	</div>
 
 	<!-- Included JS Files (Uncompressed) -->
 	<span id="scripts">
@@ -142,6 +196,7 @@
   <!-- Application Javascript, safe to override -->
   <script src="javascripts/foundation/app.js"></script>
   <script src="javascripts/functions.js"></script>
+  <script src="javascripts/jquery.sparkline.min.js"></script>
   <script src="javascripts/main.js"></script>
 
 </body>
