@@ -6174,139 +6174,141 @@ table.hide-for-medium {
     margin: 0;
   }
 }
-/* line 9, ../sass/mixins.scss */
-h1, h2, h3, h4, h5, h6, p, td, a {
-  margin: 0;
-  padding: 0;
-}
-
-/* line 15, ../sass/mixins.scss */
+/*  -----------------------------------------------------------------------------
+	::  FUNCTIONS
+	----------------------------------------------------------------------------- */
+/*  -----------------------------------------------------------------------------
+	::  MIXINS
+	----------------------------------------------------------------------------- */
+/*  -----------------------------------------------------------------------------
+	::  CONSTANTS
+	----------------------------------------------------------------------------- */
+/*  -----------------------------------------------------------------------------
+	::  FOUNDATION OVERRIDES
+	----------------------------------------------------------------------------- */
+/* line 15, ../sass/_main.scss */
 html {
   font-size: 22px;
   line-height: 1.4;
 }
 @media (max-width: 1600px) {
-  /* line 15, ../sass/mixins.scss */
+  /* line 15, ../sass/_main.scss */
   html {
     font-size: 18px;
   }
 }
 @media (max-width: 1420px) {
-  /* line 15, ../sass/mixins.scss */
+  /* line 15, ../sass/_main.scss */
   html {
     font-size: 17px;
   }
 }
 @media (max-width: 1260px) {
-  /* line 15, ../sass/mixins.scss */
+  /* line 15, ../sass/_main.scss */
   html {
     font-size: 16px;
   }
 }
 @media (max-width: 960px) {
-  /* line 15, ../sass/mixins.scss */
+  /* line 15, ../sass/_main.scss */
   html {
     font-size: 15px;
   }
 }
 @media (max-width: 767px) {
-  /* line 15, ../sass/mixins.scss */
+  /* line 15, ../sass/_main.scss */
   html {
     font-size: 14px;
   }
 }
 @media (max-width: 520px) {
-  /* line 15, ../sass/mixins.scss */
+  /* line 15, ../sass/_main.scss */
   html {
     font-size: 13px;
   }
 }
 @media (max-width: 320px) {
-  /* line 15, ../sass/mixins.scss */
+  /* line 15, ../sass/_main.scss */
   html {
     font-size: 12px;
   }
 }
-
-/* line 49, ../sass/mixins.scss */
-h1, h2, h3, h4, h5, h6, p {
+/* line 28, ../sass/_mixins.scss */
+html h1, html h2, html h3, html h4, html h5, html h6, html p, html td, html a {
+  margin: 0;
+  padding: 0;
+}
+/* line 38, ../sass/_mixins.scss */
+html h1, html h2, html h3, html h4, html h5, html h6, html p {
   margin-bottom: 1rem;
 }
 @media (max-width: 767px) {
-  /* line 49, ../sass/mixins.scss */
-  h1, h2, h3, h4, h5, h6, p {
+  /* line 38, ../sass/_mixins.scss */
+  html h1, html h2, html h3, html h4, html h5, html h6, html p {
     margin-bottom: .5rem;
   }
 }
-/* line 54, ../sass/mixins.scss */
-h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:last-child, p:last-child {
+/* line 43, ../sass/_mixins.scss */
+html h1:last-child, html h2:last-child, html h3:last-child, html h4:last-child, html h5:last-child, html h6:last-child, html p:last-child {
   margin-bottom: 0;
 }
-
-/* line 59, ../sass/mixins.scss */
-h1 {
+/* line 48, ../sass/_mixins.scss */
+html h1 {
   font-size: 3.2973rem;
 }
-
-/* line 62, ../sass/mixins.scss */
-h2 {
+/* line 51, ../sass/_mixins.scss */
+html h2 {
   font-size: 2.70271rem;
 }
-
-/* line 65, ../sass/mixins.scss */
-h3 {
+/* line 54, ../sass/_mixins.scss */
+html h3 {
   font-size: 2.21533rem;
 }
-
-/* line 68, ../sass/mixins.scss */
-h4 {
+/* line 57, ../sass/_mixins.scss */
+html h4 {
   font-size: 1.81585rem;
 }
-
-/* line 71, ../sass/mixins.scss */
-h5 {
+/* line 60, ../sass/_mixins.scss */
+html h5 {
   font-size: 1.4884rem;
 }
-
-/* line 74, ../sass/mixins.scss */
-h6 {
+/* line 63, ../sass/_mixins.scss */
+html h6 {
   font-size: 1.22rem;
 }
-
-/* line 77, ../sass/mixins.scss */
-p, td, a, th {
-  font-size: 1rem !important;
+/* line 66, ../sass/_mixins.scss */
+html p, html td, html a, html th {
+  font-size: 1rem;
 }
 
-/* line 15, ../sass/main.scss */
+/* line 33, ../sass/_main.scss */
 p {
   color: #333;
 }
 
-/* line 20, ../sass/main.scss */
+/* line 38, ../sass/_main.scss */
 .row, header, section {
-  padding: 0px 6%;
+  padding: 0px 6.85353%;
 }
 @media (max-width: 767px) {
-  /* line 20, ../sass/main.scss */
+  /* line 38, ../sass/_main.scss */
   .row, header, section {
-    padding: 0 3%;
+    padding: 0 3.42676%;
   }
 }
 
-/* line 27, ../sass/main.scss */
-.columns {
-  padding: 0px 1% !important;
+/* line 45, ../sass/_main.scss */
+.column, .columns {
+  padding: 0px 0.809% !important;
 }
-
 @media (max-width: 768px) {
-  /* line 31, ../sass/main.scss */
-  .columns {
+  /* line 45, ../sass/_main.scss */
+  .column, .columns {
     margin-bottom: 2rem;
   }
 }
 
-/* line 42, ../sass/main.scss */
+/* line 57, ../sass/_main.scss */
 table {
   width: 100%;
   border-radius: none;
@@ -6314,146 +6316,178 @@ table {
   background: none;
   border-collapse: collapse;
 }
-/* line 49, ../sass/main.scss */
+/* line 64, ../sass/_main.scss */
 table td, table th {
   font-size: 1em;
 }
-/* line 53, ../sass/main.scss */
+/* line 68, ../sass/_main.scss */
 table .emphasis {
   font-weight: 600;
 }
-/* line 57, ../sass/main.scss */
+/* line 72, ../sass/_main.scss */
 table thead tr, table tbody tr {
   background: none;
 }
-/* line 59, ../sass/main.scss */
+/* line 74, ../sass/_main.scss */
 table thead tr td, table tbody tr td {
   line-height: inherit;
 }
-/* line 61, ../sass/main.scss */
+/* line 76, ../sass/_main.scss */
 table thead tr td.number, table tbody tr td.number {
   font-family: "WhitneyNumeric";
   font-weight: 400;
 }
-/* line 68, ../sass/main.scss */
+/* line 83, ../sass/_main.scss */
 table thead {
   background: none;
 }
-/* line 71, ../sass/main.scss */
+/* line 86, ../sass/_main.scss */
 table thead tr th {
   padding: 0 0 1rem;
 }
-/* line 79, ../sass/main.scss */
+/* line 94, ../sass/_main.scss */
 table tbody tr {
   background: none;
 }
-/* line 81, ../sass/main.scss */
+/* line 96, ../sass/_main.scss */
 table tbody tr:nth-child(2n) {
   background: none;
 }
-/* line 84, ../sass/main.scss */
+/* line 99, ../sass/_main.scss */
 table tbody tr td {
   padding: 0;
 }
 
-/* line 92, ../sass/main.scss */
+/* line 107, ../sass/_main.scss */
 .table-wrapper {
   border: none !important;
 }
-/* line 94, ../sass/main.scss */
+/* line 109, ../sass/_main.scss */
 .table-wrapper * {
   border: none;
 }
-/* line 97, ../sass/main.scss */
+/* line 112, ../sass/_main.scss */
 .table-wrapper .pinned {
   background: none;
   border: none;
   border-right: 1px solid #eee;
 }
-/* line 102, ../sass/main.scss */
+/* line 117, ../sass/_main.scss */
 .table-wrapper .scrollable {
   border: none;
   margin-left: 35%;
 }
 
-/* line 108, ../sass/main.scss */
+/* line 123, ../sass/_main.scss */
 .panel {
   border: none;
   background: #f9f9f9;
-  padding: .5rem;
+  padding: .5em;
   margin: 0;
 }
-/* line 114, ../sass/main.scss */
+/* line 130, ../sass/_main.scss */
 .panel.blue {
   background: #ecf1f3;
 }
 
-/* line 119, ../sass/main.scss */
+/* line 135, ../sass/_main.scss */
 .centered {
   text-align: center;
 }
 
-/* line 128, ../sass/main.scss */
+/*  -----------------------------------------------------------------------------
+	::  PROJECT CLASSES
+	----------------------------------------------------------------------------- */
+/* line 145, ../sass/_main.scss */
 header, section {
   padding-top: 2rem;
 }
 
-/* line 133, ../sass/main.scss */
+/* line 150, ../sass/_main.scss */
 header {
   padding-top: 2rem;
 }
-/* line 135, ../sass/main.scss */
+/* line 152, ../sass/_main.scss */
 header h1 {
   margin-bottom: 0;
 }
-/* line 138, ../sass/main.scss */
+/* line 155, ../sass/_main.scss */
 header h6 {
   font-weight: 400;
   color: #666;
 }
-/* line 142, ../sass/main.scss */
+/* line 159, ../sass/_main.scss */
 header div {
   margin-bottom: 1rem;
 }
 
-/* line 148, ../sass/main.scss */
+/* line 165, ../sass/_main.scss */
 section:after {
   display: block;
-  margin: 0 1%;
+  margin: 0 0.809%;
   padding-top: 1rem;
   border-bottom: 1px solid #eee;
 }
 
-/* line 157, ../sass/main.scss */
+/* line 174, ../sass/_main.scss */
 .number {
   text-align: right;
 }
-/* line 163, ../sass/main.scss */
+/* line 180, ../sass/_main.scss */
 .number:last-child span {
   margin: 0;
 }
 
-/* line 169, ../sass/main.scss */
+/* line 186, ../sass/_main.scss */
 .graphic {
   margin-bottom: 1rem;
 }
-/* line 171, ../sass/main.scss */
+/* line 188, ../sass/_main.scss */
 .graphic .footnote {
   font-size: 0.81967rem;
   color: #666;
 }
+/* line 191, ../sass/_main.scss */
+.graphic .footnote.panel {
+  padding: .25rem .5rem;
+}
 
-/* line 177, ../sass/main.scss */
+/* line 197, ../sass/_main.scss */
 .sidebar {
   margin-bottom: 1rem;
 }
-/* line 178, ../sass/main.scss */
+/* line 198, ../sass/_main.scss */
 .sidebar h5 {
   font-size: 1.22rem;
 }
-/* line 181, ../sass/main.scss */
+/* line 201, ../sass/_main.scss */
 .sidebar p {
   font-size: 0.81967rem !important;
+}
+
+/* line 207, ../sass/_main.scss */
+#variable-size-table {
+  font-size: 22px;
+}
+@media (max-width: 1260px) {
+  /* line 207, ../sass/_main.scss */
+  #variable-size-table {
+    font-size: 16px;
+  }
+}
+@media (max-width: 800px) {
+  /* line 207, ../sass/_main.scss */
+  #variable-size-table {
+    font-size: 11px;
+  }
+}
+/* line 217, ../sass/_main.scss */
+#variable-size-table table td, #variable-size-table table th {
+  font-size: 1em;
+}
+/* line 222, ../sass/_main.scss */
+#variable-size-table .panel {
+  padding: .5em;
 }
 
 /* Foundation v2.1.4 http://foundation.zurb.com */
@@ -6468,12 +6502,12 @@ section:after {
 /* -----------------------------------------
    Shared Styles
 ----------------------------------------- */
-/* line 17, ../sass/responsive-tables.scss */
+/* line 17, ../sass/_responsive-tables.scss */
 table th {
   font-weight: bold;
 }
 
-/* line 18, ../sass/responsive-tables.scss */
+/* line 18, ../sass/_responsive-tables.scss */
 table td, table th {
   padding: 9px 10px;
   text-align: left;
@@ -6481,12 +6515,12 @@ table td, table th {
 
 /* Mobile */
 @media only screen and (max-width: 767px) {
-  /* line 23, ../sass/responsive-tables.scss */
+  /* line 23, ../sass/_responsive-tables.scss */
   table.responsive {
     margin-bottom: 0;
   }
 
-  /* line 25, ../sass/responsive-tables.scss */
+  /* line 25, ../sass/_responsive-tables.scss */
   .pinned {
     position: absolute;
     left: 0;
@@ -6499,24 +6533,24 @@ table td, table th {
     border-left: 1px solid #ccc;
   }
 
-  /* line 26, ../sass/responsive-tables.scss */
+  /* line 26, ../sass/_responsive-tables.scss */
   .pinned table {
     border-right: none;
     border-left: none;
     width: 100%;
   }
 
-  /* line 27, ../sass/responsive-tables.scss */
+  /* line 27, ../sass/_responsive-tables.scss */
   .pinned table th, .pinned table td {
     white-space: nowrap;
   }
 
-  /* line 28, ../sass/responsive-tables.scss */
+  /* line 28, ../sass/_responsive-tables.scss */
   .pinned td:last-child {
     border-bottom: 0;
   }
 
-  /* line 30, ../sass/responsive-tables.scss */
+  /* line 30, ../sass/_responsive-tables.scss */
   div.table-wrapper {
     position: relative;
     margin-bottom: 20px;
@@ -6524,25 +6558,25 @@ table td, table th {
     border-right: 1px solid #ccc;
   }
 
-  /* line 31, ../sass/responsive-tables.scss */
+  /* line 31, ../sass/_responsive-tables.scss */
   div.table-wrapper div.scrollable table {
     margin-left: 35%;
   }
 
-  /* line 32, ../sass/responsive-tables.scss */
+  /* line 32, ../sass/_responsive-tables.scss */
   div.table-wrapper div.scrollable {
     overflow: scroll;
     overflow-y: hidden;
   }
 
-  /* line 34, ../sass/responsive-tables.scss */
+  /* line 34, ../sass/_responsive-tables.scss */
   table.responsive td, table.responsive th {
     position: relative;
     white-space: nowrap;
     overflow: hidden;
   }
 
-  /* line 35, ../sass/responsive-tables.scss */
+  /* line 35, ../sass/_responsive-tables.scss */
   table.responsive th:first-child, table.responsive td:first-child, table.responsive td:first-child, table.responsive.pinned td {
     display: none;
   }

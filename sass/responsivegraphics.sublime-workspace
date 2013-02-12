@@ -24,18 +24,37 @@
 	"buffers":
 	[
 		{
-			"file": "main.scss",
+			"file": "app.scss",
 			"settings":
 			{
-				"buffer_size": 64,
+				"buffer_size": 1691,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "mixins.scss",
+			"file": "main.scss",
 			"settings":
 			{
-				"buffer_size": 72,
+				"buffer_size": 2764,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "_settings.scss",
+			"settings":
+			{
+				"buffer_size": 6516,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "//FUNCTIONS\n@function generate-url($img){\n  @return url(\"#{$imageRoot}#{$img}\");\n}\n\n//MIXINS\n@mixin initialize-type($base-size, $ratio){\n	//Reset type styles\n	h1, h2, h3, h4, h5, h6, p, td, a{\n		margin: 0;\n		padding: 0;\n	}\n\n	//Set Responsive Type Breakpoints\n	html{\n		//largest for large monitors\n		font-size: 22px;\n		line-height: 1.4;\n\n		@media (max-width: 1600px) {\n			//font-size: 20px;\n			font-size: 18px;\n		}\n		@media (max-width: 1420px) {\n			//font-size: 18px;\n			font-size: 17px;\n		}\n		@media (max-width: 1260px) {\n			font-size: 16px;\n		}		\n		@media (max-width: 960px) {\n			font-size: 15px;\n		}\n		@media (max-width: 767px) {\n			font-size: 14px;\n		}\n		@media (max-width: 520px) {\n			font-size: 13px;\n		}		\n		@media (max-width: 320px) {\n			font-size: 12px;\n		}\n	}				\n\n	//Output to terminal\n	@include ms-list(0, 7, $base-size, $ratio);\n\n	//Init Type\n	h1, h2, h3, h4, h5, h6, p{\n		margin-bottom: 1rem;\n		@media (max-width: 767px) {\n			margin-bottom: .5rem;\n		}\n		&:last-child{\n			margin-bottom: 0;\n		}\n	}\n\n	h1{\n		font-size: ms(6, $base-size, $ratio);\n	}\n	h2{\n		font-size: ms(5, $base-size, $ratio);\n	}\n	h3{\n		font-size: ms(4, $base-size, $ratio);\n	}\n	h4{\n		font-size: ms(3, $base-size, $ratio);\n	}\n	h5{\n		font-size: ms(2, $base-size, $ratio);\n	}\n	h6{\n		font-size: ms(1, $base-size, $ratio);\n	}\n	p, td, a, th{\n		font-size: ms(0, $base-size, $ratio) !important;\n	}\n}",
+			"file": "mixins.scss",
+			"file_size": 1368,
+			"file_write_time": 1360346786000000,
+			"settings":
+			{
+				"buffer_size": 1368,
 				"line_ending": "Unix"
 			}
 		},
@@ -43,7 +62,26 @@
 			"file": "/Users/mluster/Projects/ResponsiveGraphics/javascripts/main.js",
 			"settings":
 			{
-				"buffer_size": 70,
+				"buffer_size": 394,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/mluster/Projects/ResponsiveGraphics/javascripts/functions.js",
+			"settings":
+			{
+				"buffer_size": 757,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "$(document).ready(function() {\n  var switched = false;\n  var updateTables = function() {\n    if (($(window).width() < 767) && !switched ){\n      switched = true;\n      $(\"table.responsive\").each(function(i, element) {\n        splitTable($(element));\n      });\n      return true;\n    }\n    else if (switched && ($(window).width() > 767)) {\n      switched = false;\n      $(\"table.responsive\").each(function(i, element) {\n        unsplitTable($(element));\n      });\n    }\n  };\n  \n  $(window).load(updateTables);\n  $(window).bind(\"resize\", updateTables);\n  \n  \n  function splitTable(original)\n  {\n    original.wrap(\"<div class='table-wrapper' />\");\n    \n    var copy = original.clone();\n    copy.find(\"td:not(:first-child), th:not(:first-child)\").css(\"display\", \"none\");\n    copy.removeClass(\"responsive\");\n    \n    original.closest(\".table-wrapper\").append(copy);\n    copy.wrap(\"<div class='pinned' />\");\n    original.wrap(\"<div class='scrollable' />\");\n\n    setCellHeights(original, copy);\n  }\n  \n  function unsplitTable(original) {\n    original.closest(\".table-wrapper\").find(\".pinned\").remove();\n    original.unwrap();\n    original.unwrap();\n  }\n\n  function setCellHeights(original, copy) {\n    var tr = original.find('tr'),\n    tr_copy = copy.find('tr'),\n    heights = [];\n\n    tr.each(function (index) {\n      var self = $(this),\n      tx = self.find('th, td');\n\n      tx.each(function () {\n        var height = $(this).outerHeight(true);\n        heights[index] = heights[index] || 0;\n        if (height > heights[index]) heights[index] = height;\n      });\n\n    });\n\n    tr_copy.each(function (index) {\n      $(this).height(heights[index]);\n    });\n  }\n\n});\n",
+			"file": "/Users/mluster/Projects/ResponsiveGraphics/javascripts/responsive-tables.js",
+			"file_size": 1649,
+			"file_write_time": 1357321496000000,
+			"settings":
+			{
+				"buffer_size": 1660,
 				"line_ending": "Unix"
 			}
 		},
@@ -51,7 +89,7 @@
 			"file": "/Users/mluster/Projects/ResponsiveGraphics/index.html",
 			"settings":
 			{
-				"buffer_size": 5366,
+				"buffer_size": 12326,
 				"line_ending": "Unix"
 			}
 		}
@@ -59,15 +97,67 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 0.0,
+		"height": 115.0,
 		"selected_items":
 		[
+			[
+				"settings",
+				"Preferences: Settings - User"
+			],
+			[
+				"key",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"install pack",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"remove pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"remove package",
+				"Package Control: Remove Package"
+			],
+			[
+				"install package	",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"About"
+			],
+			[
+				"install package",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Remove Package"
+			],
+			[
+				"package	",
+				"Package Control: Install Package"
+			]
 		],
-		"width": 0.0
+		"width": 462.0
 	},
 	"console":
 	{
-		"height": 0.0
+		"height": 125.0
 	},
 	"distraction_free":
 	{
@@ -80,6 +170,16 @@
 	},
 	"file_history":
 	[
+		"/Users/mluster/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/mluster/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/mluster/Projects/ResponsiveGraphics/sass/app.scss",
+		"/Users/mluster/Projects/ResponsiveGraphics/index.html",
+		"/Users/mluster/Projects/Birst Acquia/docroot/careers-new/index.html",
+		"/Users/mluster/Projects/Birst Acquia/docroot/careers-new/sass/main.scss",
+		"/Users/mluster/Projects/Birst Acquia/docroot/careers-new/sass/mixins.scss",
+		"/Users/mluster/Projects/Birst Acquia/docroot/careers-new/sass/app.scss",
+		"/Users/mluster/Projects/ResponsiveGraphics/sass/responsivegraphics.sublime-project",
+		"/Users/mluster/Projects/ResponsiveGraphics/config.rb",
 		"/Applications/MAMP/conf/apache/extra/httpd-vhosts.conf",
 		"/Applications/MAMP/conf/apache/httpd.conf",
 		"/Applications/MAMP/conf/apache/vhosts.conf",
@@ -87,13 +187,9 @@
 		"/Users/mluster/Projects/Responsive Graphics/sass/app.scss",
 		"/Users/mluster/Projects/Responsive Graphics/sass/mixins.scss",
 		"/Users/mluster/Projects/Responsive Graphics/sass/main.scss",
-		"/Users/mluster/Projects/Birst Acquia/docroot/careers-new/sass/app.scss",
-		"/Users/mluster/Projects/Birst Acquia/docroot/careers-new/sass/main.scss",
-		"/Users/mluster/Projects/Birst Acquia/docroot/careers-new/sass/mixins.scss",
 		"/Users/mluster/Projects/Birst Acquia/docroot/careers-new/sass/_settings.scss",
 		"/Users/mluster/Projects/Birst Acquia/docroot/careers-new/javascripts/main.js",
 		"/Users/mluster/Projects/Birst Acquia/docroot/careers-new/javascripts/foundation/app.js",
-		"/Users/mluster/Projects/Birst Acquia/docroot/careers-new/index.html",
 		"/Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/lib/foundation/generators/templates/application.html.haml",
 		"/Users/mluster/Projects/Birst Acquia/docroot/careers-new/javascripts/foundation/jquery.foundation.buttons.js",
 		"/Users/mluster/Dropbox/Birst/Compass/careers/config.rb",
@@ -128,6 +224,26 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"		<header>\n				<div class=\"eight columns\">\n					<h1>Responsive Tables</h1>\n					<h6>Experiments with Proportional Layout and Typography</h6>\n				</div>\n		</header>",
+			"tbody",
+			"Microstrategy",
+			"Tableau",
+			"{\n",
+			"$font-base-size",
+			"font-weight: 600",
+			"font-weight",
+			"sidebar",
+			"\">\n",
+			"../",
+			"2rem",
+			"</span>",
+			"<span>",
+			"caption",
+			"span",
+			"20px",
+			"2em",
+			"h5",
+			"none",
 			"src=\"/careers-new/",
 			"src=\"../",
 			"\"../",
@@ -187,11 +303,13 @@
 			"50px"
 		],
 		"highlight": true,
-		"in_selection": true,
+		"in_selection": false,
 		"preserve_case": false,
 		"regex": false,
 		"replace_history":
 		[
+			"/careers-new/",
+			"",
 			"src=\"../",
 			"src=\"/careers-new/",
 			"src=\"../",
@@ -221,23 +339,23 @@
 			[
 				{
 					"buffer": 0,
-					"file": "main.scss",
+					"file": "app.scss",
 					"settings":
 					{
-						"buffer_size": 64,
+						"buffer_size": 1691,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								383,
+								383
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SASS/Syntaxes/SASS.tmLanguage"
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -247,18 +365,46 @@
 				},
 				{
 					"buffer": 1,
-					"file": "mixins.scss",
+					"file": "main.scss",
 					"settings":
 					{
-						"buffer_size": 72,
+						"buffer_size": 2764,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								531,
+								531
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "_settings.scss",
+					"settings":
+					{
+						"buffer_size": 6516,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								119,
+								119
 							]
 						],
 						"settings":
@@ -272,24 +418,107 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "/Users/mluster/Projects/ResponsiveGraphics/javascripts/main.js",
+					"buffer": 3,
+					"file": "mixins.scss",
 					"settings":
 					{
-						"buffer_size": 70,
+						"buffer_size": 1368,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								547,
+								547
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 619.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/Users/mluster/Projects/ResponsiveGraphics/javascripts/main.js",
+					"settings":
+					{
+						"buffer_size": 394,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								95,
+								95
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/Users/mluster/Projects/ResponsiveGraphics/javascripts/functions.js",
+					"settings":
+					{
+						"buffer_size": 757,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								704,
+								704
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/Users/mluster/Projects/ResponsiveGraphics/javascripts/responsive-tables.js",
+					"settings":
+					{
+						"buffer_size": 1660,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								468,
+								468
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -304,28 +533,42 @@
 			"sheets":
 			[
 				{
-					"buffer": 3,
+					"buffer": 7,
 					"file": "/Users/mluster/Projects/ResponsiveGraphics/index.html",
 					"settings":
 					{
-						"buffer_size": 5366,
+						"buffer_size": 12326,
 						"regions":
 						{
+							"TagLint":
+							{
+								"flags": 52,
+								"icon": "dot",
+								"regions":
+								[
+									[
+										10548,
+										10561
+									]
+								],
+								"scope": "variable.parameter"
+							}
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								445,
+								445
 							]
 						],
 						"settings":
 						{
+							"is_xml": false,
 							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 4487.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -366,11 +609,15 @@
 		"rows":
 		[
 			0.0,
-			0.521250009161,
+			0.449279276652,
 			1.0
 		]
 	},
 	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
 	"replace":
 	{
 		"height": 64.0
@@ -381,6 +628,14 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"",
+				"Package Control Messages"
+			],
+			[
+				"su",
+				"/Users/mluster/Projects/ResponsiveGraphics/sass/app.scss"
+			]
 		],
 		"width": 0.0
 	},
@@ -393,9 +648,9 @@
 		"width": 0.0
 	},
 	"show_minimap": true,
-	"show_open_files": false,
+	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_visible": false,
+	"side_bar_width": 189.0,
 	"status_bar_visible": true
 }

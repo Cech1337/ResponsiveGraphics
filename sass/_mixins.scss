@@ -1,0 +1,69 @@
+/*  -----------------------------------------------------------------------------
+	::  FUNCTIONS
+	----------------------------------------------------------------------------- */
+
+@function generate-url($img){
+  @return url("#{$imageRoot}#{$img}");
+}
+
+/*  -----------------------------------------------------------------------------
+	::  MIXINS
+	----------------------------------------------------------------------------- */
+
+
+@mixin responsive-type($size-breakpoint-lists...){
+	@each $size-breakpoint-list in $size-breakpoint-lists{
+		$font-size: nth($size-breakpoint-list, 1);
+		$breakpoint: nth($size-breakpoint-list, 2);
+		@media (max-width: $breakpoint + "px") {
+			font-size: #{$font-size}px;
+		}
+	}
+}
+
+
+
+@mixin proportional-type($base-size, $ratio){
+	//Reset type styles
+	h1, h2, h3, h4, h5, h6, p, td, a{
+		margin: 0;
+		padding: 0;
+	}			
+
+	//Output to terminal
+	//@include ms-list(0, 7, $base-size $base-size + 1, $ratio);
+	@include ms-list(0, 12, $ratio);
+
+	//Init Type
+	h1, h2, h3, h4, h5, h6, p{
+		margin-bottom: 1rem;
+		@media (max-width: 767px) {
+			margin-bottom: .5rem;
+		}
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+
+	h1{
+		font-size: ms(6, $base-size, $ratio);
+	}
+	h2{
+		font-size: ms(5, $base-size, $ratio);
+	}
+	h3{
+		font-size: ms(4, $base-size, $ratio);
+	}
+	h4{
+		font-size: ms(3, $base-size, $ratio);
+	}
+	h5{
+		font-size: ms(2, $base-size, $ratio);
+	}
+	h6{
+		font-size: ms(1, $base-size, $ratio);
+	}
+	p, td, a, th{
+		font-size: ms(0, $base-size, $ratio);
+	}
+}
