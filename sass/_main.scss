@@ -2,23 +2,23 @@
 	::  CONSTANTS
 	----------------------------------------------------------------------------- */
 
-$font-base-size: 1rem;
 $font-ratio: 1.22;
 $row-padding: ms(4, 1%, 1.618);
-$col-padding: ms(1, 1%, 1.618) / 2 ;
+$col-padding: ms(1, 1%, 1.618) / 2;
 
 /*  -----------------------------------------------------------------------------
 	::  FOUNDATION OVERRIDES
 	----------------------------------------------------------------------------- */
 
 //	Initialize Typography
-html{
+html, *{
 	//largest for large monitors
 	font-size: 22px;
 	line-height: 1.4;
 	
-	//set root font sizses at maximum width
+	//set root font sizes between breakpoints
 	@include responsive-type(
+		20 3000,	
 		18 1600,
 		17 1420,
 		16 1260,
@@ -27,7 +27,8 @@ html{
 		13 520,
 		12 320
 	);
-	@include proportional-type($font-base-size, $font-ratio);	
+
+	@include proportional-type($font-ratio);	
 }
 
 p{
@@ -38,20 +39,20 @@ p{
 .row{
 	padding: 0px $row-padding;
 	@media (max-width: 767px) {
-		padding: 0 $row-padding/2;
+		padding: 0 $row-padding / 2;
 	}		
 }
 
-.column, .columns{
+.column, columns{
 	padding: 0px $col-padding !important;
 	@media (max-width: 768px) {
 		margin-bottom: 2rem;
 	}
 }
 
-//	Elements
+// Elements
 body{
-	//background-color: #fafaf5
+	background-color: #fafaf5
 }
 
 table{
@@ -60,10 +61,6 @@ table{
 	border: none;
 	background: none;
 	border-collapse: collapse;
-
-	td, th{
-		font-size: 1em;
-	}
 
 	.emphasis{
 		font-weight: 600;
@@ -84,7 +81,7 @@ table{
 		background: none;
 		tr{
 			th{
-				padding: 0 0 1rem;
+				padding: 0 0 1em;
 			}		
 
 		}		
@@ -186,7 +183,7 @@ section{
 .graphic{
 	margin-bottom: 1rem;
 	.footnote{
-		font-size: ms(-1, $font-base-size, $font-ratio);
+		font-size: ms(-1, 1rem, $font-ratio);
 		color: #666;
 		&.panel{
 			padding: .25rem .5rem;
@@ -196,29 +193,34 @@ section{
 
 .sidebar{
 	h5{
-		font-size: ms(1, $font-base-size, $font-ratio);
+		font-size: 1rem;
 	}
 	p{
-		font-size: ms(-1, $font-base-size, $font-ratio) !important;
+		font-size: ms(-1, 1rem, $font-ratio) !important;
 	}
 	margin-bottom: 1rem;
 }
 
 #variable-size-table{
 
-	//Set variable font-sizes smaller than main
-	font-size: 22px;
-	@include responsive-type(
-		16 1260,
-		11 800
-	);
-
-	table{
-		td, th{
-			font-size: 1em;
-		}
+	//Set type via a modular scale of HTML font-size
+	font-size: 1em;
+	&.reduce-1{
+		font-size: ms(-1, 1em, $font-ratio);
+	}
+	&.reduce-2{
+		font-size: ms(-2, 1em, $font-ratio);
+	}
+	&.reduce-3{
+		font-size: ms(-3, 1em, $font-ratio);
 	}
 
+	//Set type relative to container size
+	*{
+		font-size: 1em !important;
+	}
+
+	//Set padding relative to local type sizing
 	.panel{
 		padding: .5em;
 	}
