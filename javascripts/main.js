@@ -17,7 +17,7 @@ $(document).ready(function() {
 	var myvalues = [10,8,5,7,4,4,1,10,8,5,7,4,4,1,10,8,5,7,4,4,1];
     $('.dynamicsparkline').sparkline(myvalues);
 
-    //Enclose all table cells in spans
+    //Enclose all table cells in spans so we can calculate colision distance
     $('td, th').wrapInner('<span />');
 
 });
@@ -27,21 +27,41 @@ $(window).load(function() {
 });
 
 
-$(window).on("throttledresize", function( event ) {
 
+var reduceBy = 0;
 
-	// $("#variable-size-table span").each(function(){
+$(window).on("throttledresize", function(event){
 
+	var resized = false;
+	var minDistance;
 
-	// 	var contentWidth = $(this).width(); 
-	// 	var columnWidth = $(this).parent().width();
-	// 	if(columnWidth < contentWidth - 12){
-	// 		$("#variable-size-table").addClass("reduce-1");
-	// 	}
+	$(".scalable table span").each(function(){
+		var contentWidth = $(this).width(); 
+		var columnWidth = $(this).parent().width();
+		var distance = columnWidth - contentWidth;
 
-	// });
+		if(minDistance == null || distance < minDistance){
+			minDistance = distance;
+		}
 
-	//Transverse 
+		console.log(
+			"Content: " + contentWidth +"\n"+
+			"Column: " 	+ columnWidth +"\n"+
+			"Distance: "+ distance
+		);
 
+		if(distance < 12){
+			$(".scalable").removeClass("reduce" + reduceBy);
+			reduceBy--;
+			$(".scalable").addClass("reduce" + reduceBy);
+			resized = true;
+			return false;
+		}
+	});
+
+	//If cells have plenty of breathing room, expand font sizes until back to normal
+	if(!resized && minDistance > 40 && reduceBy < 0){
+
+	}
 
 });
