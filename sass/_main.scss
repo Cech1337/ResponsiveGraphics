@@ -134,13 +134,43 @@ table{
 	----------------------------------------------------------------------------- */
 
 //	Elements
+
+
+#nav{
+	@extend .row;
+	position: fixed;
+	z-index: 1;
+	height: 2rem;
+	background: #f7f7f7;
+	border-bottom: 1px solid #eee;
+	ul{
+		li{
+			display: inline;
+			a{
+				display: inline-block;
+				line-height: 2rem;
+				height: 2rem;
+				margin-right: 1.5rem;
+				color: #666;
+				padding: 0 $col-padding;
+				&.active{
+					color: #000;
+				}
+				&:hover{
+					color: #000;
+				}
+			}
+		}
+	}
+}
+
 header, section{
 	@extend .row;
 	padding-top: 2rem;
 }
 
 header{
-	padding-top: 2rem;
+	padding-top: 4rem;
 	h1{
 		margin-bottom: 0;
 	}
@@ -214,6 +244,7 @@ section{
 	*{
 		font-size: 1em !important;
 	}
+
 
 	//Set padding relative to the local font-size instead of HTML font-size
 	.panel{
