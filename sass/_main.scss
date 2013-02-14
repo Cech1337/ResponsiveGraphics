@@ -4,7 +4,9 @@
 
 $font-ratio: 1.22;
 $row-padding: ms(4, 1%, 1.618);
-$col-padding: ms(1, 1%, 1.618) / 2;
+$col-padding: ms(1, 1%, 1.618);
+// $row-padding: 6%;
+// $col-padding: 2%;
 
 /*  -----------------------------------------------------------------------------
 	::  FOUNDATION OVERRIDES
@@ -134,8 +136,6 @@ table{
 	----------------------------------------------------------------------------- */
 
 //	Elements
-
-
 #nav{
 	@extend .row;
 	position: fixed;
@@ -150,7 +150,6 @@ table{
 				display: inline-block;
 				line-height: 2rem;
 				height: 2rem;
-				margin-right: 1.5rem;
 				color: #666;
 				padding: 0 $col-padding;
 				&.active{
