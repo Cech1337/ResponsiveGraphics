@@ -6188,7 +6188,7 @@ table.hide-for-medium {
 	----------------------------------------------------------------------------- */
 /* line 14, ../sass/_main.scss */
 html, * {
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1.4;
 }
 @media (max-width: 3000px) {

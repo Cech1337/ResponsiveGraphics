@@ -30,6 +30,8 @@ $(window).load(function() {
 
 $(window).on("throttledresize", function(event){
 
+	console.time('resizer');
+
 	//Loop through each scalable table
 	$(".scalable").each(function(){
 
@@ -78,6 +80,7 @@ $(window).on("throttledresize", function(event){
 		}
 
 	});
-
+	
+	console.timeEnd('resizer');
 
 });
