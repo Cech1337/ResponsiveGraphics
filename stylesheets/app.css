@@ -6763,3 +6763,25 @@ table td, table th {
 #layout .sidebar {
   text-align: justify;
 }
+
+/* line 26, ../sass/_layout.scss */
+#asymmetry header h1 {
+  font-weight: 400;
+}
+/* line 29, ../sass/_layout.scss */
+#asymmetry header h6 {
+  font-weight: 400;
+  margin-top: 1rem;
+  line-height: 1.35;
+}
+/* line 34, ../sass/_layout.scss */
+#asymmetry header:after {
+  border-bottom: 1px solid #ddd;
+  display: block;
+  margin: 0 1.618%;
+  padding-top: 2rem;
+}
+/* line 41, ../sass/_layout.scss */
+#asymmetry .left {
+  text-align: right;
+}

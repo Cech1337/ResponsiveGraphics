@@ -1,3 +1,6 @@
+//Set throttle limit
+$.event.special.throttledresize.threshold = 1;
+
 //Inits
 $('p, table, .footnote').moltenLeading({
 	minline: 1.25,
@@ -24,12 +27,12 @@ $(document).ready(function() {
 });
 
 $(window).load(function() {
-	detectCollisions();
+	detectCollisions(10, 30, 10, 1.22);
 });
 
 
 $(window).on("throttledresize", function(event){
 
-	detectCollisions();
+	detectCollisions(10, 30, 10, 1.22);
 
 });
