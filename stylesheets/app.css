@@ -6465,7 +6465,7 @@ table thead {
 }
 /* line 81, ../sass/_main.scss */
 table thead tr th {
-  padding: 0 0 1em;
+  padding: 0 0 .5em;
 }
 /* line 89, ../sass/_main.scss */
 table tbody tr {
@@ -6525,7 +6525,7 @@ table tbody tr td {
   position: fixed;
   z-index: 1;
   height: 2rem;
-  background: #f7f7f7;
+  background: rgba(250, 250, 250, 0.97);
   border-bottom: 1px solid #eee;
 }
 /* line 147, ../sass/_main.scss */
