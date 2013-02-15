@@ -2,7 +2,7 @@
 $.event.special.throttledresize.threshold = 1;
 
 //Inits
-$('p, table, .footnote').moltenLeading({
+$('p, .footnote').moltenLeading({
 	minline: 1.25,
 	maxline: 1.5,
 	minwidth: 220,
@@ -32,7 +32,5 @@ $(window).load(function() {
 
 
 $(window).on("throttledresize", function(event){
-
 	detectCollisions(10, 30, 10, 1.22);
-
 });
