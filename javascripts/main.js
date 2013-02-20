@@ -23,9 +23,9 @@ $(document).ready(function() {
 
 $(window).load(function() {
 	$('.scalable').responsiveTable({
-		minPadding: 10,
-        maxPadding: 30, 
-        minFontSize: 10, 
-        fontRatio: 1.21
+		minPadding: 	10,
+        maxPadding: 	30, 
+        minFontSize: 	10, 
+        fontRatio: 		1.21
 	});
 });

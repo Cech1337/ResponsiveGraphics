@@ -12,7 +12,7 @@
             fontRatio: 1.618
         };	
 
-    // The actual plugin constructor
+    // The actual plugin constructor 
     function ResponsiveTable(element, options) {
         this.element = element;
         this.options = $.extend( {}, defaults, options );
@@ -25,7 +25,7 @@
 
     ResponsiveTable.prototype = {
 
-        init : function() {
+        init : function(){
 
             var cur = this;
  			
@@ -47,7 +47,7 @@
 
         },
 
-        detectCollisions : function(el, options) {
+        detectCollisions : function(el, options){
 
         	var cur = this;
 
@@ -77,31 +77,31 @@
 						//If reducing the font will shrink it beyond the min font size, go responsive
 						if(targetFontSize < options.minFontSize){
 							resized = true;
-							return cur.splitTable(el);
+							return cur.splitTable(el, options);
 						}
 						//Else targetFontSize is within the accepted range and should be applied
 						else{
-							return cur.reduceFont(el);
+							return cur.reduceFont(el, options);
 						}
 					}
 				});
 
 				//If all cells have more than maxPadding distance, expand font size until font-size is not scaled from base
 				if(!resized && minDistance > options.maxPadding && $(el).data('reduceFactor') < 0){
-					return this.growFont(el);
+					return this.growFont(el, options);
 				}
 			}
 
 			//Else the table is split and detect if it's ready to be unsplit
 			else{
 				if($(window).width() > $(el).data('splitWidth')){
-					return this.unsplitTable(el);
+					return this.unsplitTable(el, options);
 				}
 			}
 
         },
 
-     	reduceFont : function(el, options) {
+     	reduceFont : function(el, options){
 			console.log("reduceFont");
 
 			var currentReduce = $(el).data('reduceFactor');
@@ -117,7 +117,7 @@
 			return false;
         },
 
-        growFont : function(el, options) {
+        growFont : function(el, options){
         	console.log("growFont");
 
 			var currentReduce = $(el).data('reduceFactor');
@@ -133,25 +133,50 @@
         	return false;
         },
 
-        splitTable : function(el, options) {
+        splitTable : function(el, options){
         	console.log("splitTable");
 
 			$(el).data('split', true);
             $(el).data('splitWidth', $(window).width());
 
-            // Split table scrpit here
+            var pinned = $(el).find("table");
+            var scrollable = $(pinned).clone();
+
+            //Wrap tables in a new 'split' div
+            $(pinned).wrap('<div class="split" />');
+            var split = $(pinned).parent();
+
+            //Hide non-first child elements from pinned
+            $(pinned).addClass("pinned").find("td:not(:first-child), th:not(:first-child)").hide();
+
+            //Calculate a margin for the scrollable table
+            var pinnedWidth = $(pinned).width() + options.minPadding;
+
+            //Create scrollable table and hide from original table
+            $(scrollable).addClass("scrollable").appendTo(split).find("td:first-child, th:first-child").hide();
+            $(scrollable).css("margin-left", pinnedWidth);
 
         	return false;
         },
 
-        unsplitTable : function(el, options) {
+        unsplitTable : function(el, options){
         	console.log("unsplitTable");
 
 			$(el).data('split', false);
 
-			// Unsplit table script here
+            var pinned = $(el).find(".pinned");
+
+            //Remove srolling table
+            $(pinned).siblings().remove();
+
+            //Return the pinned table to normal
+            $(pinned).removeClass("pinned").unwrap().find("td:not(:first-child), th:not(:first-child)").show();
 
         	return false;
+        },
+
+        getColWidth: function(el, options){
+
         }
     };
 
