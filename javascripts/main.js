@@ -19,18 +19,13 @@ $('.caption').moltenLeading({
 $(document).ready(function() {
 	var myvalues = [10,8,5,7,4,4,1,10,8,5,7,4,4,1,10,8,5,7,4,4,1];
     $('.dynamicsparkline').sparkline(myvalues);
-
-    //Enclose all table cells in spans so we can calculate colision distance
-    $('td, th').wrapInner('<span />');
-    $(".scalable").attr("reduceFactor", 0);
-
 });
 
 $(window).load(function() {
-	detectCollisions(10, 30, 10, 1.22);
-});
-
-
-$(window).on("throttledresize", function(event){
-	detectCollisions(10, 30, 10, 1.22);
+	$('.scalable').responsiveTable({
+		minPadding: 10,
+        maxPadding: 30, 
+        minFontSize: 10, 
+        fontRatio: 1.21
+	});
 });
