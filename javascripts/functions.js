@@ -141,21 +141,8 @@
 	::  Detect table cell collisions and resize or go responsive
 	----------------------------------------------------------------------------- */
 
-
-// the semi-colon before function invocation is a safety net against concatenated
-// scripts and/or other plugins which may not be closed properly.
 ;(function ($, window, document, undefined) {
 
-    // undefined is used here as the undefined global variable in ECMAScript 3 is
-    // mutable (ie. it can be changed by someone else). undefined isn't really being
-    // passed in so we can ensure the value of it is truly undefined. In ES5, undefined
-    // can no longer be modified.
-
-    // window and document are passed through as local variable rather than global
-    // as this (slightly) quickens the resolution process and can be more efficiently
-    // minified (especially when both are regularly referenced in your plugin).
-
-    // Create the defaults once
     var pluginName = "responsiveTable",
         defaults = {
             minPadding: 10,
@@ -167,11 +154,6 @@
     // The actual plugin constructor
     function ResponsiveTable(element, options) {
         this.element = element;
-
-        // jQuery has an extend method which merges the contents of two or
-        // more objects, storing the result in the first object. The first object
-        // is generally empty as we don't want to alter the default options for
-        // future instances of the plugin
         this.options = $.extend( {}, defaults, options );
 
         this._defaults = defaults;
@@ -182,23 +164,20 @@
 
     ResponsiveTable.prototype = {
 
-        init: function() {
+        init : function() {
             // Place initialization logic here
             // You already have access to the DOM element and
             // the options via the instance, e.g. this.element
             // and this.options
             // you can add more functions like the one below and
             // call them like so: this.yourOtherFunction(this.element, this.options).
- 			
-            // $(this.element).data('split', false);
-            // $(this.element).data('splitWidth', null);
-            // $(this.element).data('reduceFactor', 0);
-            // $(this.element).data('minDistance', null);
 
-            var split = false;
-            var splitWidth = null;
-            var reduceFactor = 0;
-            var minDistance = null;
+            var cur = this;
+ 			
+            $(this.element).data('split', false);
+            $(this.element).data('splitWidth', null);
+            $(this.element).data('reduceFactor', 0);
+            $(this.element).data('minDistance', null);
 
             //Enable measurement of table content width
  			$(this.element).find('td, th').wrapInner('<span />');
@@ -208,17 +187,19 @@
 
             //Bind throttled resize listener
 			$(window).on("throttledresize", function(event){
-				this.detectCollisions(this.element, this.options);
+				cur.detectCollisions(cur.element, cur.options);
 			});
 
         },
 
         detectCollisions : function(el, options) {
 
-			if(!split){
+        	var cur = this;
+
+			if(!$(el).data('split')){
 
 				var resized;
-				var minDistance;
+				var minDistance = $(el).data('minDistance');
 
 				// For each table cell, detect potential column collisions
 				$(el).find("table span").each(function(){
@@ -240,49 +221,63 @@
 						
 						//If reducing the font will shrink it beyond the min font size, go responsive
 						if(targetFontSize < options.minFontSize){
-							this.splitTable();
-							return false;
+							resized = true;
+							return cur.splitTable(el);
 						}
 						//Else targetFontSize is within the accepted range and should be applied
 						else{
-							this.splitTable(this.element, this.options);
-							return false;
+							return cur.reduceFont(el);
 						}
 					}
 				});
 
 				//If all cells have more than maxPadding distance, expand font size until font-size is not scaled from base
-				if(!resized && minDistance > options.maxPadding && reduceFactor < 0){
-					this.growFont();
+				if(!resized && minDistance > options.maxPadding && $(el).data('reduceFactor') < 0){
+					return this.growFont(el);
 				}
 			}
 
 			//Else the table is split and detect if it's ready to be unsplit
 			else{
-				if($(window).width() > splitWidth){
-					this.unsplitTable(el, options);
+				if($(window).width() > $(el).data('splitWidth')){
+					return this.unsplitTable(el);
 				}
 			}
 
         },
 
-        reduceFont : function(el, options) {
+     	reduceFont : function(el, options) {
 			console.log("reduceFont");
+
+			var currentReduce = $(el).data('reduceFactor');
+			var newReduce = currentReduce - 1;
+
+			$(el).removeClass("reduce" + currentReduce);
+			$(el).data('reduceFactor', newReduce);
+			$(el).addClass("reduce" + newReduce);
+
+			//Don't attempt to increase size on this loop
+			resized = true;
+
+			return false;
         },
 
         growFont : function(el, options) {
         	console.log("growFont");
+        	return false;
         },
 
         splitTable : function(el, options) {
         	console.log("splitTable");
+        	return false;
         },
 
         unsplitTable : function(el, options) {
         	console.log("unsplitTable");
+        	return false;
         }
-
     };
+
 
     // A really lightweight plugin wrapper around the constructor,
     // preventing against multiple instantiations and allowing any

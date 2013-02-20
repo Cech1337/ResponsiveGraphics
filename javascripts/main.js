@@ -1,5 +1,5 @@
 //Set throttle limit
-$.event.special.throttledresize.threshold = 1;
+//$.event.special.throttledresize.threshold = 1;
 
 //Inits
 $('p, .footnote').moltenLeading({
