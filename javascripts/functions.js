@@ -165,12 +165,6 @@
     ResponsiveTable.prototype = {
 
         init : function() {
-            // Place initialization logic here
-            // You already have access to the DOM element and
-            // the options via the instance, e.g. this.element
-            // and this.options
-            // you can add more functions like the one below and
-            // call them like so: this.yourOtherFunction(this.element, this.options).
 
             var cur = this;
  			
@@ -264,16 +258,38 @@
 
         growFont : function(el, options) {
         	console.log("growFont");
+
+			var currentReduce = $(el).data('reduceFactor');
+			var newReduce = currentReduce + 1;
+
+			$(el).removeClass("reduce" + currentReduce);
+			$(el).data('reduceFactor', newReduce);
+			$(el).addClass("reduce" + newReduce);
+
+			//Don't attempt to increase size on this loop
+			resized = true;
+
         	return false;
         },
 
         splitTable : function(el, options) {
         	console.log("splitTable");
+
+			$(el).data('split', true);
+            $(el).data('splitWidth', $(window).width());
+
+            // Split table scrpit here
+
         	return false;
         },
 
         unsplitTable : function(el, options) {
         	console.log("unsplitTable");
+
+			$(el).data('split', false);
+
+			// Unsplit table script here
+
         	return false;
         }
     };
