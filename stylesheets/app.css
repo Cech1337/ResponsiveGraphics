@@ -6648,13 +6648,31 @@ section:after {
 /*  -----------------------------------------------------------------------------
 	::  Responsive tables	
 	----------------------------------------------------------------------------- */
-/* line 8, ../sass/_responsive-tables.scss */
+/* line 10, ../sass/_responsive-tables.scss */
+.split .pinned, .split .scrollable {
+  white-space: nowrap;
+}
+/* line 14, ../sass/_responsive-tables.scss */
+.split .pinned {
+  position: absolute;
+}
+/* line 16, ../sass/_responsive-tables.scss */
+.split .pinned span {
+  padding-right: 1rem;
+}
+/* line 21, ../sass/_responsive-tables.scss */
+.split .scrollable {
+  overflow: scroll;
+  overflow-y: hidden;
+}
+/* line 24, ../sass/_responsive-tables.scss */
+.split .scrollable span {
+  padding-left: 1rem;
+}
+/* line 29, ../sass/_responsive-tables.scss */
 .split table {
   width: auto;
-}
-/* line 11, ../sass/_responsive-tables.scss */
-.split table.pinned {
-  position: absolute;
+  margin-bottom: 0;
 }
 
 /*  -----------------------------------------------------------------------------

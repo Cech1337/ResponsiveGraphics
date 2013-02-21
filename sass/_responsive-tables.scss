@@ -5,17 +5,30 @@
 
 
 .split{
+
+
+	.pinned, .scrollable{
+		white-space: nowrap;
+	}
+
+	.pinned{
+		position: absolute;
+		span{
+			padding-right: 1rem;
+		}
+	}
+
+	.scrollable{
+		overflow: scroll;
+		overflow-y: hidden;
+		span{
+			padding-left: 1rem;
+		}
+	}
+
 	table{
 		width: auto;
-
-		&.pinned{
-			position: absolute;
-		}
-
-		&.scrollable{
-
-		}
-
+		margin-bottom: 0;
 	}
 }
 

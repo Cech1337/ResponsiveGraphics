@@ -139,21 +139,20 @@
 			$(el).data('split', true);
             $(el).data('splitWidth', $(window).width());
 
-            var pinned = $(el).find("table");
-            var scrollable = $(pinned).clone();
+            //Grab original table and wrap it in a div split
+            var original = $(el).find("table").wrap('<div class="split" />');
 
-            //Wrap tables in a new 'split' div
-            $(pinned).wrap('<div class="split" />');
-            var split = $(pinned).parent();
+            var pinned = $(original).wrap('<div class="pinned" />').parent();
+            var scrollable = $(original).clone().wrap('<div class="scrollable" />').parent();
 
             //Hide non-first child elements from pinned
-            $(pinned).addClass("pinned").find("td:not(:first-child), th:not(:first-child)").hide();
+            $(pinned).find("td:not(:first-child), th:not(:first-child)").hide();
 
             //Calculate a margin for the scrollable table
-            var pinnedWidth = $(pinned).width() + options.minPadding;
+            var pinnedWidth = $(pinned).children().width();
 
-            //Create scrollable table and hide from original table
-            $(scrollable).addClass("scrollable").appendTo(split).find("td:first-child, th:first-child").hide();
+            //Insert scrollable table as a sibling to pinned and hide left column
+            $(scrollable).insertAfter(pinned).find("td:first-child, th:first-child").hide();
             $(scrollable).css("margin-left", pinnedWidth);
 
         	return false;
@@ -164,19 +163,15 @@
 
 			$(el).data('split', false);
 
-            var pinned = $(el).find(".pinned");
+            var pinnedTable = $(el).find(".pinned table");
 
-            //Remove srolling table
-            $(pinned).siblings().remove();
+            //Remove scrolling table
+            $(pinnedTable).parent().siblings().remove();
 
             //Return the pinned table to normal
-            $(pinned).removeClass("pinned").unwrap().find("td:not(:first-child), th:not(:first-child)").show();
+            $(pinnedTable).unwrap().unwrap().find("td:not(:first-child), th:not(:first-child)").show();
 
         	return false;
-        },
-
-        getColWidth: function(el, options){
-
         }
     };
 
