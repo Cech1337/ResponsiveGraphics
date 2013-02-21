@@ -37,9 +37,11 @@
             //Enable measurement of table content width
  			$(this.element).find('td, th').wrapInner('<span />');
 
- 			//Update table state on first run
- 			this.detectCollisions(this.element, this.options);
-
+ 			//Update table state on first run - detect 3x
+            for (var i = 0; i < 3; i++) {
+                this.detectCollisions(this.element, this.options);
+            };
+ 			
             //Bind throttled resize listener
 			$(window).on("throttledresize", function(event){
 				cur.detectCollisions(cur.element, cur.options);
@@ -48,6 +50,8 @@
         },
 
         detectCollisions : function(el, options){
+
+            console.time("detectCollisions");
 
         	var cur = this;
 
@@ -94,10 +98,13 @@
 
 			//Else the table is split and detect if it's ready to be unsplit
 			else{
-				if($(window).width() > $(el).data('splitWidth')){
+                //If the table container is larger than the original split table
+				if($(el).width() - 20 > $(el).data('splitWidth')){
 					return this.unsplitTable(el, options);
 				}
 			}
+
+            console.timeEnd("detectCollisions");
 
         },
 
@@ -134,13 +141,21 @@
         },
 
         splitTable : function(el, options){
-        	console.log("splitTable");
+        	console.time("splitTable");
 
-			$(el).data('split', true);
-            $(el).data('splitWidth', $(window).width());
 
             //Grab original table and wrap it in a div split
             var original = $(el).find("table").wrap('<div class="split" />');
+
+            console.log(
+                "el: " + $(el).width() + "\n" +
+                "table: " + $(original).width() + "\n" +
+                "window: " + $(window).width() + "\n" +
+                "document: " + $(document).width()
+            );
+
+            $(el).data('split', true);
+            $(el).data('splitWidth', $(original).width());
 
             var pinned = $(original).wrap('<div class="pinned" />').parent();
             var scrollable = $(original).clone().wrap('<div class="scrollable" />').parent();
@@ -155,11 +170,19 @@
             $(scrollable).insertAfter(pinned).find("td:first-child, th:first-child").hide();
             $(scrollable).css("margin-left", pinnedWidth);
 
+            console.timeEnd("splitTable");
+
         	return false;
         },
 
         unsplitTable : function(el, options){
-        	console.log("unsplitTable");
+        	console.time("unsplitTable");
+
+            console.log(
+                "table: " + $(el).width() + "\n" +
+                "window: " + $(window).width() + "\n" +
+                "document: " + $(document).width()
+            );
 
 			$(el).data('split', false);
 
@@ -170,6 +193,8 @@
 
             //Return the pinned table to normal
             $(pinnedTable).unwrap().unwrap().find("td:not(:first-child), th:not(:first-child)").show();
+
+            console.timeEnd("unsplitTable");
 
         	return false;
         }

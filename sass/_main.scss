@@ -20,14 +20,12 @@ html, *{
 	
 	//set root font sizes between breakpoints
 	@include responsive-type(
-		20 3000,	
+		22 2800,	
+		18 1900,
 		18 1600,
 		17 1420,
-		16 1260,
-		15 960,
-		14 767,
-		13 520,
-		12 320
+		16 1260
+		14 960
 	);
 
 	@include proportional-type($font-ratio);	

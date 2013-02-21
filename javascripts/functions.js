@@ -42,6 +42,7 @@
 * This saved you an hour of work?
 * Send me music http://www.amazon.co.uk/wishlist/HNTU0468LQON
 */
+
 (function($) {
 
 	var $event = $.event,
@@ -87,5 +88,7 @@
 		threshold: 0
 	};
 })(jQuery);
+
+$.event.special.throttledresize.threshold = 3;
 
 

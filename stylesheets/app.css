@@ -6311,10 +6311,16 @@ html, * {
   font-size: 20px;
   line-height: 1.4;
 }
-@media (max-width: 3000px) {
+@media (max-width: 2800px) {
   /* line 16, ../sass/_main.scss */
   html, * {
-    font-size: 20px;
+    font-size: 22px;
+  }
+}
+@media (max-width: 1900px) {
+  /* line 16, ../sass/_main.scss */
+  html, * {
+    font-size: 18px;
   }
 }
 @media (max-width: 1600px) {
@@ -6333,30 +6339,6 @@ html, * {
   /* line 16, ../sass/_main.scss */
   html, * {
     font-size: 16px;
-  }
-}
-@media (max-width: 960px) {
-  /* line 16, ../sass/_main.scss */
-  html, * {
-    font-size: 15px;
-  }
-}
-@media (max-width: 767px) {
-  /* line 16, ../sass/_main.scss */
-  html, * {
-    font-size: 14px;
-  }
-}
-@media (max-width: 520px) {
-  /* line 16, ../sass/_main.scss */
-  html, * {
-    font-size: 13px;
-  }
-}
-@media (max-width: 320px) {
-  /* line 16, ../sass/_main.scss */
-  html, * {
-    font-size: 12px;
   }
 }
 /* line 30, ../sass/_mixins.scss */
@@ -6407,34 +6389,34 @@ html p, html td, html a, html th, * p, * td, * a, * th {
   font-size: 1rem !important;
 }
 
-/* line 36, ../sass/_main.scss */
+/* line 34, ../sass/_main.scss */
 p {
   color: #333;
 }
 
-/* line 41, ../sass/_main.scss */
+/* line 39, ../sass/_main.scss */
 .row, #nav, header, section {
   padding: 0px 6.85353%;
 }
 @media (max-width: 767px) {
-  /* line 41, ../sass/_main.scss */
+  /* line 39, ../sass/_main.scss */
   .row, #nav, header, section {
     padding: 0 3.42676%;
   }
 }
 
-/* line 48, ../sass/_main.scss */
+/* line 46, ../sass/_main.scss */
 .column, columns {
   padding: 0px 1.618% !important;
 }
 @media (max-width: 768px) {
-  /* line 48, ../sass/_main.scss */
+  /* line 46, ../sass/_main.scss */
   .column, columns {
     margin-bottom: 2rem;
   }
 }
 
-/* line 56, ../sass/_main.scss */
+/* line 54, ../sass/_main.scss */
 table {
   width: 100%;
   border-radius: none;
@@ -6442,77 +6424,77 @@ table {
   background: none;
   border-collapse: collapse;
 }
-/* line 63, ../sass/_main.scss */
+/* line 61, ../sass/_main.scss */
 table .emphasis {
   font-weight: 600;
 }
-/* line 67, ../sass/_main.scss */
+/* line 65, ../sass/_main.scss */
 table thead tr, table tbody tr {
   background: none;
 }
-/* line 69, ../sass/_main.scss */
+/* line 67, ../sass/_main.scss */
 table thead tr td, table tbody tr td {
   line-height: inherit;
 }
-/* line 71, ../sass/_main.scss */
+/* line 69, ../sass/_main.scss */
 table thead tr td.number, table tbody tr td.number {
   font-family: "WhitneyNumeric";
   font-weight: 400;
 }
-/* line 78, ../sass/_main.scss */
+/* line 76, ../sass/_main.scss */
 table thead {
   background: none;
 }
-/* line 81, ../sass/_main.scss */
+/* line 79, ../sass/_main.scss */
 table thead tr th {
   padding: 0 0 .5em;
 }
-/* line 89, ../sass/_main.scss */
+/* line 87, ../sass/_main.scss */
 table tbody tr {
   background: none;
 }
-/* line 91, ../sass/_main.scss */
+/* line 89, ../sass/_main.scss */
 table tbody tr:nth-child(2n) {
   background: none;
 }
-/* line 94, ../sass/_main.scss */
+/* line 92, ../sass/_main.scss */
 table tbody tr td {
   padding: 0;
 }
 
-/* line 102, ../sass/_main.scss */
+/* line 100, ../sass/_main.scss */
 .table-wrapper {
   border: none !important;
 }
-/* line 104, ../sass/_main.scss */
+/* line 102, ../sass/_main.scss */
 .table-wrapper * {
   border: none;
 }
-/* line 107, ../sass/_main.scss */
+/* line 105, ../sass/_main.scss */
 .table-wrapper .pinned {
   background: none;
   border: none;
   border-right: 1px solid #eee;
 }
-/* line 112, ../sass/_main.scss */
+/* line 110, ../sass/_main.scss */
 .table-wrapper .scrollable {
   border: none;
   margin-left: 35%;
 }
 
-/* line 118, ../sass/_main.scss */
+/* line 116, ../sass/_main.scss */
 .panel {
   border: none;
   background: #f9f9f9;
   padding: .5rem;
   margin: 0;
 }
-/* line 124, ../sass/_main.scss */
+/* line 122, ../sass/_main.scss */
 .panel.blue {
   background: #ecf1f3;
 }
 
-/* line 129, ../sass/_main.scss */
+/* line 127, ../sass/_main.scss */
 .centered {
   text-align: center;
 }
@@ -6520,7 +6502,7 @@ table tbody tr td {
 /*  -----------------------------------------------------------------------------
 	::  PROJECT CLASSES
 	----------------------------------------------------------------------------- */
-/* line 139, ../sass/_main.scss */
+/* line 137, ../sass/_main.scss */
 #nav {
   position: fixed;
   z-index: 1;
@@ -6528,11 +6510,11 @@ table tbody tr td {
   background: rgba(250, 250, 250, 0.97);
   border-bottom: 1px solid #eee;
 }
-/* line 147, ../sass/_main.scss */
+/* line 145, ../sass/_main.scss */
 #nav ul li {
   display: inline;
 }
-/* line 149, ../sass/_main.scss */
+/* line 147, ../sass/_main.scss */
 #nav ul li a {
   display: inline-block;
   line-height: 2rem;
@@ -6540,39 +6522,39 @@ table tbody tr td {
   color: #666;
   padding: 0 1.618%;
 }
-/* line 155, ../sass/_main.scss */
+/* line 153, ../sass/_main.scss */
 #nav ul li a.active {
   color: #000;
 }
-/* line 158, ../sass/_main.scss */
+/* line 156, ../sass/_main.scss */
 #nav ul li a:hover {
   color: #000;
 }
 
-/* line 166, ../sass/_main.scss */
+/* line 164, ../sass/_main.scss */
 header, section {
   padding-top: 2rem;
 }
 
-/* line 171, ../sass/_main.scss */
+/* line 169, ../sass/_main.scss */
 header {
   padding-top: 4rem;
 }
-/* line 173, ../sass/_main.scss */
+/* line 171, ../sass/_main.scss */
 header h1 {
   margin-bottom: 0;
 }
-/* line 176, ../sass/_main.scss */
+/* line 174, ../sass/_main.scss */
 header h6 {
   font-weight: 400;
   color: #666;
 }
-/* line 180, ../sass/_main.scss */
+/* line 178, ../sass/_main.scss */
 header div {
   margin-bottom: 1rem;
 }
 
-/* line 186, ../sass/_main.scss */
+/* line 184, ../sass/_main.scss */
 section:after {
   display: block;
   margin: 0 1.618%;
@@ -6580,67 +6562,67 @@ section:after {
   border-bottom: 1px solid #eee;
 }
 
-/* line 195, ../sass/_main.scss */
+/* line 193, ../sass/_main.scss */
 .number {
   text-align: right;
 }
-/* line 201, ../sass/_main.scss */
+/* line 199, ../sass/_main.scss */
 .number:last-child span {
   margin: 0;
 }
 
-/* line 207, ../sass/_main.scss */
+/* line 205, ../sass/_main.scss */
 .graphic {
   margin-bottom: 1rem;
 }
-/* line 209, ../sass/_main.scss */
+/* line 207, ../sass/_main.scss */
 .graphic .footnote {
   font-size: 0.81967rem;
   color: #666;
 }
-/* line 212, ../sass/_main.scss */
+/* line 210, ../sass/_main.scss */
 .graphic .footnote.panel {
   padding: .25rem .5rem;
 }
 
-/* line 218, ../sass/_main.scss */
+/* line 216, ../sass/_main.scss */
 .sidebar {
   margin-bottom: 1rem;
 }
-/* line 219, ../sass/_main.scss */
+/* line 217, ../sass/_main.scss */
 .sidebar h5 {
   font-size: 1rem;
 }
-/* line 222, ../sass/_main.scss */
+/* line 220, ../sass/_main.scss */
 .sidebar p {
   font-size: 0.81967rem !important;
 }
 
-/* line 228, ../sass/_main.scss */
+/* line 226, ../sass/_main.scss */
 .scalable {
   font-size: 1rem;
 }
-/* line 231, ../sass/_main.scss */
+/* line 229, ../sass/_main.scss */
 .scalable.reduce-1 {
   font-size: 0.81967rem;
 }
-/* line 234, ../sass/_main.scss */
+/* line 232, ../sass/_main.scss */
 .scalable.reduce-2 {
   font-size: 0.67186rem;
 }
-/* line 237, ../sass/_main.scss */
+/* line 235, ../sass/_main.scss */
 .scalable.reduce-3 {
   font-size: 0.55071rem;
 }
-/* line 243, ../sass/_main.scss */
+/* line 241, ../sass/_main.scss */
 .scalable * {
   font-size: 1em !important;
 }
-/* line 249, ../sass/_main.scss */
+/* line 247, ../sass/_main.scss */
 .scalable .panel {
   padding: .5em;
 }
-/* line 254, ../sass/_main.scss */
+/* line 252, ../sass/_main.scss */
 .scalable .footnote {
   font-size: 0.81967em !important;
 }
@@ -6648,28 +6630,32 @@ section:after {
 /*  -----------------------------------------------------------------------------
 	::  Responsive tables	
 	----------------------------------------------------------------------------- */
-/* line 10, ../sass/_responsive-tables.scss */
-.split .pinned, .split .scrollable {
+/* line 7, ../sass/_responsive-tables.scss */
+.split {
   white-space: nowrap;
 }
-/* line 14, ../sass/_responsive-tables.scss */
+/* line 11, ../sass/_responsive-tables.scss */
+.split span {
+  padding-left: 1rem;
+}
+/* line 19, ../sass/_responsive-tables.scss */
 .split .pinned {
   position: absolute;
 }
-/* line 16, ../sass/_responsive-tables.scss */
-.split .pinned span {
-  padding-right: 1rem;
-}
 /* line 21, ../sass/_responsive-tables.scss */
+.split .pinned span {
+  padding: 0 1rem 0 0;
+}
+/* line 26, ../sass/_responsive-tables.scss */
 .split .scrollable {
   overflow: scroll;
   overflow-y: hidden;
 }
-/* line 24, ../sass/_responsive-tables.scss */
-.split .scrollable span {
-  padding-left: 1rem;
-}
 /* line 29, ../sass/_responsive-tables.scss */
+.split .scrollable span {
+  padding: 0 0 0 1rem;
+}
+/* line 34, ../sass/_responsive-tables.scss */
 .split table {
   width: auto;
   margin-bottom: 0;

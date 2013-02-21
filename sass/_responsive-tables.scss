@@ -6,15 +6,20 @@
 
 .split{
 
+	white-space: nowrap;
+
+	span{
+		//temp padding for table width calc
+		padding-left: 1rem;
+	}
 
 	.pinned, .scrollable{
-		white-space: nowrap;
 	}
 
 	.pinned{
-		position: absolute;
+		position: absolute;	
 		span{
-			padding-right: 1rem;
+			padding: 0 1rem 0 0;
 		}
 	}
 
@@ -22,7 +27,7 @@
 		overflow: scroll;
 		overflow-y: hidden;
 		span{
-			padding-left: 1rem;
+			padding: 0 0 0 1rem;
 		}
 	}
 
