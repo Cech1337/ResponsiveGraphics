@@ -32,80 +32,106 @@
             $(this.element).data('split', false);
             $(this.element).data('splitWidth', null);
             $(this.element).data('reduceFactor', 0);
-            $(this.element).data('minDistance', null);
 
             //Enable measurement of table content width
  			$(this.element).find('td, th').wrapInner('<span />');
 
- 			//Update table state on first run - detect 3x
-            for (var i = 0; i < 3; i++) {
-                this.detectCollisions(this.element, this.options);
-            };
+            this.setMaxContentWidth(this.element, this.options);
+
+ 			//Attempt to re-calculate positioning until no more changes can be applied
+            while(this.detectCollisions(this.element, this.options));
  			
             //Bind throttled resize listener
 			$(window).on("throttledresize", function(event){
+                console.time("detectCollisions");
 				cur.detectCollisions(cur.element, cur.options);
+                console.timeEnd("detectCollisions");
 			});
 
         },
 
+        //this should return true when we take action, false when we don't
         detectCollisions : function(el, options){
-
-            console.time("detectCollisions");
 
         	var cur = this;
 
 			if(!$(el).data('split')){
 
-				var resized;
-				var minDistance = $(el).data('minDistance');
+				var changed;
+				var minDistance;
+                    
+                 $(el).find("th").each(function(){
+                    var columnWidth = $(this).width();
+                    var maxContentWidth = $(this).data('maxContentWidth');
+                    var distance = columnWidth - contentWidth;
 
-				// For each table cell, detect potential column collisions
-				$(el).find("table span").each(function(){
+                    if(minDistance == null || distance < minDistance){
+                        minDistance = distance;
+                    }
 
-					var contentWidth = $(this).width(); 
-					var columnWidth = $(this).parent().width();
-					var distance = columnWidth - contentWidth;
+                    //If this cell has less padding than the minimum padding
+                    if(distance < options.minPadding){
+                        changed = true;
 
-					if(minDistance == null || distance < minDistance){
-						minDistance = distance;
-					}
+                        //Calculate target font size                
+                        var currentFontSize = parseInt($(this).css("font-size"), 10);
+                        var targetFontSize = currentFontSize / options.fontRatio;
+                        
+                        //If reducing the font will shrink it beyond the min font size, go responsive
+                        if(targetFontSize < options.minFontSize){
+                            cur.splitTable(el, options);
+                        }
+                        //Else targetFontSize is within the accepted range and should be applied
+                        else{
+                            cur.reduceFont(el, options);
+                        }
 
-					//If this cell has less padding than the minimum padding
-					if(distance < options.minPadding){
+                        return false;
+                    }
+                });
 
-						//Calculate target font size				
-						var currentFontSize = parseInt($(this).css("font-size"), 10);
-						var targetFontSize = currentFontSize / options.fontRatio;
-						
-						//If reducing the font will shrink it beyond the min font size, go responsive
-						if(targetFontSize < options.minFontSize){
-							resized = true;
-							return cur.splitTable(el, options);
-						}
-						//Else targetFontSize is within the accepted range and should be applied
-						else{
-							return cur.reduceFont(el, options);
-						}
-					}
-				});
-
-				//If all cells have more than maxPadding distance, expand font size until font-size is not scaled from base
-				if(!resized && minDistance > options.maxPadding && $(el).data('reduceFactor') < 0){
-					return this.growFont(el, options);
-				}
+                //If we split table or reduced the font
+                if(changed){
+                    return true;
+                } 
+                //Else if the table has room, grow the font
+                else if(minDistance > options.maxPadding && $(el).data('reduceFactor') < 0){
+                    this.growFont(el, options);
+                    return true
+                }
 			}
 
 			//Else the table is split and detect if it's ready to be unsplit
 			else{
                 //If the table container is larger than the original split table
-				if($(el).width() - 20 > $(el).data('splitWidth')){
-					return this.unsplitTable(el, options);
+				if($(el).width() > $(el).data('splitWidth')){
+					this.unsplitTable(el, options);
+                    return true;
 				}
 			}
 
-            console.timeEnd("detectCollisions");
+            //No action
+            return false;
 
+        },
+
+        setMaxContentWidth : function(el, options){
+            console.time("setMaxContentWidth");
+
+            var table = $(el).find("table");
+
+            //For every column, find the maximum content width and store it as a data object on the column header
+            for (var i = 1; i < $(table).find("th").length + 1; i++) {
+                var maxWidth = 0;
+                $(table).find("tr *:nth-child(" +i+ ") span").each(function(){
+                    contentWidth = $(this).width();
+                    if(contentWidth > maxWidth){
+                        maxWidth = contentWidth;
+                    }
+                });
+                $(table).find("tr *:nth-child(" +i+ ") th").data('maxContentWidth', maxWidth);
+            };
+            console.timeEnd("setMaxContentWidth");
         },
 
      	reduceFont : function(el, options){
@@ -120,12 +146,10 @@
 
 			//Don't attempt to increase size on this loop
 			resized = true;
-
-			return false;
         },
 
         growFont : function(el, options){
-        	console.log("growFont");
+        	console.time("growFont");
 
 			var currentReduce = $(el).data('reduceFactor');
 			var newReduce = currentReduce + 1;
@@ -134,10 +158,7 @@
 			$(el).data('reduceFactor', newReduce);
 			$(el).addClass("reduce" + newReduce);
 
-			//Don't attempt to increase size on this loop
-			resized = true;
-
-        	return false;
+            console.timeEnd("growFont");
         },
 
         splitTable : function(el, options){
@@ -147,12 +168,12 @@
             //Grab original table and wrap it in a div split
             var original = $(el).find("table").wrap('<div class="split" />');
 
-            console.log(
-                "el: " + $(el).width() + "\n" +
-                "table: " + $(original).width() + "\n" +
-                "window: " + $(window).width() + "\n" +
-                "document: " + $(document).width()
-            );
+            // console.log(
+            //     "el: " + $(el).width() + "\n" +
+            //     "table: " + $(original).width() + "\n" +
+            //     "window: " + $(window).width() + "\n" +
+            //     "document: " + $(document).width()
+            // );
 
             $(el).data('split', true);
             $(el).data('splitWidth', $(original).width());
@@ -171,18 +192,16 @@
             $(scrollable).css("margin-left", pinnedWidth);
 
             console.timeEnd("splitTable");
-
-        	return false;
         },
 
         unsplitTable : function(el, options){
         	console.time("unsplitTable");
 
-            console.log(
-                "table: " + $(el).width() + "\n" +
-                "window: " + $(window).width() + "\n" +
-                "document: " + $(document).width()
-            );
+            // console.log(
+            //     "table: " + $(el).width() + "\n" +
+            //     "window: " + $(window).width() + "\n" +
+            //     "document: " + $(document).width()
+            // );
 
 			$(el).data('split', false);
 
@@ -195,8 +214,6 @@
             $(pinnedTable).unwrap().unwrap().find("td:not(:first-child), th:not(:first-child)").show();
 
             console.timeEnd("unsplitTable");
-
-        	return false;
         }
     };
 

@@ -10,7 +10,7 @@
 
 	span{
 		//temp padding for table width calc
-		padding-left: 1rem;
+		padding-left: 2rem;
 	}
 
 	.pinned, .scrollable{
@@ -19,7 +19,7 @@
 	.pinned{
 		position: absolute;	
 		span{
-			padding: 0 1rem 0 0;
+			padding: 0 2rem 0 0;
 		}
 	}
 
@@ -27,7 +27,7 @@
 		overflow: scroll;
 		overflow-y: hidden;
 		span{
-			padding: 0 0 0 1rem;
+			padding: 0 0 0 2rem;
 		}
 	}
 
@@ -35,6 +35,10 @@
 		width: auto;
 		margin-bottom: 0;
 	}
+}
+
+table{
+
 }
 
 
