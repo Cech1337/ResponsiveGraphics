@@ -227,37 +227,6 @@ section{
 	margin-bottom: 2rem;
 }
 
-.scalable{
-	//Set container's font-size space via a modular scale of HTML font-size
-	font-size: 1rem;
-	&.reduce-1{
-		font-size: ms(-1, 1rem, $font-ratio);
-	}
-	&.reduce-2{
-		font-size: ms(-2, 1rem, $font-ratio);
-	}
-	&.reduce-3{
-		font-size: ms(-3, 1rem, $font-ratio);
-	}
-
-	//Set all font-sizes relative to container size. 
-	//Other elements should override this with EM values relative to the .scalable parent (ex large table headers at 1.5em)
-	*{
-		font-size: 1em !important;
-	}
-
-
-	//Set padding relative to the local font-size instead of HTML font-size
-	.panel{
-		padding: .5em;
-	}
-
-	//Set footnotes to be one scale interval smaller than table content else
-	.footnote{
-		font-size: ms(-1, 1em, $font-ratio) !important;
-	}
-}
-
 
 
 

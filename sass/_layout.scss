@@ -22,6 +22,7 @@
 }
 
 #balanced{
+
 	header{
 		h1{
 			font-weight: 400;
@@ -40,6 +41,9 @@
 	}
 	.left{
 		text-align: right;
+	}
+	.right{
+		float: right;
 	}
 	@media screen and (max-width: 768px){
 		header{

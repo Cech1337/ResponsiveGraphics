@@ -4,43 +4,96 @@
 
 
 
-.split{
-
-	white-space: nowrap;
-
-	span{
-		//temp padding for table width calc
-		padding-left: 2rem;
+.scalable{
+	//Set container's font-size space via a modular scale of HTML font-size
+	font-size: 1rem;
+	&.reduce-1{
+		font-size: ms(-1, 1rem, $font-ratio);
+	}
+	&.reduce-2{
+		font-size: ms(-2, 1rem, $font-ratio);
+	}
+	&.reduce-3{
+		font-size: ms(-3, 1rem, $font-ratio);
 	}
 
-	.pinned, .scrollable{
+	//Set all internal content font-sizes relative to container size. 
+	//Internal elements should override this with EM values relative to the .scalable parent (ex large table headers at 1.5em)
+	*{
+		font-size: 1em !important;
 	}
 
-	.pinned{
-		position: absolute;	
-		span{
-			padding: 0 2rem 0 0;
+	//Set footnotes to be one scale interval smaller than table content else
+	.footnote{
+		font-size: ms(-1, 1em, $font-ratio) !important;
+		border-top: 1px solid #fff;
+	}
+
+	//Set padding relative to the local font-size instead of HTML font-size
+	.panel{
+		padding: .5em;
+		&.split{
+			padding: 0;
+			.pinned{
+				padding: .5em 0 .5em .5em;
+			}
+			.scrollable{
+				padding: .5em .5em .5em 0em;
+				table{
+					border-right: .5em solid rgba(black, .0); //invisible border hack
+				}
+			}
 		}
 	}
 
-	.scrollable{
-		overflow: scroll;
-		overflow-y: hidden;
-		span{
-			padding: 0 0 0 2rem;
+
+	//Split tables
+	.split{
+		white-space: nowrap;
+
+		table{
+			width: auto;
+			margin-bottom: 0;
+			span{
+				//temp padding for table width calc
+				padding-left: 2rem;
+			}
 		}
-	}
 
-	table{
-		width: auto;
-		margin-bottom: 0;
+
+		.pinned{
+			position: absolute;	
+			z-index: 1;
+			span{
+				padding: 0 2em 0 0;
+			}
+		}
+
+		.scrollable{
+			overflow: scroll;
+			overflow-y: hidden;
+			@include transition-property(box-shadow);
+  			@include transition-duration(.3s); 
+
+			&.content-hidden-right{
+				@include box-shadow(rgba(black, 0.15) -7px 0px 6px -3px inset);
+			}
+
+			&.content-hidden-left{
+				@include box-shadow(rgba(black, 0.15) 7px 0px 6px -3px inset);
+			}
+
+			&.content-hidden-right.content-hidden-left{
+				@include box-shadow(rgba(0, 0, 0, 0.1) -6px 0px 5px -3px inset, rgba(0, 0, 0, 0.1) 6px 0px 5px -3px inset);
+			}
+
+			span{
+				padding: 0 0 0 2em;
+			}
+		}
+
 	}
 }
-
-table{
-
-}
-
 
 
 
@@ -63,4 +116,3 @@ table{
 
 // table.responsive td, table.responsive th { position: relative; white-space: nowrap; overflow: hidden; }
 // table.responsive th:first-child, table.responsive td:first-child, table.responsive td:first-child, table.responsive.pinned td { display: none; }
-	

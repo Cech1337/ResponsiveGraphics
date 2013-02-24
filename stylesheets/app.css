@@ -6624,67 +6624,110 @@ section:after {
   font-size: 0.81967rem !important;
 }
 
-/* line 230, ../sass/_main.scss */
-.scalable {
-  font-size: 1rem;
-}
-/* line 233, ../sass/_main.scss */
-.scalable.reduce-1 {
-  font-size: 0.81967rem;
-}
-/* line 236, ../sass/_main.scss */
-.scalable.reduce-2 {
-  font-size: 0.67186rem;
-}
-/* line 239, ../sass/_main.scss */
-.scalable.reduce-3 {
-  font-size: 0.55071rem;
-}
-/* line 245, ../sass/_main.scss */
-.scalable * {
-  font-size: 1em !important;
-}
-/* line 251, ../sass/_main.scss */
-.scalable .panel {
-  padding: .5em;
-}
-/* line 256, ../sass/_main.scss */
-.scalable .footnote {
-  font-size: 0.81967em !important;
-}
-
 /*  -----------------------------------------------------------------------------
 	::  Responsive tables	
 	----------------------------------------------------------------------------- */
 /* line 7, ../sass/_responsive-tables.scss */
-.split {
+.scalable {
+  font-size: 1rem;
+}
+/* line 10, ../sass/_responsive-tables.scss */
+.scalable.reduce-1 {
+  font-size: 0.81967rem;
+}
+/* line 13, ../sass/_responsive-tables.scss */
+.scalable.reduce-2 {
+  font-size: 0.67186rem;
+}
+/* line 16, ../sass/_responsive-tables.scss */
+.scalable.reduce-3 {
+  font-size: 0.55071rem;
+}
+/* line 22, ../sass/_responsive-tables.scss */
+.scalable * {
+  font-size: 1em !important;
+}
+/* line 27, ../sass/_responsive-tables.scss */
+.scalable .footnote {
+  font-size: 0.81967em !important;
+  border-top: 1px solid #fff;
+}
+/* line 33, ../sass/_responsive-tables.scss */
+.scalable .panel {
+  padding: .5em;
+}
+/* line 35, ../sass/_responsive-tables.scss */
+.scalable .panel.split {
+  padding: 0;
+}
+/* line 37, ../sass/_responsive-tables.scss */
+.scalable .panel.split .pinned {
+  padding: .5em 0 .5em .5em;
+}
+/* line 40, ../sass/_responsive-tables.scss */
+.scalable .panel.split .scrollable {
+  padding: .5em .5em .5em 0em;
+}
+/* line 42, ../sass/_responsive-tables.scss */
+.scalable .panel.split .scrollable table {
+  border-right: 0.5em solid rgba(0, 0, 0, 0);
+}
+/* line 51, ../sass/_responsive-tables.scss */
+.scalable .split {
   white-space: nowrap;
 }
-/* line 11, ../sass/_responsive-tables.scss */
-.split span {
-  padding-left: 2rem;
-}
-/* line 19, ../sass/_responsive-tables.scss */
-.split .pinned {
-  position: absolute;
-}
-/* line 21, ../sass/_responsive-tables.scss */
-.split .pinned span {
-  padding: 0 2rem 0 0;
-}
-/* line 26, ../sass/_responsive-tables.scss */
-.split .scrollable {
-  overflow: scroll;
-  overflow-y: hidden;
-}
-/* line 29, ../sass/_responsive-tables.scss */
-.split .scrollable span {
-  padding: 0 0 0 2rem;
-}
-/* line 34, ../sass/_responsive-tables.scss */
-.split table {
+/* line 54, ../sass/_responsive-tables.scss */
+.scalable .split table {
   width: auto;
   margin-bottom: 0;
+}
+/* line 57, ../sass/_responsive-tables.scss */
+.scalable .split table span {
+  padding-left: 2rem;
+}
+/* line 64, ../sass/_responsive-tables.scss */
+.scalable .split .pinned {
+  position: absolute;
+  z-index: 1;
+}
+/* line 67, ../sass/_responsive-tables.scss */
+.scalable .split .pinned span {
+  padding: 0 2em 0 0;
+}
+/* line 72, ../sass/_responsive-tables.scss */
+.scalable .split .scrollable {
+  overflow: scroll;
+  overflow-y: hidden;
+  -webkit-transition-property: box-shadow;
+  -moz-transition-property: box-shadow;
+  -o-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+/* line 78, ../sass/_responsive-tables.scss */
+.scalable .split .scrollable.content-hidden-right {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) -7px 0px 6px -3px inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.15) -7px 0px 6px -3px inset;
+  box-shadow: rgba(0, 0, 0, 0.15) -7px 0px 6px -3px inset;
+}
+/* line 82, ../sass/_responsive-tables.scss */
+.scalable .split .scrollable.content-hidden-left {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 7px 0px 6px -3px inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.15) 7px 0px 6px -3px inset;
+  box-shadow: rgba(0, 0, 0, 0.15) 7px 0px 6px -3px inset;
+}
+/* line 86, ../sass/_responsive-tables.scss */
+.scalable .split .scrollable.content-hidden-right.content-hidden-left {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) -6px 0px 5px -3px inset, rgba(0, 0, 0, 0.1) 6px 0px 5px -3px inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) -6px 0px 5px -3px inset, rgba(0, 0, 0, 0.1) 6px 0px 5px -3px inset;
+  box-shadow: rgba(0, 0, 0, 0.1) -6px 0px 5px -3px inset, rgba(0, 0, 0, 0.1) 6px 0px 5px -3px inset;
+}
+/* line 90, ../sass/_responsive-tables.scss */
+.scalable .split .scrollable span {
+  padding: 0 0 0 2em;
 }
 
 /*  -----------------------------------------------------------------------------
@@ -6712,44 +6755,48 @@ section:after {
   text-align: justify;
 }
 
-/* line 26, ../sass/_layout.scss */
+/* line 27, ../sass/_layout.scss */
 #balanced header h1 {
   font-weight: 400;
 }
-/* line 29, ../sass/_layout.scss */
+/* line 30, ../sass/_layout.scss */
 #balanced header h6 {
   font-weight: 400;
   margin-top: 1rem;
   line-height: 1.35;
 }
-/* line 34, ../sass/_layout.scss */
+/* line 35, ../sass/_layout.scss */
 #balanced header:after {
   border-bottom: 1px solid #ddd;
   display: block;
   padding-top: 2rem;
 }
-/* line 41, ../sass/_layout.scss */
+/* line 42, ../sass/_layout.scss */
 #balanced .left {
   text-align: right;
 }
+/* line 45, ../sass/_layout.scss */
+#balanced .right {
+  float: right;
+}
 @media screen and (max-width: 768px) {
-  /* line 46, ../sass/_layout.scss */
+  /* line 50, ../sass/_layout.scss */
   #balanced header:after {
     margin: 0;
   }
-  /* line 50, ../sass/_layout.scss */
+  /* line 54, ../sass/_layout.scss */
   #balanced .graphic {
     margin-bottom: 2rem;
   }
-  /* line 54, ../sass/_layout.scss */
+  /* line 58, ../sass/_layout.scss */
   #balanced .sidebar * {
     text-align: left;
   }
-  /* line 58, ../sass/_layout.scss */
+  /* line 62, ../sass/_layout.scss */
   #balanced .sidebar h5 {
     font-size: 1.22rem !important;
   }
-  /* line 61, ../sass/_layout.scss */
+  /* line 65, ../sass/_layout.scss */
   #balanced .sidebar p {
     font-size: 1rem !important;
   }

@@ -166,7 +166,9 @@
 
 
             //Grab original table and wrap it in a div split
-            var original = $(el).find("table").wrap('<div class="split" />');
+            //var original = $(el).find("table").wrap('<div class="split" />');
+            original = $(el).find("table");
+            $(original).parent().addClass("split");
 
             // console.log(
             //     "el: " + $(el).width() + "\n" +
@@ -191,6 +193,13 @@
             $(scrollable).insertAfter(pinned).find("td:first-child, th:first-child").hide();
             $(scrollable).css("margin-left", pinnedWidth);
 
+            //Check scroll position and attach scroll listener to check for edge scrolls
+            var cur = this;
+            cur.checkScrollPosition(scrollable);
+            $(scrollable).scroll(function(){
+                cur.checkScrollPosition(scrollable);
+            });
+
             console.timeEnd("splitTable");
         },
 
@@ -211,9 +220,38 @@
             $(pinnedTable).parent().siblings().remove();
 
             //Return the pinned table to normal
-            $(pinnedTable).unwrap().unwrap().find("td:not(:first-child), th:not(:first-child)").show();
+            $(pinnedTable).unwrap().parent().removeClass("split").find("td:not(:first-child), th:not(:first-child)").show();
 
             console.timeEnd("unsplitTable");
+        },
+
+        checkScrollPosition : function(scrollable){
+
+                var scrollLeft = $(scrollable).scrollLeft();
+                var width = $(scrollable).outerWidth();
+                var tableWidth = $(scrollable).find("table").outerWidth();
+
+
+                if(scrollLeft > 0){
+                    $(scrollable).addClass("content-hidden-left");
+                } 
+                else{
+                    $(scrollable).removeClass("content-hidden-left");
+                }
+
+                if(scrollLeft < tableWidth - width){
+                    $(scrollable).addClass("content-hidden-right");
+                }
+                else{
+                    $(scrollable).removeClass("content-hidden-right");
+                }
+
+                // console.log(
+                //     "SL: " + scrollLeft +"\n"+
+                //     "Width: " + width +"\n"+
+                //     "TW: " + tableWidth +"\n"+
+                //     "TW - Width: " + (tableWidth - width)
+                // );
         }
     };
 
