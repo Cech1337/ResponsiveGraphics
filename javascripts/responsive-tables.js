@@ -32,6 +32,9 @@
             $(this.element).data('split', false);
             $(this.element).data('splitWidth', null);
             $(this.element).data('reduceFactor', 0);
+            $(this.element).data('fontSize', $(this.element).css('font-size'));
+
+            console.log("init font size: " + $(this.element).css('font-size') );
 
             //Enable measurement of table content width
  			$(this.element).find('td, th').wrapInner('<span />');
@@ -43,9 +46,20 @@
  			
             //Bind throttled resize listener
 			$(window).on("throttledresize", function(event){
-                console.time("detectCollisions");
+
+                //If the font size has changed, reset max content widths
+                var currentFontSize = $(cur.element).css("font-size");
+                var recordedFontSize = $(cur.element).data('fontSize');
+
+                if( currentFontSize != recordedFontSize ){
+                    cur.setMaxContentWidth(cur.element, cur.options);
+                    $(cur.element).data('fontSize', currentFontSize);
+                    console.log("font size changed from  " + recordedFontSize + " to " + currentFontSize);
+                }
+
+               // console.time("detectCollisions");
 				cur.detectCollisions(cur.element, cur.options);
-                console.timeEnd("detectCollisions");
+                //console.timeEnd("detectCollisions");
 			});
 
         },
@@ -57,25 +71,31 @@
 
 			if(!$(el).data('split')){
 
-				var changed;
+				var changedSettings;
 				var minDistance;
                     
                  $(el).find("th").each(function(){
                     var columnWidth = $(this).width();
                     var maxContentWidth = $(this).data('maxContentWidth');
-                    var distance = columnWidth - contentWidth;
+                    var distance = columnWidth - maxContentWidth;
 
                     if(minDistance == null || distance < minDistance){
                         minDistance = distance;
                     }
 
+                    // console.log(
+                    //     "columnWidth: " + columnWidth + "\n" +
+                    //     "maxContentWidth: " + maxContentWidth + "\n" +
+                    //     "distance: " + distance + "\n" +
+                    //     "eval: " + (distance < options.minPadding)
+                    // );
+
                     //If this cell has less padding than the minimum padding
                     if(distance < options.minPadding){
-                        changed = true;
 
                         //Calculate target font size                
-                        var currentFontSize = parseInt($(this).css("font-size"), 10);
-                        var targetFontSize = currentFontSize / options.fontRatio;
+                        var currentFontSizeInt = parseInt($(this).css("font-size"), 10);
+                        var targetFontSize = currentFontSizeInt / options.fontRatio;
                         
                         //If reducing the font will shrink it beyond the min font size, go responsive
                         if(targetFontSize < options.minFontSize){
@@ -86,12 +106,16 @@
                             cur.reduceFont(el, options);
                         }
 
+                        //Indicate that we've taken a change
+                        changedSettings = true;
+
+                        //Stop checking for collisions 
                         return false;
                     }
                 });
 
                 //If we split table or reduced the font
-                if(changed){
+                if(changedSettings){
                     return true;
                 } 
                 //Else if the table has room, grow the font
@@ -119,18 +143,29 @@
             console.time("setMaxContentWidth");
 
             var table = $(el).find("table");
+            var th = $(table).find("th");
 
-            //For every column, find the maximum content width and store it as a data object on the column header
-            for (var i = 1; i < $(table).find("th").length + 1; i++) {
+
+            $(th).each(function(i){
+
                 var maxWidth = 0;
+
+                //Add one to index for nth child selector
+                i++;
+
                 $(table).find("tr *:nth-child(" +i+ ") span").each(function(){
-                    contentWidth = $(this).width();
+                    var contentWidth = $(this).width();
                     if(contentWidth > maxWidth){
                         maxWidth = contentWidth;
                     }
                 });
-                $(table).find("tr *:nth-child(" +i+ ") th").data('maxContentWidth', maxWidth);
-            };
+                
+                //console.log("Column " + i + " maxWidth: " + maxWidth);
+
+                $(this).data('maxContentWidth', maxWidth);
+
+            });
+
             console.timeEnd("setMaxContentWidth");
         },
 
@@ -149,7 +184,7 @@
         },
 
         growFont : function(el, options){
-        	console.time("growFont");
+        	console.log("growFont");
 
 			var currentReduce = $(el).data('reduceFactor');
 			var newReduce = currentReduce + 1;
@@ -157,8 +192,6 @@
 			$(el).removeClass("reduce" + currentReduce);
 			$(el).data('reduceFactor', newReduce);
 			$(el).addClass("reduce" + newReduce);
-
-            console.timeEnd("growFont");
         },
 
         splitTable : function(el, options){
@@ -179,6 +212,8 @@
 
             $(el).data('split', true);
             $(el).data('splitWidth', $(original).width());
+
+            console.log("New split width: " + $(original).width());
 
             var pinned = $(original).wrap('<div class="pinned" />').parent();
             var scrollable = $(original).clone().wrap('<div class="scrollable" />').parent();
