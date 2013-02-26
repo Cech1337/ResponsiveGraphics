@@ -32,6 +32,7 @@
 	//Set padding relative to the local font-size instead of HTML font-size
 	.panel{
 		padding: .5em;
+		//Responsive tables have padding on the pinned and scrollable containers instead
 		&.split{
 			padding: 0;
 			.pinned{
@@ -44,6 +45,10 @@
 				}
 			}
 		}
+	}
+
+	table{
+		//white-space: nowrap;
 	}
 
 
@@ -87,6 +92,13 @@
 				@include box-shadow(rgba(0, 0, 0, 0.1) -6px 0px 5px -3px inset, rgba(0, 0, 0, 0.1) 6px 0px 5px -3px inset);
 			}
 
+			table{
+				thead{
+				}
+				tbody{
+				}
+			}
+
 			span{
 				padding: 0 0 0 2em;
 			}
@@ -96,23 +108,75 @@
 }
 
 
+#vertscroll{
+
+	$table-border: #fff;
+
+	.split{
+
+		> div{
+			> div{
+				padding: .5em;
+			}
+			th{
+					padding: 0;
+			}
+			.header-wrapper{
+				overflow: hidden;
+				border-bottom: 1px solid $table-border;
+			}
+			.body-wrapper{
+				max-height: 30rem;
+			}
+		}
+		
+		.pinned{
+			padding: 0;
+			border-right: 1px solid $table-border;
+			.header-wrapper{
+				// @include box-shadow(rgba(black, 0.15) 6px 6px 6px -4px);
+			}
+			.body-wrapper{
+				overflow: hidden;				
+			}
+		}
+
+		.scrollable{
+			//JS
+			margin-left: 166px;
+
+			padding: 0;
+			overflow: visible;
+
+			.header-wrapper{
+				overflow: hidden;				
+			}
+			.body-wrapper{
+				@include box-shadow(rgba(black, 0.15) 0px 0px 6px 0px inset);
+				overflow:scroll;
+			}
+		}
+
+	}
 
 
+	//Remove this later -- just to make the header nice.. should be classes on a page layout
+	header{
+		h1{
+			font-weight: 400;
+		}
+		h6{
+			font-weight: 400;
+			margin-top: 1rem;
+			line-height: 1.35;
+		}
+		&:after{
+			border-bottom: 1px solid #ddd;
+			display: block;
+			// margin: 0 $col-padding;
+			padding-top: 2rem;
+		}
+	}
 
-/*  -----------------------------------------------------------------------------
-	::  // zurb styles
-	----------------------------------------------------------------------------- */
 
-// table.responsive { margin-bottom: 0; }
-
-// .pinned { position: absolute; left: 0; top: 0; background: #fff; width: 35%; overflow: hidden; overflow-x: scroll; border-right: 1px solid #ccc; border-left: 1px solid #ccc; }
-// .pinned table { border-right: none; border-left: none; width: 100%; }
-// .pinned table th, .pinned table td { white-space: nowrap; }
-// .pinned td:last-child { border-bottom: 0; }
-
-// div.table-wrapper { position: relative; margin-bottom: 20px; overflow: hidden; border-right: 1px solid #ccc; }
-// div.table-wrapper div.scrollable table { margin-left: 35%; }
-// div.table-wrapper div.scrollable { overflow: scroll; overflow-y: hidden; }	
-
-// table.responsive td, table.responsive th { position: relative; white-space: nowrap; overflow: hidden; }
-// table.responsive th:first-child, table.responsive td:first-child, table.responsive td:first-child, table.responsive.pinned td { display: none; }
+}

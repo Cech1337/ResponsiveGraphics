@@ -97,22 +97,6 @@ table{
 
 }
 
-.table-wrapper{
-	border: none !important;
-	*{
-		border: none;
-	}
-	.pinned{
-		background: none;
-		border: none;
-		border-right: 1px solid #eee;
-	}
-	.scrollable{
-		border: none;
-		margin-left: 35%; //temp margin -- this needs to be set in the responsive tables script to the calc'd width of the pinned column
-	}
-}
-
 .panel{
 	border: none;
 	background: #f9f9f9;

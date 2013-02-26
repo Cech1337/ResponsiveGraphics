@@ -9,7 +9,8 @@
             minPadding: 10,
             maxPadding: 30, 
             minFontSize: 10, 
-            fontRatio: 1.618
+            fontRatio: 1.618,
+            maxNumRows: null
         };	
 
     // The actual plugin constructor 
