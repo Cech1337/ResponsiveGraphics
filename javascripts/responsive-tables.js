@@ -145,7 +145,6 @@
             var table = $(el).find("table");
             var th = $(table).find("th");
 
-
             $(th).each(function(i){
 
                 var maxWidth = 0;
@@ -161,11 +160,8 @@
                 });
                 
                 //console.log("Column " + i + " maxWidth: " + maxWidth);
-
                 $(this).data('maxContentWidth', maxWidth);
-
             });
-
             console.timeEnd("setMaxContentWidth");
         },
 
