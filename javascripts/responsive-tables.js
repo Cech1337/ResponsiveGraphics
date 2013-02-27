@@ -45,29 +45,31 @@
  			$(this.element).find('td, th').wrapInner('<span />');
             
             //Calculate maximum column widths
-            this.setMaxContentWidth(this.element, this.options);
+            //this.setMaxContentWidth(this.element, this.options);
 
             //New method for column widths
             this.setMaxContentWidthVert(this.element, this.maxContentWidth);
 
- 			//Attempt to re-calculate positioning until no more changes can be applied
-            while(this.detectCollisions(this.element, this.options));
+            this.splitTableHeaders(this.element, this.maxContentWidth);
+
+ 		// 	//Attempt to re-calculate positioning until no more changes can be applied
+   //          while(this.detectCollisions(this.element, this.options));
  			
-			$(window).on("throttledresize", function(event){
+			// $(window).on("throttledresize", function(event){
 
-                //If the font size has changed, reset max content widths
-                var currentFontSize = $(cur.element).css("font-size");
-                var recordedFontSize = $(cur.element).data('fontSize');
-                if( currentFontSize != recordedFontSize ){
-                    cur.setMaxContentWidth(cur.element, cur.options);
-                    $(cur.element).data('fontSize', currentFontSize);
-                    console.log("font size changed from  " + recordedFontSize + " to " + currentFontSize);
-                }
+   //              //If the font size has changed, reset max content widths
+   //              var currentFontSize = $(cur.element).css("font-size");
+   //              var recordedFontSize = $(cur.element).data('fontSize');
+   //              if( currentFontSize != recordedFontSize ){
+   //                  cur.setMaxContentWidth(cur.element, cur.options);
+   //                  $(cur.element).data('fontSize', currentFontSize);
+   //                  console.log("font size changed from  " + recordedFontSize + " to " + currentFontSize);
+   //              }
 
-               // console.time("detectCollisions");
-				cur.detectCollisions(cur.element, cur.options);
-                //console.timeEnd("detectCollisions");
-			});
+   //             // console.time("detectCollisions");
+			// 	cur.detectCollisions(cur.element, cur.options);
+   //              //console.timeEnd("detectCollisions");
+			// });
 
         },
 
@@ -188,6 +190,41 @@
             });
 
             console.timeEnd("setMaxContentWidth VERT");
+        },
+
+        splitTableHeaders : function(el, maxContentWidth){
+            console.time("splitTableHeaders");
+
+            //Store table in memory
+            var origTable = $(el).find('table');
+            var table = $(origTable).clone();
+
+            //Remove table componenets
+            var header = $(table).find('thead').detach();
+            var body = $(table).find('tbody').detach();
+            
+            //Set header min-widths
+            $(header).find('span').each(function(i){
+                $(this).css('min-width', maxContentWidth[i]);
+            });
+
+            //Set body min-widths on the first row (in case headers are wider than content) NEEDS DEBUG?
+            // $(body).find('tr').get(0).find('span').each(function(i){
+            //     $(this).css('min-width', maxContentWidth[i]);
+            // });
+
+            //Wrap the components
+            var tableHeader = $(header).wrap('<div class="header-wrapper"><table /></div>').parent().parent();
+            var tableBody = $(body).wrap('<div class="body-wrapper"><table /></div>').parent().parent();
+
+            //Merge them
+            var mergedTable = $(tableHeader).after(tableBody);
+
+            //Reinsert table header and body content
+            $(origTable).replaceWith(mergedTable);
+
+
+            console.timeEnd("splitTableHeaders");
         },
 
         splitTableVert : function(el, options){
