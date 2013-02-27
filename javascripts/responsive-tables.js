@@ -17,6 +17,7 @@
     function ResponsiveTable(element, options) {
         this.element = element;
         this.options = $.extend( {}, defaults, options );
+        this.maxContentWidth = [];
 
         this._defaults = defaults;
         this._name = pluginName;
@@ -30,28 +31,33 @@
 
             var cur = this;
  			
-            $(this.element).data('split', false);
-            $(this.element).data('splitWidth', null);
-            $(this.element).data('reduceFactor', 0);
-            $(this.element).data('fontSize', $(this.element).css('font-size'));
+            //Store table state information on the element
+            $(this.element).data({
+                'split':        false,
+                'splitWidth':   null,
+                'reduceFactor': 0,
+                'fontSize':     $(this.element).css('font-size') 
+            });
 
-            console.log("init font size: " + $(this.element).css('font-size') );
+            //console.log("init font size: " + $(this.element).css('font-size') );
 
             //Enable measurement of table content width
  			$(this.element).find('td, th').wrapInner('<span />');
-
+            
+            //Calculate maximum column widths
             this.setMaxContentWidth(this.element, this.options);
+
+            //New method for column widths
+            this.setMaxContentWidthVert(this.element, this.maxContentWidth);
 
  			//Attempt to re-calculate positioning until no more changes can be applied
             while(this.detectCollisions(this.element, this.options));
  			
-            //Bind throttled resize listener
 			$(window).on("throttledresize", function(event){
 
                 //If the font size has changed, reset max content widths
                 var currentFontSize = $(cur.element).css("font-size");
                 var recordedFontSize = $(cur.element).data('fontSize');
-
                 if( currentFontSize != recordedFontSize ){
                     cur.setMaxContentWidth(cur.element, cur.options);
                     $(cur.element).data('fontSize', currentFontSize);
@@ -166,30 +172,89 @@
             console.timeEnd("setMaxContentWidth");
         },
 
-     	reduceFont : function(el, options){
-			console.log("reduceFont");
+        setMaxContentWidthVert : function(el, maxContentWidth){
+            console.time("setMaxContentWidth VERT");
 
-			var currentReduce = $(el).data('reduceFactor');
-			var newReduce = currentReduce - 1;
+            //For every row
+            $(el).find("tr").each(function(){
+                //For every column
+                $(this).find('span').each(function(i){
+                    var width = $(this).width();
+                    if(maxContentWidth[i] == undefined){  // width > el.maxContentWidth[i] || 
+                        maxContentWidth[i] = width;
+                    }
 
-			$(el).removeClass("reduce" + currentReduce);
-			$(el).data('reduceFactor', newReduce);
-			$(el).addClass("reduce" + newReduce);
+                });        
+            });
 
-			//Don't attempt to increase size on this loop
-			resized = true;
+            console.timeEnd("setMaxContentWidth VERT");
         },
 
-        growFont : function(el, options){
-        	console.log("growFont");
+        splitTableVert : function(el, options){
+            console.time("splitTable");
 
-			var currentReduce = $(el).data('reduceFactor');
-			var newReduce = currentReduce + 1;
 
-			$(el).removeClass("reduce" + currentReduce);
-			$(el).data('reduceFactor', newReduce);
-			$(el).addClass("reduce" + newReduce);
+            //Grab original table and wrap it in a div split
+            //var original = $(el).find("table").wrap('<div class="split" />');
+            original = $(el).find("table");
+            $(original).parent().addClass("split");
+
+            // console.log(
+            //     "el: " + $(el).width() + "\n" +
+            //     "table: " + $(original).width() + "\n" +
+            //     "window: " + $(window).width() + "\n" +
+            //     "document: " + $(document).width()
+            // );
+
+            $(el).data('split', true);
+            $(el).data('splitWidth', $(original).width());
+
+            console.log("New split width: " + $(original).width());
+
+            var pinned = $(original).wrap('<div class="pinned" />').parent();
+            var scrollable = $(original).clone().wrap('<div class="scrollable" />').parent();
+
+            //Hide non-first child elements from pinned
+            $(pinned).find("td:not(:first-child), th:not(:first-child)").hide();
+
+            //Calculate a margin for the scrollable table
+            var pinnedWidth = $(pinned).children().width();
+
+            //Insert scrollable table as a sibling to pinned and hide left column
+            $(scrollable).insertAfter(pinned).find("td:first-child, th:first-child").hide();
+            $(scrollable).css("margin-left", pinnedWidth);
+
+            //Check scroll position and attach scroll listener to check for edge scrolls
+            var cur = this;
+            cur.checkScrollPosition(scrollable);
+            $(scrollable).scroll(function(){
+                cur.checkScrollPosition(scrollable);
+            });
+
+            console.timeEnd("splitTable");
         },
+
+        unsplitTableVert : function(el, options){
+            console.time("unsplitTable");
+
+            // console.log(
+            //     "table: " + $(el).width() + "\n" +
+            //     "window: " + $(window).width() + "\n" +
+            //     "document: " + $(document).width()
+            // );
+
+            $(el).data('split', false);
+
+            var pinnedTable = $(el).find(".pinned table");
+
+            //Remove scrolling table
+            $(pinnedTable).parent().siblings().remove();
+
+            //Return the pinned table to normal
+            $(pinnedTable).unwrap().parent().removeClass("split").find("td:not(:first-child), th:not(:first-child)").show();
+
+            console.timeEnd("unsplitTable");
+        },        
 
         splitTable : function(el, options){
         	console.time("splitTable");
@@ -256,6 +321,31 @@
 
             console.timeEnd("unsplitTable");
         },
+
+        reduceFont : function(el, options){
+            console.log("reduceFont");
+
+            var currentReduce = $(el).data('reduceFactor');
+            var newReduce = currentReduce - 1;
+
+            $(el).removeClass("reduce" + currentReduce);
+            $(el).data('reduceFactor', newReduce);
+            $(el).addClass("reduce" + newReduce);
+
+            //Don't attempt to increase size on this loop
+            resized = true;
+        },
+
+        growFont : function(el, options){
+            console.log("growFont");
+
+            var currentReduce = $(el).data('reduceFactor');
+            var newReduce = currentReduce + 1;
+
+            $(el).removeClass("reduce" + currentReduce);
+            $(el).data('reduceFactor', newReduce);
+            $(el).addClass("reduce" + newReduce);
+        },        
 
         checkScrollPosition : function(scrollable){
 

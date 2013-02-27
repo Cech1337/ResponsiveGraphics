@@ -22,11 +22,11 @@ $(document).ready(function() {
 });
 
 $(window).load(function() {
-	// $('.scalable').responsiveTable({
-	// 	minPadding: 	10,
- //        maxPadding: 	30, 
- //        minFontSize: 	14, 
- //        fontRatio: 		1.21,
- //        maxNumRows: 	20 
-	// });
+	$('.scalable').responsiveTable({
+		minPadding: 	10,
+        maxPadding: 	30, 
+        minFontSize: 	14, 
+        fontRatio: 		1.21,
+        maxNumRows: 	20 
+	});
 });
