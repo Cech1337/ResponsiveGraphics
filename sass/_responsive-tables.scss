@@ -48,8 +48,14 @@
 	}
 
 	table{
-		//white-space: nowrap;
+		white-space: nowrap;
 	}
+
+	&.block{
+		span{
+			//display: block;
+		}
+	}	
 
 
 	//Split tables
@@ -109,6 +115,8 @@
 
 
 #vertscroll{
+
+	background: black;
 
 	$table-border: #fff;
 

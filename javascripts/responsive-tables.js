@@ -18,6 +18,7 @@
         this.element = element;
         this.options = $.extend( {}, defaults, options );
         this.maxContentWidth = [];
+        this.columnWidth = [];
 
         this._defaults = defaults;
         this._name = pluginName;
@@ -42,7 +43,7 @@
             //console.log("init font size: " + $(this.element).css('font-size') );
 
             //Enable measurement of table content width
- 			$(this.element).find('td, th').wrapInner('<span />');
+ 			$(this.element).find('td, th').wrapInner('<div><span /></div>');
             
             //Calculate maximum column widths
             //this.setMaxContentWidth(this.element, this.options);
@@ -151,6 +152,8 @@
         setMaxContentWidth : function(el, options){
             console.time("setMaxContentWidth");
 
+            
+
             var table = $(el).find("table");
             var th = $(table).find("th");
 
@@ -171,11 +174,18 @@
                 //console.log("Column " + i + " maxWidth: " + maxWidth);
                 $(this).data('maxContentWidth', maxWidth);
             });
+
+            //Make cell content fit to min-size
+            $(el).removeClass("block-spans");
+
             console.timeEnd("setMaxContentWidth");
         },
 
         setMaxContentWidthVert : function(el, maxContentWidth){
             console.time("setMaxContentWidth VERT");
+
+            //Make cell content measurable
+            $(el).removeClass("block");
 
             //For every row
             $(el).find("tr").each(function(){
@@ -185,9 +195,16 @@
                     if(maxContentWidth[i] == undefined){  // width > el.maxContentWidth[i] || 
                         maxContentWidth[i] = width;
                     }
-
+                    else if(width > maxContentWidth[i]){
+                        maxContentWidth[i] = width;
+                    }
                 });        
             });
+
+            //Make cell content measurable
+            $(el).addClass("block");
+
+            console.log(maxContentWidth);
 
             console.timeEnd("setMaxContentWidth VERT");
         },
@@ -203,15 +220,16 @@
             var header = $(table).find('thead').detach();
             var body = $(table).find('tbody').detach();
             
-            //Set header min-widths
-            $(header).find('span').each(function(i){
-                $(this).css('min-width', maxContentWidth[i]);
-            });
+            //Lock header and body columns
+                //Set header min-widths
+                $(header).find('div').each(function(i){
+                    $(this).css('min-width', maxContentWidth[i]);
+                });
 
-            //Set body min-widths on the first row (in case headers are wider than content) NEEDS DEBUG?
-            // $(body).find('tr').get(0).find('span').each(function(i){
-            //     $(this).css('min-width', maxContentWidth[i]);
-            // });
+                //Set body min-widths on the first row (in case headers are wider than content) NEEDS DEBUG?
+                $(body).find('tr').eq(0).find('div').each(function(i){
+                    $(this).css('min-width', maxContentWidth[i]);
+                });
 
             //Wrap the components
             var tableHeader = $(header).wrap('<div class="header-wrapper"><table /></div>').parent().parent();
@@ -228,7 +246,7 @@
         },
 
         splitTableVert : function(el, options){
-            console.time("splitTable");
+            console.time("splitTable VERT");
 
 
             //Grab original table and wrap it in a div split
@@ -268,7 +286,7 @@
                 cur.checkScrollPosition(scrollable);
             });
 
-            console.timeEnd("splitTable");
+            console.timeEnd("splitTable VERT");
         },
 
         unsplitTableVert : function(el, options){
