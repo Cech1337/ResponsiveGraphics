@@ -6363,6 +6363,12 @@ html, * {
     font-size: 16px;
   }
 }
+@media (max-width: 960px) {
+  /* line 16, ../sass/_main.scss */
+  html, * {
+    font-size: 14px;
+  }
+}
 /* line 30, ../sass/_mixins.scss */
 html h1, html h2, html h3, html h4, html h5, html h6, html p, html td, html a, * h1, * h2, * h3, * h4, * h5, * h6, * p, * td, * a {
   margin: 0;
@@ -6664,21 +6670,22 @@ section:after {
 .scalable .split table {
   width: auto;
   margin-bottom: 0;
+  position: relative;
 }
-/* line 68, ../sass/_responsive-tables.scss */
-.scalable .split table span {
-  padding-left: 2rem;
+/* line 69, ../sass/_responsive-tables.scss */
+.scalable .split table div {
+  margin-left: 2rem;
 }
-/* line 75, ../sass/_responsive-tables.scss */
+/* line 77, ../sass/_responsive-tables.scss */
 .scalable .split .pinned {
   position: absolute;
   z-index: 1;
 }
-/* line 78, ../sass/_responsive-tables.scss */
-.scalable .split .pinned span {
-  padding: 0 2em 0 0;
+/* line 81, ../sass/_responsive-tables.scss */
+.scalable .split .pinned table div {
+  margin: 0 2em 0 0;
 }
-/* line 83, ../sass/_responsive-tables.scss */
+/* line 87, ../sass/_responsive-tables.scss */
 .scalable .split .scrollable {
   overflow: scroll;
   overflow-y: hidden;
@@ -6691,87 +6698,82 @@ section:after {
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-/* line 89, ../sass/_responsive-tables.scss */
+/* line 93, ../sass/_responsive-tables.scss */
 .scalable .split .scrollable.content-hidden-right {
   -webkit-box-shadow: rgba(0, 0, 0, 0.15) -7px 0px 6px -3px inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.15) -7px 0px 6px -3px inset;
   box-shadow: rgba(0, 0, 0, 0.15) -7px 0px 6px -3px inset;
 }
-/* line 93, ../sass/_responsive-tables.scss */
+/* line 97, ../sass/_responsive-tables.scss */
 .scalable .split .scrollable.content-hidden-left {
   -webkit-box-shadow: rgba(0, 0, 0, 0.15) 7px 0px 6px -3px inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.15) 7px 0px 6px -3px inset;
   box-shadow: rgba(0, 0, 0, 0.15) 7px 0px 6px -3px inset;
 }
-/* line 97, ../sass/_responsive-tables.scss */
+/* line 101, ../sass/_responsive-tables.scss */
 .scalable .split .scrollable.content-hidden-right.content-hidden-left {
   -webkit-box-shadow: rgba(0, 0, 0, 0.1) -6px 0px 5px -3px inset, rgba(0, 0, 0, 0.1) 6px 0px 5px -3px inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.1) -6px 0px 5px -3px inset, rgba(0, 0, 0, 0.1) 6px 0px 5px -3px inset;
   box-shadow: rgba(0, 0, 0, 0.1) -6px 0px 5px -3px inset, rgba(0, 0, 0, 0.1) 6px 0px 5px -3px inset;
 }
-/* line 108, ../sass/_responsive-tables.scss */
-.scalable .split .scrollable span {
-  padding: 0 0 0 2em;
+/* line 110, ../sass/_responsive-tables.scss */
+.scalable .split .scrollable table div {
+  margin: 0 0 0 2em;
 }
 
-/* line 117, ../sass/_responsive-tables.scss */
-#vertscroll {
-  background: black;
-}
-/* line 126, ../sass/_responsive-tables.scss */
+/* line 128, ../sass/_responsive-tables.scss */
 #vertscroll .split > div > div {
   padding: .5em;
 }
-/* line 129, ../sass/_responsive-tables.scss */
+/* line 131, ../sass/_responsive-tables.scss */
 #vertscroll .split > div th {
   padding: 0;
 }
-/* line 132, ../sass/_responsive-tables.scss */
+/* line 134, ../sass/_responsive-tables.scss */
 #vertscroll .split > div .header-wrapper {
   overflow: hidden;
   border-bottom: 1px solid white;
 }
-/* line 136, ../sass/_responsive-tables.scss */
+/* line 138, ../sass/_responsive-tables.scss */
 #vertscroll .split > div .body-wrapper {
   max-height: 30rem;
 }
-/* line 141, ../sass/_responsive-tables.scss */
+/* line 143, ../sass/_responsive-tables.scss */
 #vertscroll .split .pinned {
   padding: 0;
   border-right: 1px solid white;
 }
-/* line 147, ../sass/_responsive-tables.scss */
+/* line 149, ../sass/_responsive-tables.scss */
 #vertscroll .split .pinned .body-wrapper {
   overflow: hidden;
 }
-/* line 152, ../sass/_responsive-tables.scss */
+/* line 154, ../sass/_responsive-tables.scss */
 #vertscroll .split .scrollable {
-  margin-left: 166px;
   padding: 0;
   overflow: visible;
 }
-/* line 159, ../sass/_responsive-tables.scss */
+/* line 161, ../sass/_responsive-tables.scss */
 #vertscroll .split .scrollable .header-wrapper {
   overflow: hidden;
 }
-/* line 162, ../sass/_responsive-tables.scss */
+/* line 164, ../sass/_responsive-tables.scss */
 #vertscroll .split .scrollable .body-wrapper {
   -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 6px 0px inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 6px 0px inset;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 6px 0px inset;
   overflow: scroll;
 }
-/* line 173, ../sass/_responsive-tables.scss */
+/* line 175, ../sass/_responsive-tables.scss */
 #vertscroll header h1 {
   font-weight: 400;
 }
-/* line 176, ../sass/_responsive-tables.scss */
+/* line 178, ../sass/_responsive-tables.scss */
 #vertscroll header h6 {
   font-weight: 400;
   margin-top: 1rem;
   line-height: 1.35;
 }
-/* line 181, ../sass/_responsive-tables.scss */
+/* line 183, ../sass/_responsive-tables.scss */
 #vertscroll header:after {
   border-bottom: 1px solid #ddd;
   display: block;

@@ -65,9 +65,11 @@
 		table{
 			width: auto;
 			margin-bottom: 0;
-			span{
+			position: relative;
+			div{
 				//temp padding for table width calc
-				padding-left: 2rem;
+				margin-left: 2rem;
+				//margin: 0;
 			}
 		}
 
@@ -75,8 +77,10 @@
 		.pinned{
 			position: absolute;	
 			z-index: 1;
-			span{
-				padding: 0 2em 0 0;
+			table{
+				div{
+					margin: 0 2em 0 0;
+				}
 			}
 		}
 
@@ -103,10 +107,9 @@
 				}
 				tbody{
 				}
-			}
-
-			span{
-				padding: 0 0 0 2em;
+				div{
+					margin: 0 0 0 2em;
+				}
 			}
 		}
 
@@ -116,9 +119,8 @@
 
 #vertscroll{
 
-	background: black;
-
 	$table-border: #fff;
+
 
 	.split{
 
@@ -127,7 +129,7 @@
 				padding: .5em;
 			}
 			th{
-					padding: 0;
+				padding: 0;
 			}
 			.header-wrapper{
 				overflow: hidden;
@@ -150,8 +152,8 @@
 		}
 
 		.scrollable{
-			//JS
-			margin-left: 166px;
+			//JS should override this
+			//margin-left: 166px;
 
 			padding: 0;
 			overflow: visible;
