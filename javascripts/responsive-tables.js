@@ -46,87 +46,29 @@
  			$(this.element).find('td, th').wrapInner('<div><span /></div>');
 
             //Initialize max content widths
-            this.setMaxContentWidth(this.element, this.maxContentWidth);
+            this.findMaxColContentWidth(this.element, this.maxContentWidth);
 
-            //Split the table vertically to enable locked headers
+            //Split the table headers off from the table body to enable locked headers (might want to detect this instead of init)
             this.splitTableHeaders(this.element, this.maxContentWidth);
 
-            //TEST pin table
-            this.splitTable(this.element, this.options);
+            //Attempt to re-calculate positioning until no more changes can be applied
+            while(this.handleCollisions(this.element, this.options));
+            
+            //Handle resize
+            $(window).on("throttledresize", function(event){
 
+                cur.handleFontSizeChange(cur.element);
 
-            //Test attaching resize handler to the table body this should really happen later on....
-            var tableBodyWrapper = $(this.element).find('.scrollable .body-wrapper')
-            $(tableBodyWrapper).on("scroll", function(e){
-                
-                var tableBody = $(this).find('table');
-                var tableHeader = $(this).prev().children('table');
-                var pinnedTableBody = $(cur.element).find('.pinned .body-wrapper table');
+                //console.time("handleCollisions");
+                cur.handleCollisions(cur.element, cur.options);
+                //console.timeEnd("handleCollisions");
 
-                var scrollLeft = $(this).scrollLeft();
-                var scrollTop = $(this).scrollTop();
-
-                var containerWidth = $(this).outerWidth();
-                var tableWidth = $(tableBody).outerWidth();
-                var containerHeight = $(this).outerHeight();
-                var tableHeight = $(tableBody).outerHeight();
-
-                $(tableHeader).css("left", -scrollLeft);
-                $(pinnedTableBody).css("top", -scrollTop);
-
-                // if(scrollLeft > 0){
-                //     $(scrollable).addClass("content-hidden-left");
-                // } 
-                // else{
-                //     $(scrollable).removeClass("content-hidden-left");
-                // }
-
-                // if(scrollLeft < tableWidth - width){
-                //     $(scrollable).addClass("content-hidden-right");
-                // }
-                // else{
-                //     $(scrollable).removeClass("content-hidden-right");
-                // }
-
-                // console.log(
-                //     "SL: " + scrollLeft +"\n"+
-                //     "Width: " + width +"\n"+
-                //     "TW: " + tableWidth +"\n"+
-                //     "TW - Width: " + (tableWidth - width)
-                // );
             });
-
-
- 			//Attempt to re-calculate positioning until no more changes can be applied
-            //while(this.detectCollisions(this.element, this.options));
- 			
-			$(window).on("throttledresize", function(event){
-
-                //If the font size has changed, reset max content widths
-                var currentFontSize = $(cur.element).css("font-size");
-                var recordedFontSize = $(cur.element).data('fontSize');
-                if( currentFontSize != recordedFontSize ){
-                    //Recalculate max content widths
-                    cur.setMaxContentWidth(cur.element, cur.maxContentWidth);
-                    $(cur.element).data('fontSize', currentFontSize);
-                    console.warn("font size changed from  " + recordedFontSize + " to " + currentFontSize);
-
-                    //Update min-col widths to reflect the new content size  
-                    console.time("setColMinWidth");             
-                    cur.setColMinWidth(cur.maxContentWidth, $(cur.element).find('thead'), $(cur.element).find('tbody'));
-                    console.timeEnd("setColMinWidth");
-
-                }
-
-                //console.time("detectCollisions");
-				//cur.detectCollisions(cur.element, cur.options);
-                //console.timeEnd("detectCollisions");
-			});
 
         },
 
         //this should return true when we take action, false when we don't
-        detectCollisions : function(el, options){
+        handleCollisions : function(el, options){
 
         	var cur = this;
 
@@ -135,10 +77,10 @@
 				var changedSettings;
 				var minDistance;
                     
-                 $(el).find("th").each(function(){
+                 $(el).find("th").each(function(i){
                     var columnWidth = $(this).width();
-                    var maxContentWidth = $(this).data('maxContentWidth');
-                    var distance = columnWidth - maxContentWidth;
+                    var maxColContent = cur.maxContentWidth[i];
+                    var distance = columnWidth - maxColContent;
 
                     if(minDistance == null || distance < minDistance){
                         minDistance = distance;
@@ -200,13 +142,46 @@
 
         },
 
-        setMaxContentWidth : function(el, maxContentWidth){
-            console.time("setMaxContentWidth");
+        handleFontSizeChange : function (el){
+            //If the font size has changed, reset max content widths
+            var currentFontSize = $(el).css("font-size");
+            var recordedFontSize = $(el).data('fontSize');
+            if( currentFontSize != recordedFontSize ){
+
+                $(el).data('fontSize', currentFontSize);
+                console.warn("font size changed from  " + recordedFontSize + " to " + currentFontSize);
+
+
+                //Reset content widths
+                this.maxContentWidth.length = 0;
+
+                //Recalculate max content widths
+                this.findMaxColContentWidth(el, this.maxContentWidth);
+                
+                //Update min-col widths to reflect the new content size  
+                console.time("setColMinWidth");             
+                this.setColMinWidth(this.maxContentWidth, $(el).find('thead'), $(el).find('tbody'));
+                console.timeEnd("setColMinWidth");
+            }
+        },
+
+        findMaxColContentWidth : function(el, maxContentWidth){
+            console.time("findMaxColContentWidth");
+
+            //If split, limit search to scrollable tables only
+            var split = $(el).data('split');
+            if(split){
+                el = $(el).find('.scrollable');
+            }
 
             //For every row
             $(el).find("tr").each(function(){
                 //For every column
                 $(this).find('span').each(function(i){
+                    //If split skip the first column -- this doesn't work if we have more than one split off col
+                    if(split){
+                        i++;
+                    }
                     var width = $(this).width();
                     if(maxContentWidth[i] == undefined || width > maxContentWidth[i]){ 
                         maxContentWidth[i] = width;
@@ -215,7 +190,7 @@
             });
 
             console.log("Max cwidth: " + maxContentWidth);
-            console.timeEnd("setMaxContentWidth");
+            console.timeEnd("findMaxColContentWidth");
         },
 
         setColMinWidth : function(maxContentWidth, header, body){
@@ -255,9 +230,10 @@
             //Reinsert table header and body content
             $(origTable).replaceWith(mergedTable);
 
-
             console.timeEnd("splitTableHeaders");
         },
+
+       
 
         //In theory this will pin tables for both vertically split and default tables
         splitTable : function(el, options){
@@ -290,27 +266,19 @@
             scrollable = $(el).find('.scrollable');
             $(scrollable).css("margin-left", $(el).find('.pinned').width());
 
+            //Attach scroll handler -- should detect vert scroll first anyway...
+
+            this.attachScrollHandler(el);
+
             console.timeEnd("splitTable");
         },
 
         unsplitTable : function(el, options){
             console.time("unsplitTable");
 
-            // console.log(
-            //     "table: " + $(el).width() + "\n" +
-            //     "window: " + $(window).width() + "\n" +
-            //     "document: " + $(document).width()
-            // );
-
             $(el).data('split', false);
 
-            var pinnedTable = $(el).find(".pinned table");
-
-            //Remove scrolling table
-            $(pinnedTable).parent().siblings().remove();
-
-            //Return the pinned table to normal
-            $(pinnedTable).unwrap().parent().removeClass("split").find("td:not(:first-child), th:not(:first-child)").show();
+            // DO STUFF
 
             console.timeEnd("unsplitTable");
         },        
@@ -338,6 +306,32 @@
             $(el).removeClass("reduce" + currentReduce);
             $(el).data('reduceFactor', newReduce);
             $(el).addClass("reduce" + newReduce);
+        },
+
+        attachScrollHandler : function(el){
+
+            cur = this;
+
+            var tableBodyWrapper = $(el).find('.scrollable .body-wrapper');
+            $(tableBodyWrapper).on("scroll", function(e){
+                
+                var tableBody = $(this).find('table');
+                var tableHeader = $(this).prev().children('table');
+                var pinnedTableBody = $(cur.element).find('.pinned .body-wrapper table');
+
+                var scrollLeft = $(this).scrollLeft();
+                var scrollTop = $(this).scrollTop();
+
+                var containerWidth = $(this).outerWidth();
+                var tableWidth = $(tableBody).outerWidth();
+                var containerHeight = $(this).outerHeight();
+                var tableHeight = $(tableBody).outerHeight();
+
+                $(tableHeader).css("left", -scrollLeft);
+                $(pinnedTableBody).css("top", -scrollTop);
+
+                //Determine where to show shadows
+            });
         }
     };
 

@@ -23,8 +23,8 @@ $(document).ready(function() {
 
 $(window).load(function() {
 	$('.scalable').responsiveTable({
-		minPadding: 	10,
-        maxPadding: 	30, 
+		minPadding: 	15,
+        maxPadding: 	35, 
         minFontSize: 	14, 
         fontRatio: 		1.21,
         maxNumRows: 	20 
