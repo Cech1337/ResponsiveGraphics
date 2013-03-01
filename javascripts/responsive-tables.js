@@ -20,6 +20,8 @@
 
         this.maxContentWidth = [];
         this.columnWidth = [];
+
+        //This prob isn't going to work....
         this.element.tableContainer = $(element).find('table').parent();
 
         this._defaults = defaults;
@@ -277,8 +279,35 @@
             console.time("unsplitTable");
 
             $(el).data('split', false);
+            var origContainer = $(el).find('.split');
+            var tableContainer = $(origContainer).clone();
 
-            // DO STUFF
+            $(tableContainer).removeClass('split');
+
+            //Merge pinned tablehead into scrollable table head
+            var pinned = $(tableContainer).find('.pinned');
+            var scrollable = $(tableContainer).find('.scrollable');
+
+            var pinnedHeadRows = $(pinned).find('thead tr');
+            var scrollableHeadRows = $(scrollable).find('thead tr');
+
+            var pinnedBodyRows = $(pinned).find('tbody tr');
+            var scrollableBodyRows = $(scrollable).find('tbody tr');
+
+            $(pinnedHeadRows).each(function(i){
+                var pinnedHeadContent = $(this).children();
+                $(scrollableHeadRows).eq(i).prepend(pinnedHeadContent);
+            });
+
+            $(pinnedBodyRows).each(function(i){
+                var pinnedBodyContent = $(this).children();
+                $(scrollableBodyRows).eq(i).prepend(pinnedBodyContent);
+            });
+
+            $(pinned).remove();
+            $(scrollable).removeClass('scrollable').css('margin-left', 0).unwrap();
+
+            $(origContainer).replaceWith(tableContainer);
 
             console.timeEnd("unsplitTable");
         },        
