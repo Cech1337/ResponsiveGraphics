@@ -1,0 +1,22 @@
+ResponsiveTable(element, options)
+	element
+	options
+	
+	maxContentWidth[]
+	columnWidth[]
+	isSplit
+	splitWidth
+	reduceFactor
+	fontSize
+
+Init()
+	Wrap table content
+	setMaxContentWidth(el)
+	setColumnWidth(el)
+	handleCollisions(el, options) //Loop until no more changes are necessary
+
+	Attach resize handler
+		handleFontSizeChange(el)
+		handleCollisions(el, options)
+
+

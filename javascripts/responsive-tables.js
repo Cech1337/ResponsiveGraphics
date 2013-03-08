@@ -21,8 +21,12 @@
         this.maxContentWidth = [];
         this.columnWidth = [];
 
-        //This prob isn't going to work....
-        this.element.tableContainer = $(element).find('table').parent();
+        this.isSplit = false;
+        this.splitWidth = undefined;
+        this.reduceFactor = 0;
+        this.fontSize = parseInt(element.css('font-size'), 10);
+
+        this.columnHeaders;
 
         this._defaults = defaults;
         this._name = pluginName;
@@ -34,16 +38,6 @@
 
         init : function(){
 
-            var cur = this;
- 			
-            //Store table state information on the element
-            $(this.element).data({
-                'split':        false,
-                'splitWidth':   null,
-                'reduceFactor': 0,
-                'fontSize':     $(this.element).css('font-size') 
-            });
-
             //Enable measurement of table content width and min-width setting
  			$(this.element).find('td, th').wrapInner('<div><span /></div>');
 
@@ -54,17 +48,15 @@
             this.splitTableHeaders(this.element, this.maxContentWidth);
 
             //Attempt to re-calculate positioning until no more changes can be applied
-            while(this.handleCollisions(this.element, this.options));
-            
-            //Handle resize
+            this.handleCollisions(this.element, this.options);
+
+            //Attach throttled resize handler
+            var cur = this;            
             $(window).on("throttledresize", function(event){
-
                 cur.handleFontSizeChange(cur.element);
-
                 //console.time("handleCollisions");
                 cur.handleCollisions(cur.element, cur.options);
                 //console.timeEnd("handleCollisions");
-
             });
 
         },
@@ -74,12 +66,14 @@
 
         	var cur = this;
 
-			if(!$(el).data('split')){
+			if(!this.isSplit){
 
 				var changedSettings;
 				var minDistance;
-                    
-                 $(el).find("th").each(function(i){
+                 
+                //This presumes a single header row... 
+                $(el).find("th").each(function(i){
+
                     var columnWidth = $(this).width();
                     var maxColContent = cur.maxContentWidth[i];
                     var distance = columnWidth - maxColContent;
@@ -148,11 +142,11 @@
             //If the font size has changed, reset max content widths
             var currentFontSize = $(el).css("font-size");
             var recordedFontSize = $(el).data('fontSize');
+
             if( currentFontSize != recordedFontSize ){
 
                 $(el).data('fontSize', currentFontSize);
                 console.warn("font size changed from  " + recordedFontSize + " to " + currentFontSize);
-
 
                 //Reset content widths
                 this.maxContentWidth.length = 0;
@@ -162,7 +156,7 @@
                 
                 //Update min-col widths to reflect the new content size  
                 console.time("setColMinWidth");             
-                this.setColMinWidth(this.maxContentWidth, $(el).find('thead'), $(el).find('tbody'));
+                this.setColMinWidth(this.element, this.maxContentWidth);
                 console.timeEnd("setColMinWidth");
             }
         },
@@ -170,9 +164,23 @@
         findMaxColContentWidth : function(el, maxContentWidth){
             console.time("findMaxColContentWidth");
 
-            //If split, limit search to scrollable tables only
             var split = $(el).data('split');
+            var pinnedCols;
+
+            //If the table is split, check pinned cols first
             if(split){
+                //For every row
+                $(el).find('.pinned').find("tr").each(function(){
+                    //For every column
+                    var span = $(this).find('span');
+                    pinnedCols = span.length;
+                    $(span).each(function(i){
+                        var width = $(this).width();
+                        if(maxContentWidth[i] == undefined || width > maxContentWidth[i]){ 
+                            maxContentWidth[i] = width;
+                        }
+                    });        
+                });
                 el = $(el).find('.scrollable');
             }
 
@@ -180,9 +188,9 @@
             $(el).find("tr").each(function(){
                 //For every column
                 $(this).find('span').each(function(i){
-                    //If split skip the first column -- this doesn't work if we have more than one split off col
+                    //If split, skip the number of pinned cols
                     if(split){
-                        i++;
+                        i += pinnedCols;
                     }
                     var width = $(this).width();
                     if(maxContentWidth[i] == undefined || width > maxContentWidth[i]){ 
@@ -195,19 +203,48 @@
             console.timeEnd("findMaxColContentWidth");
         },
 
-        setColMinWidth : function(maxContentWidth, header, body){
-            //Lock header and body columns (this should update on every font resize)
+        //Calculates column widths, whether or not table content is split across multiple tables
+        setColMinWidth : function(el, maxContentWidth){
+
+            var header = $(el).find('thead');
+            var body = $(el).find('tbody');
+
+            var pinnedCols;
+
+            if(this.isSplit){
+                $(header).eq(0).find('div').each(function(i){
+                    pinnedCols = this.length;
+                    $(this).css('min-width', maxContentWidth[i]);
+                });
+                $(body).eq(0).find('div').each(function(i){
+                    $(this).css('min-width', maxContentWidth[i]);
+                });
+
+                header = header.eq(1);
+                body = body.eq(1);
+            }
+            
             //Set header min-widths
-            $(header).find('div').each(function(i){
+            $(header).find('tr').eq(0).find('div').each(function(i){
+                if(split){
+                    i += pinnedCols;
+                }
                 $(this).css('min-width', maxContentWidth[i]);
             });
 
             //Set body min-widths on the first row (in case headers are wider than content) NEEDS DEBUG?
             $(body).find('tr').eq(0).find('div').each(function(i){
+                if(split){
+                    i += pinnedCols;
+                }
                 $(this).css('min-width', maxContentWidth[i]);
             });
+
+
         },
 
+
+        //Run once - table headers are always split.
         splitTableHeaders : function(el, maxContentWidth){
             console.time("splitTableHeaders");
 
@@ -220,7 +257,7 @@
             var body = $(table).find('tbody').detach();
             
             //Set their column widths
-            this.setColMinWidth(maxContentWidth, header, body);
+            this.setColMinWidth(el, maxContentWidth);
 
             //Wrap the components
             var tableHeader = $(header).wrap('<div class="header-wrapper"><table /></div>').parent().parent();
@@ -235,19 +272,24 @@
             console.timeEnd("splitTableHeaders");
         },
 
-       
+        pinColumn : function (el){
+
+        },
+
+        unpinColumn : function (el){
+
+        },
 
         //In theory this will pin tables for both vertically split and default tables
         splitTable : function(el, options){
             console.time("splitTable");
 
-            //Set table state to split, set split width            
-            $(el).data('split', true);
-            $(el).data('splitWidth', $(el).width());
-
-            console.log("New split width: " + $(el).width());
-
             var tableContainer = $(el.tableContainer).addClass('split');
+
+            //Set table state to split, set split width            
+            this.isSplit = true;
+            this.splitWidth = $(tableContainer).find('table').eq(0).width();
+            console.log("New split width: " + this.SplitWidth);
             
             //Grab the contents and clone twice
             var pinned = $(tableContainer).clone();
@@ -269,7 +311,6 @@
             $(scrollable).css("margin-left", $(el).find('.pinned').width());
 
             //Attach scroll handler -- should detect vert scroll first anyway...
-
             this.attachScrollHandler(el);
 
             console.timeEnd("splitTable");
