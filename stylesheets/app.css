@@ -6721,59 +6721,59 @@ section:after {
   margin: 0 0 0 2em;
 }
 
-/* line 128, ../sass/_responsive-tables.scss */
+/* line 127, ../sass/_responsive-tables.scss */
 #vertscroll .split > div > div {
   padding: .5em;
 }
-/* line 131, ../sass/_responsive-tables.scss */
+/* line 130, ../sass/_responsive-tables.scss */
 #vertscroll .split > div th {
   padding: 0;
 }
-/* line 134, ../sass/_responsive-tables.scss */
+/* line 133, ../sass/_responsive-tables.scss */
 #vertscroll .split > div .header-wrapper {
   overflow: hidden;
   border-bottom: 1px solid white;
 }
-/* line 138, ../sass/_responsive-tables.scss */
+/* line 137, ../sass/_responsive-tables.scss */
 #vertscroll .split > div .body-wrapper {
   max-height: 30rem;
 }
-/* line 143, ../sass/_responsive-tables.scss */
+/* line 142, ../sass/_responsive-tables.scss */
 #vertscroll .split .pinned {
   padding: 0;
   border-right: 1px solid white;
 }
-/* line 149, ../sass/_responsive-tables.scss */
+/* line 148, ../sass/_responsive-tables.scss */
 #vertscroll .split .pinned .body-wrapper {
   overflow: hidden;
 }
-/* line 154, ../sass/_responsive-tables.scss */
+/* line 153, ../sass/_responsive-tables.scss */
 #vertscroll .split .scrollable {
   padding: 0;
   overflow: visible;
 }
-/* line 161, ../sass/_responsive-tables.scss */
+/* line 156, ../sass/_responsive-tables.scss */
 #vertscroll .split .scrollable .header-wrapper {
   overflow: hidden;
 }
-/* line 164, ../sass/_responsive-tables.scss */
+/* line 159, ../sass/_responsive-tables.scss */
 #vertscroll .split .scrollable .body-wrapper {
   -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 6px 0px inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 6px 0px inset;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 6px 0px inset;
   overflow: scroll;
 }
-/* line 175, ../sass/_responsive-tables.scss */
+/* line 168, ../sass/_responsive-tables.scss */
 #vertscroll header h1 {
   font-weight: 400;
 }
-/* line 178, ../sass/_responsive-tables.scss */
+/* line 171, ../sass/_responsive-tables.scss */
 #vertscroll header h6 {
   font-weight: 400;
   margin-top: 1rem;
   line-height: 1.35;
 }
-/* line 183, ../sass/_responsive-tables.scss */
+/* line 176, ../sass/_responsive-tables.scss */
 #vertscroll header:after {
   border-bottom: 1px solid #ddd;
   display: block;

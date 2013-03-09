@@ -121,7 +121,6 @@
 
 	$table-border: #fff;
 
-
 	.split{
 
 		> div{
@@ -152,12 +151,8 @@
 		}
 
 		.scrollable{
-			//JS should override this
-			//margin-left: 166px;
-
 			padding: 0;
 			overflow: visible;
-
 			.header-wrapper{
 				overflow: hidden;				
 			}
@@ -166,9 +161,7 @@
 				overflow:scroll;
 			}
 		}
-
 	}
-
 
 	//Remove this later -- just to make the header nice.. should be classes on a page layout
 	header{
@@ -187,6 +180,5 @@
 			padding-top: 2rem;
 		}
 	}
-
 
 }
