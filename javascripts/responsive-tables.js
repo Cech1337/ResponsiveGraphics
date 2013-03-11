@@ -22,6 +22,7 @@
         this._name = pluginName;
 
         this.maxContentWidth = [];
+        //This could be used to keep track of the widest content nodes, so we don't have to scan every cell, just these (plus new ones to compare width when added)
         this.maxContentWidthNodes = [];
         this.columnWidth = [];
 
@@ -29,6 +30,8 @@
         this.splitWidth = undefined;
         this.reduceFactor = 0;
         this.fontSize = parseInt($(element).css('font-size'), 10);
+
+        this.scrollBarWidth = scrollbarWidth();
 
         this.init();
     }
@@ -258,6 +261,9 @@
             scrollable = $(el).find('.scrollable');
             $(scrollable).css("margin-left", $(el).find('.pinned').width() + 1);
 
+            //Poor man's substitute
+            $(el).children('.tableContainer').addClass("content-hidden-bottom").addClass("content-hidden-right");
+
             // console.timeEnd("splitTable");
 
             //Attach scroll handler -- scroll handling should occur before this if we vert scroll...
@@ -324,29 +330,69 @@
 
         //Fix selectors here -- attaches to more than just current
         attachScrollHandler : function(el){
-
             cur = this;
 
             var tableBodyWrapper = $(el).find('.scrollable .body-wrapper');
+
             $(tableBodyWrapper).on("scroll", function(e){
+
+                console.time("scrollcheck");
                 
-                var tableBody = $(this).find('table');
                 var tableHeader = $(this).prev().children('table');
-                var pinnedTableBody = $(cur.element).find('.pinned .body-wrapper table');
+                var pinnedTableBody = $(this).parent().prev().find('.body-wrapper table');
 
                 var scrollLeft = $(this).scrollLeft();
                 var scrollTop = $(this).scrollTop();
 
-                var containerWidth = $(this).outerWidth();
-                var tableWidth = $(tableBody).outerWidth();
-                var containerHeight = $(this).outerHeight();
-                var tableHeight = $(tableBody).outerHeight();
-
+                //Ensure header and body are position locked with scrollable content
                 $(tableHeader).css("left", -scrollLeft);
                 $(pinnedTableBody).css("top", -scrollTop);
 
-                //Determine where to show shadows
+
+
+                var tableBody = $(this).find('table');
+
+                var containerOuterWidth = $(this).outerWidth();
+                var tableOuterWidth = $(tableBody).outerWidth();
+
+                var containerOuterHeight = $(this).outerHeight();
+                var tableOuterHeight = $(tableBody).outerHeight();
+
+                // Determine where to show shadows
+                var tableContainer = $(el).children('.tableContainer');
+
+                if(scrollTop > 0){
+                    tableContainer.addClass("content-hidden-top");
+                }
+                else{
+                    tableContainer.removeClass("content-hidden-top");
+                }
+
+                if(tableOuterWidth - containerOuterWidth - scrollLeft + cur.scrollBarWidth > 0){
+                    tableContainer.addClass("content-hidden-right");
+                }
+                else{
+                    tableContainer.removeClass("content-hidden-right");
+                }
+
+                if(tableOuterHeight - containerOuterHeight - scrollTop + cur.scrollBarWidth > 0){
+                    tableContainer.addClass("content-hidden-bottom");
+                }
+                else{
+                    tableContainer.removeClass("content-hidden-bottom");
+                }
+
+                if(scrollLeft > 0){
+                    tableContainer.addClass("content-hidden-left");
+                }
+                else{
+                    tableContainer.removeClass("content-hidden-left");
+                }
+
+                console.timeEnd("scrollcheck");
+
             });
+
         },
 
         //Run once - table headers are always split.

@@ -35,20 +35,21 @@
 		//Responsive tables have padding on the pinned and scrollable containers instead
 		&.split{
 			padding: 0;
+			table{
+					border: .5em solid rgba(black, .0); //invisible border hack
+				}
 			.pinned{
 				padding: .5em 0 .5em .5em;
 			}
 			.scrollable{
 				padding: .5em .5em .5em 0em;
-				table{
-					border-right: .5em solid rgba(black, .0); //invisible border hack
-				}
 			}
 		}
 	}
 
 	table{
 		white-space: nowrap;
+		margin-bottom: 0;
 	}
 
 	//Split tables
@@ -78,20 +79,6 @@
 		.scrollable{
 			overflow: scroll;
 			overflow-y: hidden;
-			// @include transition-property(box-shadow);
-  			// @include transition-duration(.3s); 
-
-			&.content-hidden-right{
-				@include box-shadow(rgba(black, 0.15) -7px 0px 6px -3px inset);
-			}
-
-			&.content-hidden-left{
-				@include box-shadow(rgba(black, 0.15) 7px 0px 6px -3px inset);
-			}
-
-			&.content-hidden-right.content-hidden-left{
-				@include box-shadow(rgba(0, 0, 0, 0.1) -6px 0px 5px -3px inset, rgba(0, 0, 0, 0.1) 6px 0px 5px -3px inset);
-			}
 
 			table{
 				thead{
@@ -116,7 +103,7 @@
 
 		> div{
 			> div{
-				padding: .5em;
+				// padding: .5em;
 			}
 			th{
 				padding: 0;
@@ -134,10 +121,9 @@
 			padding: 0;
 			border-right: 1px solid $table-border;
 			.header-wrapper{
-				// @include box-shadow(rgba(black, 0.15) 6px 6px 6px -4px);
 			}
 			.body-wrapper{
-				overflow: hidden;				
+				overflow: hidden;
 			}
 		}
 
@@ -145,13 +131,148 @@
 			padding: 0;
 			overflow: visible;
 			.header-wrapper{
-				overflow: hidden;				
+				overflow: hidden;	
+				&.content-hidden-left{
+					// @include box-shadow(rgba(black, 0.15) 6px 0px 6px -6px inset);				
+				}		
 			}
 			.body-wrapper{
-				@include box-shadow(rgba(black, 0.15) 0px 0px 6px 0px inset);
 				overflow:scroll;
 			}
 		}
+		
+
+		$s-distance: .5em;
+		$neg-s-distance: $s-distance * -1;
+		$s-opacity: 0.16;
+
+		$s-top: 	rgba(black, $s-opacity) 0px $s-distance $s-distance $neg-s-distance inset;
+		$s-right: 	rgba(black, $s-opacity) $neg-s-distance 0px $s-distance  $neg-s-distance inset;
+		$s-bottom: 	rgba(black, $s-opacity) 0px $neg-s-distance $s-distance  $neg-s-distance inset;
+		$s-left: 	rgba(black, $s-opacity) $s-distance 0px $s-distance $neg-s-distance inset;
+
+		&.content-hidden-bottom.content-hidden-right{
+			.scrollable{
+				.header-wrapper{
+					@include box-shadow($s-right);
+				}
+				.body-wrapper{
+					@include box-shadow($s-bottom, $s-right);
+				}
+			}
+			.pinned{
+				.body-wrapper{
+					@include box-shadow($s-bottom);
+				}
+			} 
+		}
+		&.content-hidden-bottom.content-hidden-left{
+			.scrollable{
+				.header-wrapper{
+					@include box-shadow($s-left);
+				}
+				.body-wrapper{
+					@include box-shadow($s-bottom, $s-left);
+				}
+			}
+			.pinned{
+				.body-wrapper{
+					@include box-shadow($s-bottom);
+				}
+			} 
+		}
+		&.content-hidden-bottom.content-hidden-top.content-hidden-right{
+			.scrollable{
+				.header-wrapper{
+					@include box-shadow($s-right);
+				}
+				.body-wrapper{
+					@include box-shadow($s-bottom, $s-top, $s-right);
+				}
+			}
+			.pinned{
+				.body-wrapper{
+					@include box-shadow($s-bottom, $s-top);
+				}
+			} 			
+		}
+		&.content-hidden-bottom.content-hidden-top.content-hidden-left{
+			.scrollable{
+				.header-wrapper{
+					@include box-shadow($s-left);
+				}
+				.body-wrapper{
+					@include box-shadow($s-bottom, $s-top, $s-left);
+				}
+			}
+			.pinned{
+				.body-wrapper{
+					@include box-shadow($s-bottom, $s-top);
+				}
+			} 
+		}
+		&.content-hidden-bottom.content-hidden-top.content-hidden-right.content-hidden-left{
+			.scrollable{
+				.header-wrapper{
+					@include box-shadow($s-right, $s-left);
+				}
+				.body-wrapper{
+					@include box-shadow($s-bottom, $s-top, $s-right, $s-left);
+				}
+			}
+			.pinned{
+				.body-wrapper{
+					@include box-shadow($s-bottom, $s-top);
+				}
+			} 			
+		}
+
+		&.content-hidden-top.content-hidden-right{
+			.scrollable{
+				.header-wrapper{
+					@include box-shadow($s-right);
+				}
+				.body-wrapper{
+					@include box-shadow($s-top, $s-right);
+				}
+			}
+			.pinned{
+				.body-wrapper{
+					@include box-shadow($s-top);
+				}
+			} 
+		}
+		&.content-hidden-top.content-hidden-left{
+			.scrollable{
+				.header-wrapper{
+					@include box-shadow($s-left);
+				}
+				.body-wrapper{
+					@include box-shadow($s-top, $s-left);
+				}
+			}
+			.pinned{
+				.body-wrapper{
+					@include box-shadow($s-top);
+				}
+			} 			
+		}
+		&.content-hidden-top.content-hidden-right.content-hidden-left{
+			.scrollable{
+				.header-wrapper{
+					@include box-shadow($s-right, $s-left);
+				}
+				.body-wrapper{
+					@include box-shadow($s-top, $s-right, $s-left);
+				}
+			}
+			.pinned{
+				.body-wrapper{
+					@include box-shadow($s-top);
+				}
+			} 			
+		}
+
 	}
 
 	//Remove this later -- just to make the header nice.. should be classes on a page layout
