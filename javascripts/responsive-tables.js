@@ -50,7 +50,9 @@
             this.setColMinWidth(this.element, this.maxContentWidth);
 
             //Attempt to re-calculate positioning until no more changes can be applied
-            while(this.handleCollisions(this.element, this.options));
+            for (var i = 0; i < 3; i++) {
+                this.handleCollisions(this.element, this.options);
+            };
 
 
             //Attach throttled resize handler
@@ -254,7 +256,7 @@
 
             //Set scrollable width
             scrollable = $(el).find('.scrollable');
-            $(scrollable).css("margin-left", $(el).find('.pinned').width());
+            $(scrollable).css("margin-left", $(el).find('.pinned').width() + 1);
 
             // console.timeEnd("splitTable");
 
@@ -274,6 +276,9 @@
             //Merge pinned tablehead into scrollable table head
             var pinned = $(tableContainer).find('.pinned');
             var scrollable = $(tableContainer).find('.scrollable');
+
+            //Remove scrollable table offset
+            scrollable.find('.header-wrapper table').css('left', 0);
 
             var pinnedHeadRows = $(pinned).find('thead tr');
             var scrollableHeadRows = $(scrollable).find('thead tr');
@@ -399,7 +404,7 @@
 
                 //Reset margin left
                 scrollable = $(el).find('.scrollable');
-                $(scrollable).css("margin-left", $(el).find('.pinned').width());
+                $(scrollable).css("margin-left", $(el).find('.pinned').width() + 1);
 
             }
         }

@@ -51,16 +51,8 @@
 		white-space: nowrap;
 	}
 
-	&.block{
-		span{
-			//display: block;
-		}
-	}	
-
-
 	//Split tables
 	.split{
-		white-space: nowrap;
 
 		table{
 			width: auto;
@@ -72,7 +64,6 @@
 				//margin: 0;
 			}
 		}
-
 
 		.pinned{
 			position: absolute;	
@@ -87,8 +78,8 @@
 		.scrollable{
 			overflow: scroll;
 			overflow-y: hidden;
-			@include transition-property(box-shadow);
-  			@include transition-duration(.3s); 
+			// @include transition-property(box-shadow);
+  			// @include transition-duration(.3s); 
 
 			&.content-hidden-right{
 				@include box-shadow(rgba(black, 0.15) -7px 0px 6px -3px inset);
