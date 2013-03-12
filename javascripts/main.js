@@ -22,11 +22,12 @@ $(document).ready(function() {
 });
 
 $(window).load(function() {
-	$('.scalable').responsiveTable({
-		minPadding: 	15,
-        maxPadding: 	35, 
-        minFontSize: 	14, 
-        fontRatio: 		1.21,
-        maxNumRows: 	20 
-	});
+	$('.responsiveTable').responsiveTable();
+	// $('.responsiveTable').responsiveTable({
+	// 	minPadding: 	15,
+ //        maxPadding: 	35, 
+ //        minFontSize: 	14, 
+ //        fontRatio: 		1.21,
+ //        maxNumRows: 	20  //Not being used ATM.
+	// });
 });

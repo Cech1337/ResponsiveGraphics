@@ -57,6 +57,7 @@ table{
 	border: none;
 	background: none;
 	border-collapse: collapse;
+	margin-bottom: 0;
 
 	.emphasis{
 		font-weight: 600;
@@ -157,16 +158,25 @@ header, section{
 header{
 	padding-top: 4rem;
 	h1{
+		font-weight: 400;
 		margin-bottom: 0;
 	}
 	h6{
 		font-weight: 400;
+		margin-top: 1rem;
+		line-height: 1.35;
 		color: #666;
 	}
 	div{
 		margin-bottom: 1rem;
 	}
+	&:after{
+		border-bottom: 1px solid #ddd;
+		display: block;
+		padding-top: 2rem;
+	}
 }
+
 
 section{
 	&:after{

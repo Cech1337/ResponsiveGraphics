@@ -6,10 +6,10 @@
 
     var pluginName = "responsiveTable",
         defaults = {
-            minPadding: 10,
-            maxPadding: 30, 
-            minFontSize: 10, 
-            fontRatio: 1.618,
+            minPadding: 15,
+            maxPadding: 35, 
+            minFontSize: 14, 
+            fontRatio: 1.25,
             maxNumRows: null  //Prob not going to use this --- should I set in CSS or in JS?
         };	
 
@@ -22,8 +22,8 @@
         this._name = pluginName;
 
         this.maxContentWidth = [];
-        //This could be used to keep track of the widest content nodes, so we don't have to scan every cell, just these (plus new ones to compare width when added)
-        this.maxContentWidthNodes = [];
+            //This could be used to keep track of the widest content nodes, so we don't have to scan every cell, just these (plus new ones to compare width when added)
+            //this.maxContentWidthNodes = [];
         this.columnWidth = [];
 
         this.isSplit = false;
@@ -52,11 +52,10 @@
             //Set their column widths
             this.setColMinWidth(this.element, this.maxContentWidth);
 
-            //Attempt to re-calculate positioning until no more changes can be applied
+            //Attempt to re-calculate positioning until no more changes can be applied.. this is not the best way to handle this.
             for (var i = 0; i < 3; i++) {
                 this.handleCollisions(this.element, this.options);
             };
-
 
             //Attach throttled resize handler
             var cur = this;            
@@ -69,7 +68,7 @@
 
         },
 
-        //this should return true when we take action, false when we don't
+        //this should return true when we take action, false when we don't... again not the best way to handle looping until layout is resolved
         handleCollisions : function(el, options){
 
         	var cur = this;
@@ -348,8 +347,6 @@
                 $(tableHeader).css("left", -scrollLeft);
                 $(pinnedTableBody).css("top", -scrollTop);
 
-
-
                 var tableBody = $(this).find('table');
 
                 var containerOuterWidth = $(this).outerWidth();
@@ -427,7 +424,6 @@
 
             if( currentFontSize != recordedFontSize ){
 
-
                 //If split and below the minimum font size threshold, scale the font back up 
                 if(this.isSplit && this.reduceFactor < 0 && currentFontSize < options.minFontSize){
                      this.growFont(el);
@@ -455,7 +451,6 @@
             }
         }
     };
-
 
     // A really lightweight plugin wrapper around the constructor,
     // preventing against multiple instantiations and allowing any
