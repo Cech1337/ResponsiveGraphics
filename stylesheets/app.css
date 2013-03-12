@@ -6729,147 +6729,147 @@ section:after {
 }
 /* line 156, ../sass/_responsive-tables.scss */
 #vertscroll .split.content-hidden-bottom.content-hidden-right .scrollable .header-wrapper {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) -0.5em 0px 0.5em -0.5em inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.15) -0.5em 0px 0.5em -0.5em inset;
-  box-shadow: rgba(0, 0, 0, 0.15) -0.5em 0px 0.5em -0.5em inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) -0.5em 0px 0.5em -0.5em inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.16) -0.5em 0px 0.5em -0.5em inset;
+  box-shadow: rgba(0, 0, 0, 0.16) -0.5em 0px 0.5em -0.5em inset;
 }
 /* line 159, ../sass/_responsive-tables.scss */
 #vertscroll .split.content-hidden-bottom.content-hidden-right .scrollable .body-wrapper {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) -0.5em 0px 0.5em -0.5em inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.15) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) -0.5em 0px 0.5em -0.5em inset;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) -0.5em 0px 0.5em -0.5em inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) -0.5em 0px 0.5em -0.5em inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) -0.5em 0px 0.5em -0.5em inset;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) -0.5em 0px 0.5em -0.5em inset;
 }
 /* line 164, ../sass/_responsive-tables.scss */
 #vertscroll .split.content-hidden-bottom.content-hidden-right .pinned .body-wrapper {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px -0.5em 0.5em -0.5em inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.15) 0px -0.5em 0.5em -0.5em inset;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px -0.5em 0.5em -0.5em inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px -0.5em 0.5em -0.5em inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px -0.5em 0.5em -0.5em inset;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px -0.5em 0.5em -0.5em inset;
 }
 /* line 171, ../sass/_responsive-tables.scss */
 #vertscroll .split.content-hidden-bottom.content-hidden-left .scrollable .header-wrapper {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0.5em 0px 0.5em -0.5em inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.15) 0.5em 0px 0.5em -0.5em inset;
-  box-shadow: rgba(0, 0, 0, 0.15) 0.5em 0px 0.5em -0.5em inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0.5em 0px 0.5em -0.5em inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.16) 0.5em 0px 0.5em -0.5em inset;
+  box-shadow: rgba(0, 0, 0, 0.16) 0.5em 0px 0.5em -0.5em inset;
 }
 /* line 174, ../sass/_responsive-tables.scss */
 #vertscroll .split.content-hidden-bottom.content-hidden-left .scrollable .body-wrapper {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0.5em 0px 0.5em -0.5em inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.15) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0.5em 0px 0.5em -0.5em inset;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0.5em 0px 0.5em -0.5em inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0.5em 0px 0.5em -0.5em inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0.5em 0px 0.5em -0.5em inset;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0.5em 0px 0.5em -0.5em inset;
 }
 /* line 179, ../sass/_responsive-tables.scss */
 #vertscroll .split.content-hidden-bottom.content-hidden-left .pinned .body-wrapper {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px -0.5em 0.5em -0.5em inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.15) 0px -0.5em 0.5em -0.5em inset;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px -0.5em 0.5em -0.5em inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px -0.5em 0.5em -0.5em inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px -0.5em 0.5em -0.5em inset;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px -0.5em 0.5em -0.5em inset;
 }
 /* line 186, ../sass/_responsive-tables.scss */
 #vertscroll .split.content-hidden-bottom.content-hidden-top.content-hidden-right .scrollable .header-wrapper {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) -0.5em 0px 0.5em -0.5em inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.15) -0.5em 0px 0.5em -0.5em inset;
-  box-shadow: rgba(0, 0, 0, 0.15) -0.5em 0px 0.5em -0.5em inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) -0.5em 0px 0.5em -0.5em inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.16) -0.5em 0px 0.5em -0.5em inset;
+  box-shadow: rgba(0, 0, 0, 0.16) -0.5em 0px 0.5em -0.5em inset;
 }
 /* line 189, ../sass/_responsive-tables.scss */
 #vertscroll .split.content-hidden-bottom.content-hidden-top.content-hidden-right .scrollable .body-wrapper {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) -0.5em 0px 0.5em -0.5em inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.15) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) -0.5em 0px 0.5em -0.5em inset;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) -0.5em 0px 0.5em -0.5em inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) -0.5em 0px 0.5em -0.5em inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) -0.5em 0px 0.5em -0.5em inset;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) -0.5em 0px 0.5em -0.5em inset;
 }
 /* line 194, ../sass/_responsive-tables.scss */
 #vertscroll .split.content-hidden-bottom.content-hidden-top.content-hidden-right .pinned .body-wrapper {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.15) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset;
 }
 /* line 201, ../sass/_responsive-tables.scss */
 #vertscroll .split.content-hidden-bottom.content-hidden-top.content-hidden-left .scrollable .header-wrapper {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0.5em 0px 0.5em -0.5em inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.15) 0.5em 0px 0.5em -0.5em inset;
-  box-shadow: rgba(0, 0, 0, 0.15) 0.5em 0px 0.5em -0.5em inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0.5em 0px 0.5em -0.5em inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.16) 0.5em 0px 0.5em -0.5em inset;
+  box-shadow: rgba(0, 0, 0, 0.16) 0.5em 0px 0.5em -0.5em inset;
 }
 /* line 204, ../sass/_responsive-tables.scss */
 #vertscroll .split.content-hidden-bottom.content-hidden-top.content-hidden-left .scrollable .body-wrapper {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0.5em 0px 0.5em -0.5em inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.15) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0.5em 0px 0.5em -0.5em inset;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0.5em 0px 0.5em -0.5em inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0.5em 0px 0.5em -0.5em inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0.5em 0px 0.5em -0.5em inset;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0.5em 0px 0.5em -0.5em inset;
 }
 /* line 209, ../sass/_responsive-tables.scss */
 #vertscroll .split.content-hidden-bottom.content-hidden-top.content-hidden-left .pinned .body-wrapper {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.15) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset;
 }
 /* line 216, ../sass/_responsive-tables.scss */
 #vertscroll .split.content-hidden-bottom.content-hidden-top.content-hidden-right.content-hidden-left .scrollable .header-wrapper {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) -0.5em 0px 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0.5em 0px 0.5em -0.5em inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.15) -0.5em 0px 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0.5em 0px 0.5em -0.5em inset;
-  box-shadow: rgba(0, 0, 0, 0.15) -0.5em 0px 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0.5em 0px 0.5em -0.5em inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) -0.5em 0px 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0.5em 0px 0.5em -0.5em inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.16) -0.5em 0px 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0.5em 0px 0.5em -0.5em inset;
+  box-shadow: rgba(0, 0, 0, 0.16) -0.5em 0px 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0.5em 0px 0.5em -0.5em inset;
 }
 /* line 219, ../sass/_responsive-tables.scss */
 #vertscroll .split.content-hidden-bottom.content-hidden-top.content-hidden-right.content-hidden-left .scrollable .body-wrapper {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) -0.5em 0px 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0.5em 0px 0.5em -0.5em inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.15) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) -0.5em 0px 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0.5em 0px 0.5em -0.5em inset;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) -0.5em 0px 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0.5em 0px 0.5em -0.5em inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) -0.5em 0px 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0.5em 0px 0.5em -0.5em inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) -0.5em 0px 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0.5em 0px 0.5em -0.5em inset;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) -0.5em 0px 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0.5em 0px 0.5em -0.5em inset;
 }
 /* line 224, ../sass/_responsive-tables.scss */
 #vertscroll .split.content-hidden-bottom.content-hidden-top.content-hidden-right.content-hidden-left .pinned .body-wrapper {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.15) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px -0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset;
 }
 /* line 232, ../sass/_responsive-tables.scss */
 #vertscroll .split.content-hidden-top.content-hidden-right .scrollable .header-wrapper {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) -0.5em 0px 0.5em -0.5em inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.15) -0.5em 0px 0.5em -0.5em inset;
-  box-shadow: rgba(0, 0, 0, 0.15) -0.5em 0px 0.5em -0.5em inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) -0.5em 0px 0.5em -0.5em inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.16) -0.5em 0px 0.5em -0.5em inset;
+  box-shadow: rgba(0, 0, 0, 0.16) -0.5em 0px 0.5em -0.5em inset;
 }
 /* line 235, ../sass/_responsive-tables.scss */
 #vertscroll .split.content-hidden-top.content-hidden-right .scrollable .body-wrapper {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) -0.5em 0px 0.5em -0.5em inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) -0.5em 0px 0.5em -0.5em inset;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) -0.5em 0px 0.5em -0.5em inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) -0.5em 0px 0.5em -0.5em inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) -0.5em 0px 0.5em -0.5em inset;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) -0.5em 0px 0.5em -0.5em inset;
 }
 /* line 240, ../sass/_responsive-tables.scss */
 #vertscroll .split.content-hidden-top.content-hidden-right .pinned .body-wrapper {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset;
 }
 /* line 247, ../sass/_responsive-tables.scss */
 #vertscroll .split.content-hidden-top.content-hidden-left .scrollable .header-wrapper {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0.5em 0px 0.5em -0.5em inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.15) 0.5em 0px 0.5em -0.5em inset;
-  box-shadow: rgba(0, 0, 0, 0.15) 0.5em 0px 0.5em -0.5em inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0.5em 0px 0.5em -0.5em inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.16) 0.5em 0px 0.5em -0.5em inset;
+  box-shadow: rgba(0, 0, 0, 0.16) 0.5em 0px 0.5em -0.5em inset;
 }
 /* line 250, ../sass/_responsive-tables.scss */
 #vertscroll .split.content-hidden-top.content-hidden-left .scrollable .body-wrapper {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0.5em 0px 0.5em -0.5em inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0.5em 0px 0.5em -0.5em inset;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0.5em 0px 0.5em -0.5em inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0.5em 0px 0.5em -0.5em inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0.5em 0px 0.5em -0.5em inset;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0.5em 0px 0.5em -0.5em inset;
 }
 /* line 255, ../sass/_responsive-tables.scss */
 #vertscroll .split.content-hidden-top.content-hidden-left .pinned .body-wrapper {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset;
 }
 /* line 262, ../sass/_responsive-tables.scss */
 #vertscroll .split.content-hidden-top.content-hidden-right.content-hidden-left .scrollable .header-wrapper {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) -0.5em 0px 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0.5em 0px 0.5em -0.5em inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.15) -0.5em 0px 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0.5em 0px 0.5em -0.5em inset;
-  box-shadow: rgba(0, 0, 0, 0.15) -0.5em 0px 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0.5em 0px 0.5em -0.5em inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) -0.5em 0px 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0.5em 0px 0.5em -0.5em inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.16) -0.5em 0px 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0.5em 0px 0.5em -0.5em inset;
+  box-shadow: rgba(0, 0, 0, 0.16) -0.5em 0px 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0.5em 0px 0.5em -0.5em inset;
 }
 /* line 265, ../sass/_responsive-tables.scss */
 #vertscroll .split.content-hidden-top.content-hidden-right.content-hidden-left .scrollable .body-wrapper {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) -0.5em 0px 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0.5em 0px 0.5em -0.5em inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) -0.5em 0px 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0.5em 0px 0.5em -0.5em inset;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) -0.5em 0px 0.5em -0.5em inset, rgba(0, 0, 0, 0.15) 0.5em 0px 0.5em -0.5em inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) -0.5em 0px 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0.5em 0px 0.5em -0.5em inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) -0.5em 0px 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0.5em 0px 0.5em -0.5em inset;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) -0.5em 0px 0.5em -0.5em inset, rgba(0, 0, 0, 0.16) 0.5em 0px 0.5em -0.5em inset;
 }
 /* line 270, ../sass/_responsive-tables.scss */
 #vertscroll .split.content-hidden-top.content-hidden-right.content-hidden-left .pinned .body-wrapper {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0.5em 0.5em -0.5em inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 0.5em 0.5em -0.5em inset;
 }
 /* line 280, ../sass/_responsive-tables.scss */
 #vertscroll header h1 {
